@@ -1,0 +1,5 @@
+
+{
+  "name": "Geo-Attendance Pro",
+  "description": "A comprehensive attendance management application for companies to track employee check-ins and check-outs based on geographic location. Managers can define work zones, and employees can clock in only when within the allowed radius."
+}
