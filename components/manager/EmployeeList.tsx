@@ -5,24 +5,20 @@ import { API_URL } from '../../src/config';
 
 const EmployeeList: React.FC = () => {
   const [employees, setEmployees] = useState<User[]>([]);
-  const { token } = useAuth();
+  const { apiFetch } = useAuth();
   const [error, setError] = useState('');
 
   const fetchEmployees = useCallback(async () => {
-    if (token) {
         setError('');
       try {
-        const response = await fetch(`${API_URL}/employees`, {
-            headers: { 'Authorization': `Bearer ${token}` }
-        });
+        const response = await apiFetch(`${API_URL}/employees`);
         if (!response.ok) throw new Error('Failed to fetch employees');
         const data = await response.json();
-        setEmployees(data);
+        setEmployees(data.items || []);
       } catch (err: any) {
         setError(err.message);
       }
-    }
-  }, [token]);
+  }, [apiFetch]);
   
   useEffect(() => {
     fetchEmployees();

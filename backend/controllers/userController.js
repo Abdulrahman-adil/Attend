@@ -1,46 +1,23 @@
-
-const { db } = require('../db/database');
-
-const updateUserRole = (req, res, next) => {
-  const { role } = req.body;
-  const userId = req.user.id;
-
-  if (!['manager', 'employee'].includes(role)) {
-    res.status(400);
-    return next(new Error('Invalid role specified'));
-  }
-
-  db.serialize(() => {
-    db.get('SELECT company_id, role FROM users WHERE id = ?', [userId], (err, user) => {
-        if (err) return next(err);
-        if (user && user.role) {
-            res.status(400);
-            return next(new Error('User role is already set'));
-        }
-
-        if (role === 'manager') {
-            const companyName = `${req.user.name}'s Company`;
-            const insertCompanySql = 'INSERT INTO companies (name, owner_id) VALUES (?, ?)';
-            db.run(insertCompanySql, [companyName, userId], function(err) {
-                if (err) return next(err);
-                const companyId = this.lastID;
-                const updateUserSql = 'UPDATE users SET role = ?, company_id = ? WHERE id = ?';
-                db.run(updateUserSql, [role, companyId, userId], (err) => {
-                    if (err) return next(err);
-                    res.json({ message: 'Role updated to manager and company created', role, companyId });
-                });
-            });
-        } else { // Employee role
-            const updateUserSql = 'UPDATE users SET role = ? WHERE id = ?';
-            db.run(updateUserSql, [role, userId], (err) => {
-                if (err) return next(err);
-                // Note: An employee must be assigned a company by a manager.
-                // This flow assumes an employee registers and waits for assignment, or is pre-added.
-                res.json({ message: 'Role updated to employee', role });
-            });
-        }
-    });
-  });
-};
-
-module.exports = { updateUserRole };
+const { object,text,fail } = require('../lib/http');
+const { timezone } = require('../lib/time');
+const { userDto } = require('../services/mappers');
+const { audit } = require('../services/auditService');
+function createUserController({ store,now }) {
+  return {
+    async setRole(req,res) {
+      const body=object(req.body);
+      if (body.role!=='manager') fail(400,'Employees join through an invitation from their organization.','INVITATION_REQUIRED');
+      const name=text(body.companyName,'Organization name');const zone=timezone(body.timezone);const time=now().toISOString();
+      const user=await store.transaction(async tx=>{
+        const current=await tx.get('SELECT * FROM users WHERE id=?',[req.user.id]);
+        if (current.role || current.company_id) fail(409,'This account already belongs to an organization.','ROLE_ALREADY_SET');
+        const company=await tx.run('INSERT INTO companies(name,owner_id,timezone,timezone_configured) VALUES(?,?,?,1)',[name,current.id,zone]);
+        await tx.run("UPDATE users SET role='manager',company_id=? WHERE id=?",[company.lastID,current.id]);
+        await audit(tx,{companyId:company.lastID,actorId:current.id,subjectId:current.id,type:'organization.created'},time);
+        return {...current,role:'manager',company_id:company.lastID};
+      });
+      res.json({user:userDto(user),message:'Organization created.'});
+    },
+  };
+}
+module.exports = { createUserController };

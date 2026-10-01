@@ -1,13 +1,16 @@
 {
   "compilerOptions": {
-    "composite": false,
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
     "allowSyntheticDefaultImports": true,
     "strict": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "noEmit": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
+  "include": ["*.ts", "*.tsx", "src", "pages", "components", "contexts", "hooks", "services"],
+  "exclude": ["node_modules", "backend", "dist"]
 }

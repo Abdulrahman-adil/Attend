@@ -1,0 +1,474 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/j4yngs",
+    "id": "j4yngs",
+    "slide": 5,
+    "layoutId": "a24e021a-7080-40ef-a201-992df89d1d12",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      ".SF Arabic"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a24e021a-7080-40ef-a201-992df89d1d12",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r2xwrqdc",
+      "id": "1",
+      "name": "data-file/1",
+      "bbox": [
+        860,
+        340,
+        200,
+        200
+      ],
+      "geometry": "ellipse",
+      "fillColor": "rgba(255, 184, 0, 0.08)",
+      "lineColor": "#FFB800",
+      "lineWidth": 2
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/s3qxkvux",
+      "id": "2",
+      "name": "data-file/2",
+      "bbox": [
+        860,
+        340,
+        200,
+        200
+      ],
+      "geometry": "custom",
+      "lineColor": "#FFB800",
+      "lineWidth": 5
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d4zet0v2",
+      "id": "3",
+      "name": "data-file/3",
+      "bbox": [
+        860,
+        340,
+        200,
+        200
+      ],
+      "geometry": "custom",
+      "lineColor": "#FFB800",
+      "lineWidth": 4
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idofelcf",
+      "id": "4",
+      "name": "data-file/4",
+      "bbox": [
+        938,
+        432,
+        50,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFB800",
+      "lineWidth": 4
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jexwnqd0",
+      "id": "5",
+      "name": "data-file/5",
+      "bbox": [
+        938,
+        456,
+        50,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFB800",
+      "lineWidth": 4
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4f6xgvul",
+      "id": "6",
+      "name": "data-file/6",
+      "bbox": [
+        938,
+        480,
+        36,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#FFB800",
+      "lineWidth": 4
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gfep0v6",
+      "id": "7",
+      "name": "branch-0/7",
+      "bbox": [
+        435,
+        540,
+        525,
+        160
+      ],
+      "verticalFlip": true,
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.4)",
+      "lineWidth": 2
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/298fq5cz",
+      "id": "8",
+      "name": "option-0/8",
+      "bbox": [
+        245,
+        700,
+        380,
+        140
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#12172E",
+      "lineColor": "#00D9FF",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nahgzadk",
+      "id": "9",
+      "name": "option-0/9",
+      "bbox": [
+        265,
+        739,
+        340,
+        64
+      ],
+      "geometry": "rect",
+      "text": "معلومات عنك؟",
+      "textPreview": "معلومات عنك؟",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": ".SF Arabic",
+        "color": "#F5F7FA",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "معلومات عنك؟"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "معلومات عنك؟",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": ".SF Arabic",
+            "color": "#F5F7FA",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "معلومات عنك؟",
+              "fontSize": 40,
+              "typeface": ".SF Arabic",
+              "color": "#F5F7FA",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3yx8rmdw",
+      "id": "10",
+      "name": "branch-1/10",
+      "bbox": [
+        960,
+        540,
+        0,
+        160
+      ],
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.4)",
+      "lineWidth": 2
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2x47yhcb",
+      "id": "11",
+      "name": "option-1/11",
+      "bbox": [
+        770,
+        700,
+        380,
+        140
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#12172E",
+      "lineColor": "#00D9FF",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p0fqtcv2",
+      "id": "12",
+      "name": "option-1/12",
+      "bbox": [
+        790,
+        739,
+        340,
+        64
+      ],
+      "geometry": "rect",
+      "text": "تفضيلاتك؟",
+      "textPreview": "تفضيلاتك؟",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": ".SF Arabic",
+        "color": "#F5F7FA",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "تفضيلاتك؟"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "تفضيلاتك؟",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": ".SF Arabic",
+            "color": "#F5F7FA",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "تفضيلاتك؟",
+              "fontSize": 40,
+              "typeface": ".SF Arabic",
+              "color": "#F5F7FA",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4z6p07uh",
+      "id": "13",
+      "name": "branch-2/13",
+      "bbox": [
+        960,
+        540,
+        525,
+        160
+      ],
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.4)",
+      "lineWidth": 2
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/r2x8vmd8",
+      "id": "14",
+      "name": "option-2/14",
+      "bbox": [
+        1295,
+        700,
+        380,
+        140
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#12172E",
+      "lineColor": "#00D9FF",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q1or2hcn",
+      "id": "15",
+      "name": "option-2/15",
+      "bbox": [
+        1315,
+        739,
+        340,
+        64
+      ],
+      "geometry": "rect",
+      "text": "تتبع نشاطك؟",
+      "textPreview": "تتبع نشاطك؟",
+      "resolvedFontSize": 40,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 40,
+        "typeface": ".SF Arabic",
+        "color": "#F5F7FA",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "تتبع نشاطك؟"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "تتبع نشاطك؟",
+          "resolvedTextStyle": {
+            "fontSize": 40,
+            "typeface": ".SF Arabic",
+            "color": "#F5F7FA",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "تتبع نشاطك؟",
+              "fontSize": 40,
+              "typeface": ".SF Arabic",
+              "color": "#F5F7FA",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

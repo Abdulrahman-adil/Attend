@@ -1,0 +1,5 @@
+const userDto = row => ({ id:row.id,name:row.name,email:row.email,role:row.role,companyId:row.company_id,status:row.archived_at ? 'archived' : row.is_active ? 'active' : 'pending',activatedAt:row.activated_at || null,invitedAt:row.invited_at || null });
+const locationDto = row => ({ id:row.id,companyId:row.company_id,name:row.name,latitude:row.latitude,longitude:row.longitude,radius:row.radius,retiredAt:row.retired_at });
+const companyDto = row => row ? ({ id:row.id,name:row.name,ownerId:row.owner_id,logoUrl:row.logo_url,timezone:row.timezone,timezoneConfigured:Boolean(row.timezone_configured) }) : null;
+const attendanceDto = row => row ? ({ id:row.id,employeeId:row.employee_id,companyId:row.company_id,locationId:row.location_id,locationName:row.location_name || null,checkInTime:row.check_in_time,checkOutTime:row.check_out_time,checkInLocation:{latitude:row.check_in_latitude,longitude:row.check_in_longitude},checkOutLocation:row.check_out_time ? {latitude:row.check_out_latitude,longitude:row.check_out_longitude} : null }) : null;
+module.exports = { userDto,locationDto,companyDto,attendanceDto };

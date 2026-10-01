@@ -1,0 +1,393 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/w769ix",
+    "id": "w769ix",
+    "slide": 4,
+    "layoutId": "a24e021a-7080-40ef-a201-992df89d1d12",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      ".SF NS"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a24e021a-7080-40ef-a201-992df89d1d12",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/cfmlwfad",
+      "id": "1",
+      "name": "cookie/1",
+      "bbox": [
+        860,
+        340,
+        200,
+        200
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#FFB800",
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bed43ats",
+      "id": "2",
+      "name": "cookie/2",
+      "bbox": [
+        920,
+        388,
+        23,
+        23
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/adk3u5s7",
+      "id": "3",
+      "name": "cookie/3",
+      "bbox": [
+        982,
+        380,
+        16,
+        16
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pcbm10bm",
+      "id": "4",
+      "name": "cookie/4",
+      "bbox": [
+        1000,
+        434,
+        26,
+        26
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ob2lsfa1",
+      "id": "5",
+      "name": "cookie/5",
+      "bbox": [
+        934,
+        454,
+        24,
+        24
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/natkzatw",
+      "id": "6",
+      "name": "cookie/6",
+      "bbox": [
+        970,
+        496,
+        16,
+        16
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29k3q5sb",
+      "id": "7",
+      "name": "cookie/7",
+      "bbox": [
+        898,
+        488,
+        13,
+        13
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#774900",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/18b2x0bq",
+      "id": "8",
+      "name": "question-0/8",
+      "bbox": [
+        720,
+        350,
+        80,
+        96
+      ],
+      "geometry": "rect",
+      "text": "?",
+      "textPreview": "?",
+      "resolvedFontSize": 80,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 80,
+        "typeface": ".SF NS",
+        "color": "#8B7BFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "?",
+          "resolvedTextStyle": {
+            "fontSize": 80,
+            "typeface": ".SF NS",
+            "color": "#8B7BFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "?",
+              "fontSize": 80,
+              "typeface": ".SF NS",
+              "color": "#8B7BFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/072lovu5",
+      "id": "9",
+      "name": "question-1/9",
+      "bbox": [
+        1120,
+        305,
+        80,
+        96
+      ],
+      "geometry": "rect",
+      "text": "?",
+      "textPreview": "?",
+      "resolvedFontSize": 80,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 80,
+        "typeface": ".SF NS",
+        "color": "#8B7BFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "?",
+          "resolvedTextStyle": {
+            "fontSize": 80,
+            "typeface": ".SF NS",
+            "color": "#8B7BFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "?",
+              "fontSize": 80,
+              "typeface": ".SF NS",
+              "color": "#8B7BFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/udwvit8r",
+      "id": "10",
+      "name": "question-2/10",
+      "bbox": [
+        1045,
+        580,
+        80,
+        96
+      ],
+      "geometry": "rect",
+      "text": "?",
+      "textPreview": "?",
+      "resolvedFontSize": 80,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 80,
+        "typeface": ".SF NS",
+        "color": "#8B7BFF",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "?",
+          "resolvedTextStyle": {
+            "fontSize": 80,
+            "typeface": ".SF NS",
+            "color": "#8B7BFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "?",
+              "fontSize": 80,
+              "typeface": ".SF NS",
+              "color": "#8B7BFF",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

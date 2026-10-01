@@ -1,0 +1,370 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/udn6t1",
+    "id": "udn6t1",
+    "slide": 11,
+    "layoutId": "a24e021a-7080-40ef-a201-992df89d1d12",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      ".SF NS"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a24e021a-7080-40ef-a201-992df89d1d12",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4nmlcbud",
+      "id": "1",
+      "name": "search-browser/1",
+      "bbox": [
+        460,
+        265,
+        1000,
+        500
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#12172E",
+      "lineColor": "rgba(0, 217, 255, 0.45)",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3md436t8",
+      "id": "2",
+      "name": "search-browser/2",
+      "bbox": [
+        462,
+        267,
+        996,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#191F38",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2l43a1cn",
+      "id": "3",
+      "name": "search-browser/3",
+      "bbox": [
+        490,
+        292,
+        14,
+        14
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#8B7BFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hkv21gb2",
+      "id": "4",
+      "name": "search-browser/4",
+      "bbox": [
+        517,
+        292,
+        14,
+        14
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#00D9FF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gz2l8buh",
+      "id": "5",
+      "name": "search-browser/5",
+      "bbox": [
+        590,
+        281,
+        750,
+        40
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0B1024",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fytkz6tw",
+      "id": "6",
+      "name": "search-browser/6",
+      "bbox": [
+        620,
+        286,
+        690,
+        28
+      ],
+      "geometry": "rect",
+      "text": "search.example",
+      "textPreview": "search.example",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": ".SF NS",
+        "color": "#8A93A6",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "search.example"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "search.example",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": ".SF NS",
+            "color": "#8A93A6",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "search.example",
+              "fontSize": 22,
+              "typeface": ".SF NS",
+              "color": "#8A93A6",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uxk361cb",
+      "id": "7",
+      "name": "search-browser/7",
+      "bbox": [
+        460,
+        337,
+        1000,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.18)",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/twb2xwbq",
+      "id": "8",
+      "name": "search-field/8",
+      "bbox": [
+        570,
+        382,
+        780,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0A1024",
+      "lineColor": "rgba(0, 217, 255, 0.3)",
+      "lineWidth": 1
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sv2l4rul",
+      "id": "9",
+      "name": "search-field/9",
+      "bbox": [
+        614,
+        392,
+        675,
+        50
+      ],
+      "geometry": "rect",
+      "text": "Headphones",
+      "textPreview": "Headphones",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": ".SF NS",
+        "color": "#F5F7FA",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Headphones"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Headphones",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": ".SF NS",
+            "color": "#F5F7FA",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Headphones",
+              "fontSize": 32,
+              "typeface": ".SF NS",
+              "color": "#F5F7FA",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y1c3mlo3",
+      "id": "10",
+      "name": "headphones/10",
+      "bbox": [
+        850,
+        494,
+        200,
+        200
+      ],
+      "geometry": "custom",
+      "lineColor": "#8B7BFF",
+      "lineWidth": 8
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j25kfq5o",
+      "id": "11",
+      "name": "headphones/11",
+      "bbox": [
+        872,
+        580,
+        40,
+        80
+      ],
+      "geometry": "roundRect",
+      "lineColor": "#8B7BFF",
+      "lineWidth": 7
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3elob69",
+      "id": "12",
+      "name": "headphones/12",
+      "bbox": [
+        988,
+        580,
+        40,
+        80
+      ],
+      "geometry": "roundRect",
+      "lineColor": "#8B7BFF",
+      "lineWidth": 7
+    }
+  ],
+  "composeRuns": []
+}

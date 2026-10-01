@@ -1,0 +1,543 @@
+[
+  {
+    "id": "A01",
+    "scene": 1,
+    "part": 1,
+    "duration": 2,
+    "start": 0,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [],
+    "clip": 1
+  },
+  {
+    "id": "A02",
+    "scene": 1,
+    "part": 2,
+    "duration": 2,
+    "start": 2,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A03",
+    "scene": 1,
+    "part": 3,
+    "duration": 2.3,
+    "start": 4,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A04",
+    "scene": 1,
+    "part": 4,
+    "duration": 1.7,
+    "start": 6.3,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "user": 0.45,
+      "browser": 0.45,
+      "login-arrow": 0.45,
+      "request-arrow": 0.45
+    },
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A05",
+    "scene": 1,
+    "part": 5,
+    "duration": 1.2,
+    "start": 8,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "request-arrow": 0.3
+    },
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A06",
+    "scene": 1,
+    "part": 6,
+    "duration": 1.5,
+    "start": 9.2,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "request-arrow": 0.3
+    },
+    "scale": {},
+    "trans": 0.7,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A07",
+    "scene": 1,
+    "part": 7,
+    "duration": 2,
+    "start": 10.7,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "user": 0.35,
+      "server": 0.35
+    },
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A08",
+    "scene": 1,
+    "part": 8,
+    "duration": 1.7,
+    "start": 12.7,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.7,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A09",
+    "scene": 1,
+    "part": 9,
+    "duration": 1.6,
+    "start": 14.399999999999999,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "user",
+      "browser",
+      "server"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "A10",
+    "scene": 1,
+    "part": 10,
+    "duration": 4,
+    "start": 15.999999999999998,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.5,
+    "glowGroups": [
+      "browser"
+    ],
+    "clip": 1
+  },
+  {
+    "id": "B01",
+    "scene": 2,
+    "part": 1,
+    "duration": 1.6,
+    "start": 20,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [],
+    "clip": 2
+  },
+  {
+    "id": "B02",
+    "scene": 2,
+    "part": 2,
+    "duration": 0.5,
+    "start": 21.6,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B03",
+    "scene": 2,
+    "part": 3,
+    "duration": 0.5,
+    "start": 22.1,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B04",
+    "scene": 2,
+    "part": 4,
+    "duration": 0.5,
+    "start": 22.6,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B05",
+    "scene": 2,
+    "part": 5,
+    "duration": 0.9,
+    "start": 23.1,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B06",
+    "scene": 2,
+    "part": 6,
+    "duration": 3,
+    "start": 24,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "type-1": 0.3,
+      "type-2": 0.3,
+      "type-3": 0.3
+    },
+    "scale": {
+      "type-0": 1.05
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B07",
+    "scene": 2,
+    "part": 7,
+    "duration": 3,
+    "start": 27,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "type-0": 0.3,
+      "type-2": 0.3,
+      "type-3": 0.3
+    },
+    "scale": {
+      "type-1": 1.05
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B08",
+    "scene": 2,
+    "part": 8,
+    "duration": 3,
+    "start": 30,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "type-0": 0.3,
+      "type-1": 0.3,
+      "type-3": 0.3
+    },
+    "scale": {
+      "type-2": 1.05
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B09",
+    "scene": 2,
+    "part": 9,
+    "duration": 3,
+    "start": 33,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "type-0": 0.3,
+      "type-1": 0.3,
+      "type-2": 0.3
+    },
+    "scale": {
+      "type-3": 1.05
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "B10",
+    "scene": 2,
+    "part": 10,
+    "duration": 1,
+    "start": 36,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "type-0",
+      "type-1",
+      "type-2",
+      "type-3"
+    ],
+    "clip": 2
+  },
+  {
+    "id": "C01",
+    "scene": 3,
+    "part": 1,
+    "duration": 1.6,
+    "start": 37,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [],
+    "clip": 3
+  },
+  {
+    "id": "C02",
+    "scene": 3,
+    "part": 2,
+    "duration": 0.6,
+    "start": 38.6,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C03",
+    "scene": 3,
+    "part": 3,
+    "duration": 0.6,
+    "start": 39.2,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C04",
+    "scene": 3,
+    "part": 4,
+    "duration": 0.6,
+    "start": 39.800000000000004,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1",
+      "comparison-2"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C05",
+    "scene": 3,
+    "part": 5,
+    "duration": 4,
+    "start": 40.400000000000006,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "comparison-1": 0.3,
+      "comparison-2": 0.3
+    },
+    "scale": {
+      "comparison-0": 1.06
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1",
+      "comparison-2"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C06",
+    "scene": 3,
+    "part": 6,
+    "duration": 4,
+    "start": 44.400000000000006,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "comparison-0": 0.3,
+      "comparison-2": 0.3
+    },
+    "scale": {
+      "comparison-1": 1.06
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1",
+      "comparison-2"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C07",
+    "scene": 3,
+    "part": 7,
+    "duration": 4,
+    "start": 48.400000000000006,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {
+      "comparison-0": 0.3,
+      "comparison-1": 0.3
+    },
+    "scale": {
+      "comparison-2": 1.06
+    },
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1",
+      "comparison-2"
+    ],
+    "clip": 3
+  },
+  {
+    "id": "C08",
+    "scene": 3,
+    "part": 8,
+    "duration": 2.6,
+    "start": 52.400000000000006,
+    "transition": "magic move",
+    "builds": [],
+    "opacity": {},
+    "scale": {},
+    "trans": 0.4,
+    "glowGroups": [
+      "comparison-0",
+      "comparison-1",
+      "comparison-2"
+    ],
+    "clip": 3
+  }
+]

@@ -34,7 +34,7 @@ const ActivationPage: React.FC = () => {
         setMessage(data.message)
       } catch (error) {
         setStatus('error')
-        setMessage(error.message)
+        setMessage(error instanceof Error ? error.message : 'Activation failed. Please try again.')
       }
     }
 

@@ -4,24 +4,24 @@ export enum UserRole {
 }
 
 export interface User {
-  id: string;
+  id: number;
   name: string;
   email: string;
   passwordHash?: string;
   role?: UserRole;
-  companyId: string;
+  companyId: number | null;
   google_id?: string;
 }
 
 export interface Company {
-  id: string;
+  id: number;
   name: string;
-  ownerId: string;
+  ownerId: number;
   logoUrl?: string;
 }
 
 export interface WorkLocation {
-  id: string;
+  id: number;
   name: string;
   latitude: number;
   longitude: number;
@@ -30,8 +30,8 @@ export interface WorkLocation {
 }
 
 export interface AttendanceRecord {
-  id: string;
-  employeeId: string;
+  id: number;
+  employeeId: number;
   locationId?: number;
   locationName?: string;
   checkInTime: string;

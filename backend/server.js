@@ -1,37 +1,65 @@
-const dotenv = require("dotenv");
-const express = require("express");
-const cors = require("cors");
+const path = require('node:path');
+const { createApp } = require('./app');
+const { loadConfig } = require('./config');
+const { openDatabase } = require('./db/database');
 
-const authRoutes = require("./routes/authRoutes");
-const userRoutes = require("./routes/userRoutes");
-const employeeRoutes = require("./routes/employeeRoutes");
-const locationRoutes = require("./routes/locationRoutes");
-const attendanceRoutes = require("./routes/attendanceRoutes");
+async function startServer({ config = loadConfig(), logger = console } = {}) {
+  // Migrations are an explicit setup step; startup never changes the schema.
+  const store = await openDatabase(config.dbPath);
+  let server;
+  try {
+    const app = createApp({ store, config });
+    server = await new Promise((resolve, reject) => {
+      const listener = app.listen(config.port, config.host);
+      listener.once('error', reject);
+      listener.once('listening', () => {
+        listener.removeListener('error', reject);
+        resolve(listener);
+      });
+    });
+    let closing;
+    const close = () => {
+      if (!closing) closing = (async () => {
+        try {
+          await new Promise((resolve, reject) => {
+            server.close(error => error ? reject(error) : resolve());
+            server.closeIdleConnections?.();
+          });
+        } finally {
+          await store.close();
+        }
+      })();
+      return closing;
+    };
+    logger.info(`Server running on http://${config.host}:${server.address().port}`);
+    return { app, server, close };
+  } catch (error) {
+    if (server) await new Promise(resolve => server.close(resolve));
+    await store.close();
+    throw error;
+  }
+}
 
-const { initDB } = require("./db/database");
-const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+if (require.main === module) {
+  require('dotenv').config({ path: path.join(__dirname, '.env') });
+  startServer().then(({ close }) => {
+    let shuttingDown = false;
+    const shutdown = () => {
+      if (shuttingDown) return;
+      shuttingDown = true;
+      const timeout = setTimeout(() => process.exit(1), 10000);
+      timeout.unref();
+      close().catch(error => {
+        console.error(`Shutdown failed: ${error.message}`);
+        process.exitCode = 1;
+      }).finally(() => clearTimeout(timeout));
+    };
+    process.once('SIGINT', shutdown);
+    process.once('SIGTERM', shutdown);
+  }).catch(error => {
+    console.error(`Startup failed: ${error.message}`);
+    process.exitCode = 1;
+  });
+}
 
-dotenv.config();
-initDB();
-
-const app = express();
-app.use(
-  cors({
-    origin: "http://localhost:5172", // Adjust as needed for your frontend
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
-app.use(express.json());
-
-app.use("/api/auth", authRoutes);
-app.use("/api/users", userRoutes);
-app.use("/api/employees", employeeRoutes);
-app.use("/api/locations", locationRoutes);
-app.use("/api/attendance", attendanceRoutes);
-
-app.use(notFound);
-app.use(errorHandler);
-
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = { startServer };

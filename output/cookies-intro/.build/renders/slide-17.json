@@ -1,0 +1,526 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/w91evl",
+    "id": "w91evl",
+    "slide": 17,
+    "layoutId": "a24e021a-7080-40ef-a201-992df89d1d12",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      ".SF NS"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a24e021a-7080-40ef-a201-992df89d1d12",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih8rmdcf",
+      "id": "1",
+      "name": "road-line/1",
+      "bbox": [
+        250,
+        540,
+        1415,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.3)",
+      "lineWidth": 2
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/54zqhsvq",
+      "id": "2",
+      "name": "road-0/2",
+      "bbox": [
+        113.75,
+        441,
+        357.5,
+        198
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(18, 23, 46, 1)",
+      "lineColor": "rgba(0, 217, 255, 1)",
+      "lineWidth": 2.5
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/43q9onul",
+      "id": "3",
+      "name": "road-0/3",
+      "bbox": [
+        133.75,
+        469,
+        317.5,
+        142
+      ],
+      "geometry": "rect",
+      "text": "What are\nCookies?",
+      "textPreview": "What are | Cookies?",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": ".SF NS",
+        "color": "rgba(245, 247, 250, 1)",
+        "bold": true,
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "What are"
+          },
+          {
+            "index": 2,
+            "text": "Cookies?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "What are",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 1)",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "What are",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 1)",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Cookies?",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 1)",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Cookies?",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 1)",
+              "bold": true,
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vex8bydo",
+      "id": "4",
+      "name": "road-1/4",
+      "bbox": [
+        575,
+        450,
+        325,
+        180
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(18, 23, 46, 0.3)",
+      "lineColor": "rgba(0, 217, 255, 0.3)",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/udo7idc3",
+      "id": "5",
+      "name": "road-1/5",
+      "bbox": [
+        595,
+        478,
+        285,
+        124
+      ],
+      "geometry": "rect",
+      "text": "What do\nthey store?",
+      "textPreview": "What do | they store?",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": ".SF NS",
+        "color": "rgba(245, 247, 250, 0.3)",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "What do"
+          },
+          {
+            "index": 2,
+            "text": "they store?"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "What do",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "What do",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "they store?",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "they store?",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hgzqd8vu",
+      "id": "6",
+      "name": "road-2/6",
+      "bbox": [
+        1020,
+        450,
+        325,
+        180
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(18, 23, 46, 0.3)",
+      "lineColor": "rgba(0, 217, 255, 0.3)",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wfq9k3u9",
+      "id": "7",
+      "name": "road-2/7",
+      "bbox": [
+        1040,
+        478,
+        285,
+        124
+      ],
+      "geometry": "rect",
+      "text": "Cookie\nTypes",
+      "textPreview": "Cookie | Types",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": ".SF NS",
+        "color": "rgba(245, 247, 250, 0.3)",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Cookie"
+          },
+          {
+            "index": 2,
+            "text": "Types"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Cookie",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Cookie",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Types",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Types",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7ax87yds",
+      "id": "8",
+      "name": "road-3/8",
+      "bbox": [
+        1465,
+        450,
+        325,
+        180
+      ],
+      "geometry": "roundRect",
+      "fillColor": "rgba(18, 23, 46, 0.3)",
+      "lineColor": "rgba(0, 217, 255, 0.3)",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m9o7etc7",
+      "id": "9",
+      "name": "road-3/9",
+      "bbox": [
+        1485,
+        478,
+        285,
+        124
+      ],
+      "geometry": "rect",
+      "text": "Privacy\n& Consent",
+      "textPreview": "Privacy | & Consent",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": ".SF NS",
+        "color": "rgba(245, 247, 250, 0.3)",
+        "alignment": "center",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Privacy"
+          },
+          {
+            "index": 2,
+            "text": "& Consent"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Privacy",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Privacy",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "& Consent",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": ".SF NS",
+            "color": "rgba(245, 247, 250, 0.3)",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "& Consent",
+              "fontSize": 36,
+              "typeface": ".SF NS",
+              "color": "rgba(245, 247, 250, 0.3)",
+              "alignment": "center"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

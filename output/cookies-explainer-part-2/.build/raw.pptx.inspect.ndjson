@@ -1,0 +1,791 @@
+{"kind":"deck","id":"pr/x0tpd4","name":"Deck"}
+{"kind":"layout","layoutId":"d124f9a1-7f81-4b5a-8d38-59606ac80f7a","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"5740ec39-38ff-4904-8317-3359284baf5b","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/mppppr","slide":1,"title":"إزاي الموقع بيفتكرك؟","textShapes":2}
+{"kind":"textbox","id":"sh/7mdovexg","slide":1,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[460,410,1000,120]}
+{"kind":"textbox","id":"sh/8nm54zyl","slide":1,"name":"subtitle/2","text":"How Cookies Work","textPreview":"How Cookies Work","textChars":16,"textLines":1,"bbox":[660,545,600,60]}
+{"kind":"notes","id":"nt/mppppr","slide":1,"text":"A01 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 2 ثانية.\n\nعنوان المقطع. Fade In للعنوان 0.4s وللعنوان الفرعي 0.4s بعد 0.2s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/odrc87","slide":2,"title":"إزاي الموقع بيفتكرك؟","textShapes":7}
+{"kind":"textbox","id":"sh/lojyd0fe","slide":2,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/y1sfilwn","slide":2,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/zm1gbqx8","slide":2,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/8ruxovep","slide":2,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/9s3yh0fa","slide":2,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/mpcfm5wj","slide":2,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/nqlgfqx4","slide":2,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/ovqxcbel","slide":2,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/pwze5gf6","slide":2,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/xkbepwri","slide":2,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/wj2dwrqx","slide":2,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/bitwnm9c","slide":2,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/ahkvuh8r","slide":2,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,565,290,45]}
+{"kind":"shape","id":"sh/l8vetwre","slide":2,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/k72x0bqt","slide":2,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/j6twr69o","slide":2,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/y5kfy183","slide":2,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/tcvexgrq","slide":2,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/8bmx4bq5","slide":2,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/sfuh0fy1","slide":2,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/tg3y9kfm","slide":2,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/6dczypgb","slide":2,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/relg7axw","slide":2,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/gjeh4zyd","slide":2,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/1knyd4fy","slide":2,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"notes","id":"nt/odrc87","slide":2,"text":"A02 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 2 ثانية.\n\nتصغير العنوان ونقله للأعلى. ظهور User ثم Browser ثم Server. Scale Up لكل بطاقة 0.4s، بفاصل 0.2s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/2alzmv","slide":3,"title":"إزاي الموقع بيفتكرك؟","textShapes":9}
+{"kind":"textbox","id":"sh/2p4fmd4f","slide":3,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/pcvyh836","slide":3,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/obmxo3ml","slide":3,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/fmtgbyl4","slide":3,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/elkfit4j","slide":3,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/1ovyd83u","slide":3,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/0nmxk3m9","slide":3,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/ritg7y5s","slide":3,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/qhkfet47","slide":3,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/4zeh4725","slide":3,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/50nydcjq","slide":3,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/ixwz2xkz","slide":3,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/jy5gb21k","slide":3,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,565,290,45]}
+{"kind":"shape","id":"sh/wvuh072t","slide":3,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/hw3y9cje","slide":3,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/utczyxk3","slide":3,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/vulg721o","slide":3,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/0ryhcrid","slide":3,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/1s7ilwjy","slide":3,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/983ypwb2","slide":3,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/o7uhwrah","slide":3,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/n6lgnmtw","slide":3,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/m5czuhsb","slide":3,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/1k3ylcbq","slide":3,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/0jahs7a5","slide":3,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"shape","id":"sh/zi1gjmt0","slide":3,"name":"login-arrow/26","bbox":[450,510,345,0]}
+{"kind":"shape","id":"sh/ehszqhsf","slide":3,"name":"login-arrow/27","bbox":[781,500,14,20]}
+{"kind":"shape","id":"sh/dgjyhcbu","slide":3,"name":"login-arrow/28","bbox":[450,510,345,0]}
+{"kind":"textbox","id":"sh/cfaho7a9","slide":3,"name":"login-arrow/29","text":"Login","textPreview":"Login","textChars":5,"textLines":1,"bbox":[522,447,200,47]}
+{"kind":"shape","id":"sh/i9on294v","slide":3,"name":"request-arrow/30","bbox":[1125,510,345,0]}
+{"kind":"shape","id":"sh/jax4be5g","slide":3,"name":"request-arrow/31","bbox":[1456,500,14,20]}
+{"kind":"shape","id":"sh/4b654jm1","slide":3,"name":"request-arrow/32","bbox":[1125,510,345,0]}
+{"kind":"textbox","id":"sh/5cfmdonm","slide":3,"name":"request-arrow/33","text":"Request","textPreview":"Request","textChars":7,"textLines":1,"bbox":[1195,447,220,47]}
+{"kind":"notes","id":"nt/2alzmv","slide":3,"text":"A03 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 2.3 ثانية.\n\nLogin: Line Draw مدة 0.4s. Request: Line Draw مدة 0.4s بعد الخط الأول.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/wq2csh","slide":4,"title":"إزاي الموقع بيفتكرك؟","textShapes":9}
+{"kind":"textbox","id":"sh/i983m5sz","slide":4,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/5cz2hkba","slide":4,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/kbqlofap","slide":4,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/7ehkjatg","slide":4,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/6d83q5sv","slide":4,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/t0zmlkbm","slide":4,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/szqlsfa1","slide":4,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/f214nutc","slide":4,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/u1s3upsr","slide":4,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/or6pkf2t","slide":4,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/psfqtk3e","slide":4,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/2po7i5kn","slide":4,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/3qx8ral8","slide":4,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,565,290,45]}
+{"kind":"shape","id":"sh/cv6pof2p","slide":4,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/xwzqxk3a","slide":4,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/qto7mpkz","slide":4,"name":"server-check/16","bbox":[1580,455,110,110]}
+{"kind":"shape","id":"sh/bux8vul4","slide":4,"name":"server-check/17","bbox":[1580,455,110,110]}
+{"kind":"textbox","id":"sh/kzq9sz21","slide":4,"name":"server/18","text":"Verified","textPreview":"Verified","textChars":8,"textLines":1,"bbox":[1490,585,290,45]}
+{"kind":"shape","id":"sh/l0zql43m","slide":4,"name":"login-arrow/19","bbox":[450,510,345,0]}
+{"kind":"shape","id":"sh/tgvq54bq","slide":4,"name":"login-arrow/20","bbox":[781,500,14,20]}
+{"kind":"shape","id":"sh/8fmpczu5","slide":4,"name":"login-arrow/21","bbox":[450,510,345,0]}
+{"kind":"textbox","id":"sh/7ed83udk","slide":4,"name":"login-arrow/22","text":"Login","textPreview":"Login","textChars":5,"textLines":1,"bbox":[522,447,200,47]}
+{"kind":"shape","id":"sh/6d47apcz","slide":4,"name":"request-arrow/23","bbox":[1125,510,345,0]}
+{"kind":"shape","id":"sh/hkfq94bm","slide":4,"name":"request-arrow/24","bbox":[1456,500,14,20]}
+{"kind":"shape","id":"sh/gj6pgzu1","slide":4,"name":"request-arrow/25","bbox":[1125,510,345,0]}
+{"kind":"textbox","id":"sh/vix87utg","slide":4,"name":"request-arrow/26","text":"Request","textPreview":"Request","textChars":7,"textLines":1,"bbox":[1195,447,220,47]}
+{"kind":"notes","id":"nt/wq2csh","slide":4,"text":"A04 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 1.7 ثانية.\n\nالتركيز على Server. علامة التحقق Scale Up مدة 0.35s. User وBrowser بعتامة 45%.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/jodu0m","slide":5,"title":"إزاي الموقع بيفتكرك؟","textShapes":10}
+{"kind":"textbox","id":"sh/r694juhg","slide":5,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/c7i5czi1","slide":5,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/d8rmlkzm","slide":5,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/e90nep07","slide":5,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/za94nuhs","slide":5,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/0b25gzid","slide":5,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/1cbmp4zy","slide":5,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/udg32503","slide":5,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/fep4baho","slide":5,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/jidkzepo","slide":5,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/yh4j69o3","slide":5,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/lkf21o7u","slide":5,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/kj618j69","slide":5,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,565,290,45]}
+{"kind":"shape","id":"sh/budkveps","slide":5,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/at4j29o7","slide":5,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/xwv2x47i","slide":5,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/wvm14j6d","slide":5,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/nqt0rupg","slide":5,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/mpkjyp8v","slide":5,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/qlk3aps3","slide":5,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/rmtk3u9o","slide":5,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/cn2lczat","slide":5,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/dob254re","slide":5,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/epk3e9sz","slide":5,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/zqtk7u9k","slide":5,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"shape","id":"sh/0r2lgza5","slide":5,"name":"login-arrow/26","bbox":[450,510,345,0]}
+{"kind":"shape","id":"sh/1sv294rq","slide":5,"name":"login-arrow/27","bbox":[781,500,14,20]}
+{"kind":"shape","id":"sh/mt43i9sb","slide":5,"name":"login-arrow/28","bbox":[450,510,345,0]}
+{"kind":"textbox","id":"sh/nudkbe9g","slide":5,"name":"login-arrow/29","text":"Login","textPreview":"Login","textChars":5,"textLines":1,"bbox":[522,447,200,47]}
+{"kind":"shape","id":"sh/hkzexcfu","slide":5,"name":"request-arrow/30","bbox":[1125,510,345,0]}
+{"kind":"shape","id":"sh/wzqxo7yp","slide":5,"name":"request-arrow/31","bbox":[1456,500,14,20]}
+{"kind":"shape","id":"sh/vyhwv2x4","slide":5,"name":"request-arrow/32","bbox":[1125,510,345,0]}
+{"kind":"textbox","id":"sh/ux8fmxgj","slide":5,"name":"request-arrow/33","text":"Request","textPreview":"Request","textChars":7,"textLines":1,"bbox":[1195,447,220,47]}
+{"kind":"shape","id":"sh/5oze1cf6","slide":5,"name":"return-arrow/34","bbox":[1125,585,345,0]}
+{"kind":"shape","id":"sh/4nqxs7yl","slide":5,"name":"return-arrow/35","bbox":[1125,575,14,20]}
+{"kind":"shape","id":"sh/jmhwz2x0","slide":5,"name":"return-arrow/36","bbox":[1125,585,345,0]}
+{"kind":"shape","id":"sh/il8fqhgf","slide":5,"name":"moving-cookie/37","bbox":[1415,540,90,90]}
+{"kind":"shape","id":"sh/tsje5wf2","slide":5,"name":"moving-cookie/38","bbox":[1442,561.6,10.35,10.35]}
+{"kind":"shape","id":"sh/sraxwryh","slide":5,"name":"moving-cookie/39","bbox":[1469.9,558,7.2,7.2]}
+{"kind":"shape","id":"sh/onuhovip","slide":5,"name":"moving-cookie/40","bbox":[1478,582.3,11.7,11.7]}
+{"kind":"shape","id":"sh/ponix0za","slide":5,"name":"moving-cookie/41","bbox":[1448.3,591.3,10.8,10.8]}
+{"kind":"shape","id":"sh/2lczml0z","slide":5,"name":"moving-cookie/42","bbox":[1464.5,610.2,7.2,7.2]}
+{"kind":"shape","id":"sh/3ml0vqhk","slide":5,"name":"moving-cookie/43","bbox":[1432.1,606.6,5.85,5.85]}
+{"kind":"textbox","id":"sh/gjuhkbit","slide":5,"name":"return-label/44","text":"Session Cookie","textPreview":"Session Cookie","textChars":14,"textLines":1,"bbox":[1210,645,280,50]}
+{"kind":"notes","id":"nt/jodu0m","slide":5,"text":"A05 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 1.2 ثانية.\n\nإرجاع البطاقات لعتامة 100%. بدء Cookie من السيرفر. Line Draw للسهم الذهبي 0.5s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/03dmcb","slide":6,"title":"إزاي الموقع بيفتكرك؟","textShapes":10}
+{"kind":"textbox","id":"sh/rqhcbidw","slide":6,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/crad4neh","slide":6,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/dsjudsv2","slide":6,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/etsv6xc7","slide":6,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/ze1cf2ds","slide":6,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/0fad87ud","slide":6,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/1gjuhcvy","slide":6,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/mhsvahcj","slide":6,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/ni1cj2d4","slide":6,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/7ix4valc","slide":6,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/6ho3m54r","slide":6,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/tkfmxk3i","slide":6,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/8j6lofmx","slide":6,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,565,290,45]}
+{"kind":"shape","id":"sh/jed4rql0","slide":6,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/yd43i54f","slide":6,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/lgfmt036","slide":6,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/kfmlkvml","slide":6,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/3ah43ulk","slide":6,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/i98nup4z","slide":6,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/yhcfixsj","slide":6,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/zilgbi9o","slide":6,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/0juxkna9","slide":6,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/lknydsru","slide":6,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/mlwzmxsf","slide":6,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/nm5gf290","slide":6,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"shape","id":"sh/8neho7al","slide":6,"name":"login-arrow/26","bbox":[450,510,345,0]}
+{"kind":"shape","id":"sh/9onyhcr6","slide":6,"name":"login-arrow/27","bbox":[781,500,14,20]}
+{"kind":"shape","id":"sh/2psfadsb","slide":6,"name":"login-arrow/28","bbox":[450,510,345,0]}
+{"kind":"textbox","id":"sh/3q1g3y9w","slide":6,"name":"login-arrow/29","text":"Login","textPreview":"Login","textChars":5,"textLines":1,"bbox":[522,447,200,47]}
+{"kind":"shape","id":"sh/54ripgbe","slide":6,"name":"request-arrow/30","bbox":[1125,510,345,0]}
+{"kind":"shape","id":"sh/kji1gbut","slide":6,"name":"request-arrow/31","bbox":[1456,500,14,20]}
+{"kind":"shape","id":"sh/jip0n6t8","slide":6,"name":"request-arrow/32","bbox":[1125,510,345,0]}
+{"kind":"textbox","id":"sh/ihgje1cn","slide":6,"name":"request-arrow/33","text":"Request","textPreview":"Request","textChars":7,"textLines":1,"bbox":[1195,447,220,47]}
+{"kind":"shape","id":"sh/t8r2tgba","slide":6,"name":"return-arrow/34","bbox":[1125,585,345,0]}
+{"kind":"shape","id":"sh/s7i1kbup","slide":6,"name":"return-arrow/35","bbox":[1125,575,14,20]}
+{"kind":"shape","id":"sh/7690r6t4","slide":6,"name":"return-arrow/36","bbox":[1125,585,345,0]}
+{"kind":"shape","id":"sh/650ji1cj","slide":6,"name":"moving-cookie/37","bbox":[1255,540,90,90]}
+{"kind":"shape","id":"sh/9c7ihwb6","slide":6,"name":"moving-cookie/38","bbox":[1282,561.6,10.35,10.35]}
+{"kind":"shape","id":"sh/8be18rul","slide":6,"name":"moving-cookie/39","bbox":[1309.9,558,7.2,7.2]}
+{"kind":"shape","id":"sh/c7mlgze9","slide":6,"name":"moving-cookie/40","bbox":[1318,582.3,11.7,11.7]}
+{"kind":"shape","id":"sh/d8vmp4vu","slide":6,"name":"moving-cookie/41","bbox":[1288.3,591.3,10.8,10.8]}
+{"kind":"shape","id":"sh/q543epw3","slide":6,"name":"moving-cookie/42","bbox":[1304.5,610.2,7.2,7.2]}
+{"kind":"shape","id":"sh/r6d4nudo","slide":6,"name":"moving-cookie/43","bbox":[1272.1,606.6,5.85,5.85]}
+{"kind":"textbox","id":"sh/43mlcfex","slide":6,"name":"return-label/44","text":"Session Cookie","textPreview":"Session Cookie","textChars":14,"textLines":1,"bbox":[1210,645,280,50]}
+{"kind":"notes","id":"nt/03dmcb","slide":6,"text":"A06 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 1.5 ثانية.\n\nCookie في منتصف مسار العودة. Magic Move 0.7s بين موضعي السيرفر والمتصفح.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/rjnlok","slide":7,"title":"إزاي الموقع بيفتكرك؟","textShapes":9}
+{"kind":"textbox","id":"sh/q9sz21wv","slide":7,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/dcjidwv6","slide":7,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/cbah4be1","slide":7,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/ze10f6dc","slide":7,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/edsj61wr","slide":7,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/l03i1gvi","slide":7,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/0fa18bex","slide":7,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/n2l03qdo","slide":7,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/m1cjalw3","slide":7,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/0ju183i9","slide":7,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/lk3218ze","slide":7,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/yhsj6t03","slide":7,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/zilkzyho","slide":7,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,628,290,45]}
+{"kind":"shape","id":"sh/8nulcni5","slide":7,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/98325szq","slide":7,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/mlcjad0z","slide":7,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/nmlk3ihk","slide":7,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/wbelgnih","slide":7,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/xcn29szm","slide":7,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/5wzadonu","slide":7,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/kvqt4j69","slide":7,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/juhsby5o","slide":7,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/it8b2to3","slide":7,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/tkjah8nq","slide":7,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/sjat83m5","slide":7,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"shape","id":"sh/7i1sfy5k","slide":7,"name":"session-tag/26","bbox":[845,515,230,90]}
+{"kind":"textbox","id":"sh/6h8b6t4f","slide":7,"name":"session-tag/27","text":"session_id","textPreview":"session_id","textChars":10,"textLines":1,"bbox":[855,533,210,53]}
+{"kind":"shape","id":"sh/9ofa54nm","slide":7,"name":"saved-badge/28","bbox":[840,720,240,55]}
+{"kind":"textbox","id":"sh/8n6twz61","slide":7,"name":"saved-badge/29","text":"Cookie Saved","textPreview":"Cookie Saved","textChars":12,"textLines":1,"bbox":[847,724,226,46]}
+{"kind":"notes","id":"nt/rjnlok","slide":7,"text":"A07 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 2 ثانية.\n\nحفظ session_id داخل المتصفح. Cookie Saved: Scale Up مدة 0.4s. User وServer بعتامة 35%.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/fc47y3","slide":8,"title":"إزاي الموقع بيفتكرك؟","textShapes":10}
+{"kind":"textbox","id":"sh/0vqlgz25","slide":8,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/zuh4nu1k","slide":8,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/yt83epkz","slide":8,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/dszmlk3e","slide":8,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/crqlcf2t","slide":8,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/bqhkjal8","slide":8,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/qpo3a5kn","slide":8,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/pof2h03i","slide":8,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/o36l8v2x","slide":8,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/25cbyhgn","slide":8,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/n6ls7mh8","slide":8,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/o7ut0ryd","slide":8,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/p83a9wzy","slide":8,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,628,290,45]}
+{"kind":"shape","id":"sh/ehcbuhgb","slide":8,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/fils3mhw","slide":8,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/0jutw7yh","slide":8,"name":"server/16","bbox":[1584,446,106,23.32]}
+{"kind":"shape","id":"sh/143a5cz2","slide":8,"name":"server/17","bbox":[1594.6,454.48,5.3,5.3]}
+{"kind":"shape","id":"sh/qdsbqxgf","slide":8,"name":"server/18","bbox":[1613.68,457.13,55.12,0]}
+{"kind":"shape","id":"sh/re1sz2h0","slide":8,"name":"server/19","bbox":[1584,475.68,106,23.32]}
+{"kind":"shape","id":"sh/vih87yxs","slide":8,"name":"server/20","bbox":[1594.6,484.16,5.3,5.3]}
+{"kind":"shape","id":"sh/uho7ytw7","slide":8,"name":"server/21","bbox":[1613.68,486.81,55.12,0]}
+{"kind":"shape","id":"sh/hkzq98fi","slide":8,"name":"server/22","bbox":[1584,505.36,106,23.32]}
+{"kind":"shape","id":"sh/wjqp03ed","slide":8,"name":"server/23","bbox":[1594.6,513.84,5.3,5.3]}
+{"kind":"shape","id":"sh/jmh8bixo","slide":8,"name":"server/24","bbox":[1613.68,516.49,55.12,0]}
+{"kind":"textbox","id":"sh/il872dw3","slide":8,"name":"server/25","text":"السيرفر","textPreview":"السيرفر","textChars":7,"textLines":1,"bbox":[1490,580,290,50]}
+{"kind":"shape","id":"sh/5ozqd8fu","slide":8,"name":"session-tag/26","bbox":[845,515,230,90]}
+{"kind":"textbox","id":"sh/4nqp43e9","slide":8,"name":"session-tag/27","text":"session_id","textPreview":"session_id","textChars":10,"textLines":1,"bbox":[855,533,210,53]}
+{"kind":"shape","id":"sh/zqd8zexk","slide":8,"name":"saved-badge/28","bbox":[840,720,240,55]}
+{"kind":"textbox","id":"sh/yp47q9wz","slide":8,"name":"saved-badge/29","text":"Cookie Saved","textPreview":"Cookie Saved","textChars":12,"textLines":1,"bbox":[847,724,226,46]}
+{"kind":"shape","id":"sh/ov250fux","slide":8,"name":"cookie-request/30","bbox":[1125,570,345,0]}
+{"kind":"shape","id":"sh/pwbm9kv2","slide":8,"name":"cookie-request/31","bbox":[1456,560,14,20]}
+{"kind":"shape","id":"sh/2tkny5cr","slide":8,"name":"cookie-request/32","bbox":[1125,570,345,0]}
+{"kind":"shape","id":"sh/nut47adc","slide":8,"name":"moving-cookie/33","bbox":[1127,539,62,62]}
+{"kind":"shape","id":"sh/0ri5wful","slide":8,"name":"moving-cookie/34","bbox":[1145.6,553.88,7.13,7.13]}
+{"kind":"shape","id":"sh/1sbm50v6","slide":8,"name":"moving-cookie/35","bbox":[1164.82,551.4,4.96,4.96]}
+{"kind":"shape","id":"sh/ep0nu5cf","slide":8,"name":"moving-cookie/36","bbox":[1170.4,568.14,8.06,8.06]}
+{"kind":"shape","id":"sh/fq943ad0","slide":8,"name":"moving-cookie/37","bbox":[1149.94,574.34,7.44,7.44]}
+{"kind":"shape","id":"sh/knm58zu5","slide":8,"name":"moving-cookie/38","bbox":[1161.1,587.36,4.96,4.96]}
+{"kind":"shape","id":"sh/lov6h4va","slide":8,"name":"moving-cookie/39","bbox":[1138.78,584.88,4.03,4.03]}
+{"kind":"textbox","id":"sh/h872twb2","slide":8,"name":"cookie-request/40","text":"Request + Cookie","textPreview":"Request + Cookie","textChars":16,"textLines":1,"bbox":[1160,610,330,50]}
+{"kind":"notes","id":"nt/fc47y3","slide":8,"text":"A08 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 1.7 ثانية.\n\nإعادة العتامة 100%. Request + Cookie باتجاه السيرفر، حركة 0.7s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/1h0j4m","slide":9,"title":"إزاي الموقع بيفتكرك؟","textShapes":10}
+{"kind":"textbox","id":"sh/y5k3mdcb","slide":9,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/l8v2hsv2","slide":9,"name":"user/2","bbox":[120,360,330,300]}
+{"kind":"textbox","id":"sh/k72lonuh","slide":9,"name":"user/3","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[140,378,290,54]}
+{"kind":"shape","id":"sh/7adkj2ts","slide":9,"name":"user/4","bbox":[268.36,443,33.28,33.28]}
+{"kind":"shape","id":"sh/m943qxcn","slide":9,"name":"user/5","bbox":[233,443,104,104]}
+{"kind":"textbox","id":"sh/9wvmlsby","slide":9,"name":"user/6","text":"المستخدم","textPreview":"المستخدم","textChars":8,"textLines":1,"bbox":[140,580,290,50]}
+{"kind":"shape","id":"sh/8bmls7ud","slide":9,"name":"browser/7","bbox":[795,330,330,360]}
+{"kind":"textbox","id":"sh/3e9k7ydo","slide":9,"name":"browser/8","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[815,350,290,54]}
+{"kind":"shape","id":"sh/2d0jetc3","slide":9,"name":"browser/9","bbox":[902,416,116,81.2]}
+{"kind":"shape","id":"sh/wnaxkvet","slide":9,"name":"browser/10","bbox":[902,436.88,116,0]}
+{"kind":"shape","id":"sh/hojyt0fe","slide":9,"name":"browser/11","bbox":[912.44,424.12,5.22,5.22]}
+{"kind":"shape","id":"sh/ulsfi5wn","slide":9,"name":"browser/12","bbox":[922.88,424.12,5.22,5.22]}
+{"kind":"textbox","id":"sh/vm1grax8","slide":9,"name":"browser/13","text":"المتصفح","textPreview":"المتصفح","textChars":7,"textLines":1,"bbox":[815,628,290,45]}
+{"kind":"shape","id":"sh/4raxofep","slide":9,"name":"server/14","bbox":[1470,360,330,300]}
+{"kind":"textbox","id":"sh/5cjyxkfa","slide":9,"name":"server/15","text":"Server","textPreview":"Server","textChars":6,"textLines":1,"bbox":[1490,378,290,54]}
+{"kind":"shape","id":"sh/ipsfm5wz","slide":9,"name":"server-check/16","bbox":[1580,455,110,110]}
+{"kind":"shape","id":"sh/jq1gvaxk","slide":9,"name":"server-check/17","bbox":[1580,455,110,110]}
+{"kind":"textbox","id":"sh/kvqxcbyl","slide":9,"name":"server/18","text":"User Recognized","textPreview":"User Recognized","textChars":15,"textLines":1,"bbox":[1490,585,290,45]}
+{"kind":"shape","id":"sh/lgzelgf6","slide":9,"name":"session-tag/19","bbox":[845,515,230,90]}
+{"kind":"textbox","id":"sh/107mt83y","slide":9,"name":"session-tag/20","text":"session_id","textPreview":"session_id","textChars":10,"textLines":1,"bbox":[855,533,210,53]}
+{"kind":"shape","id":"sh/gzyl0nmd","slide":9,"name":"saved-badge/21","bbox":[840,720,240,55]}
+{"kind":"textbox","id":"sh/fyp4rils","slide":9,"name":"saved-badge/22","text":"Cookie Saved","textPreview":"Cookie Saved","textChars":12,"textLines":1,"bbox":[847,724,226,46]}
+{"kind":"shape","id":"sh/edg3yd47","slide":9,"name":"cookie-request/23","bbox":[1125,570,345,0]}
+{"kind":"shape","id":"sh/p4rmxs3u","slide":9,"name":"cookie-request/24","bbox":[1456,560,14,20]}
+{"kind":"shape","id":"sh/o3y54nm9","slide":9,"name":"cookie-request/25","bbox":[1125,570,345,0]}
+{"kind":"shape","id":"sh/n2p4vilo","slide":9,"name":"moving-cookie/26","bbox":[1399,539,62,62]}
+{"kind":"shape","id":"sh/21g32d43","slide":9,"name":"moving-cookie/27","bbox":[1417.6,553.88,7.13,7.13]}
+{"kind":"shape","id":"sh/x8rm1c3q","slide":9,"name":"moving-cookie/28","bbox":[1436.82,551.4,4.96,4.96]}
+{"kind":"shape","id":"sh/c7i587ml","slide":9,"name":"moving-cookie/29","bbox":[1442.4,568.14,8.06,8.06]}
+{"kind":"shape","id":"sh/udcj2pk3","slide":9,"name":"moving-cookie/30","bbox":[1421.94,574.34,7.44,7.44]}
+{"kind":"shape","id":"sh/vel0vu18","slide":9,"name":"moving-cookie/31","bbox":[1433.1,587.36,4.96,4.96]}
+{"kind":"shape","id":"sh/wfu14z2t","slide":9,"name":"moving-cookie/32","bbox":[1410.78,584.88,4.03,4.03]}
+{"kind":"textbox","id":"sh/hg32x4je","slide":9,"name":"cookie-request/33","text":"Request + Cookie","textPreview":"Request + Cookie","textChars":16,"textLines":1,"bbox":[1160,610,330,50]}
+{"kind":"notes","id":"nt/1h0j4m","slide":9,"text":"A09 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 1.6 ثانية.\n\nوصول Cookie للسيرفر. User Recognized: Fade In مدة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/27fj6w","slide":10,"title":"إزاي الموقع بيفتكرك؟","textShapes":3}
+{"kind":"textbox","id":"sh/ahkzipkb","slide":10,"name":"main-heading/1","text":"إزاي الموقع بيفتكرك؟","textPreview":"إزاي الموقع بيفتكرك؟","textChars":20,"textLines":1,"bbox":[610,55,700,75]}
+{"kind":"shape","id":"sh/xkbyt432","slide":10,"name":"browser/2","bbox":[560,325,800,370]}
+{"kind":"shape","id":"sh/wj2hkz2h","slide":10,"name":"success/3","bbox":[875,380,170,170]}
+{"kind":"shape","id":"sh/ne9gnalk","slide":10,"name":"success/4","bbox":[875,380,170,170]}
+{"kind":"textbox","id":"sh/mt0fepkf","slide":10,"name":"logged-in/5","text":"Logged In","textPreview":"Logged In","textChars":9,"textLines":1,"bbox":[660,561,600,70]}
+{"kind":"textbox","id":"sh/9gbypk3q","slide":10,"name":"logged-caption/6","text":"الموقع افتكرك من غير ما تسجل دخول تاني","textPreview":"الموقع افتكرك من غير ما تسجل دخول تاني","textChars":38,"textLines":1,"bbox":[530,701,860,65]}
+{"kind":"notes","id":"nt/27fj6w","slide":10,"text":"A10 — إزاي الموقع بيفتكرك؟\nمدة المرحلة: 4 ثانية.\n\nالتركيز النهائي على حالة Logged In. Magic Move / Zoom مدة 0.5s. عند نهاية المقطع: Dissolve 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/j6uny9","slide":11,"title":"أنواع الـCookies","textShapes":2}
+{"kind":"textbox","id":"sh/9w7ypgri","slide":11,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/mtgze187","slide":11,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"notes","id":"nt/j6uny9","slide":11,"text":"B01 — أنواع الـCookies\nمدة المرحلة: 1.6 ثانية.\n\nعنوان المقطع. Fade In مدة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/kvn2jl","slide":12,"title":"أنواع الـCookies","textShapes":4}
+{"kind":"textbox","id":"sh/r2t8fi9k","slide":12,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/c329o3q5","slide":12,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/d4bqh8ra","slide":12,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/e5krqd8v","slide":12,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/z6t8ji9g","slide":12,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/07m9snq1","slide":12,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/18vqlsrm","slide":12,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"notes","id":"nt/kvn2jl","slide":12,"text":"B02 — أنواع الـCookies\nمدة المرحلة: 0.5 ثانية.\n\nظهور بطاقة Session Cookies. Sequential Reveal، فرق التوقيت 0.2s، الحركة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/6c0ywd","slide":13,"title":"أنواع الـCookies","textShapes":6}
+{"kind":"textbox","id":"sh/jed8za50","slide":13,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/4z69sfml","slide":13,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/50fq1kn6","slide":13,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/u94rm54j","slide":13,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/vad8va54","slide":13,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/wbm9ofmp","slide":13,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/hcvqxkna","slide":13,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/e5ory94n","slide":13,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/f6hs7e58","slide":13,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/v21knqlw","slide":13,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/u1sjel4b","slide":13,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/h4j2p03m","slide":13,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/g3a1gvm1","slide":13,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/3q1krals","slide":13,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/ipsji547","slide":13,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/5s32t03y","slide":13,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/4ralkvmd","slide":13,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/rulkvalo","slide":13,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/qtc3m54j","slide":13,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/2pwne9or","slide":13,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"notes","id":"nt/6c0ywd","slide":13,"text":"B03 — أنواع الـCookies\nمدة المرحلة: 0.5 ثانية.\n\nظهور بطاقة Persistent Cookies. Sequential Reveal، فرق التوقيت 0.2s، الحركة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/gw6q55","slide":14,"title":"أنواع الـCookies","textShapes":8}
+{"kind":"textbox","id":"sh/t4jqpw7q","slide":14,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/6187u18f","slide":14,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/72h8n6p0","slide":14,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/g7a90bqh","slide":14,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/h8jqtg72","slide":14,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/u5sry18b","slide":14,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/v618r6pw","slide":14,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/wb6po7qd","slide":14,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/xczqhc7i","slide":14,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/h8va1g7m","slide":14,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/w7m9sb61","slide":14,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/v6tsz6pg","slide":14,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/alkrq1ob","slide":14,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/5cva5g7y","slide":14,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/4bm9wv6d","slide":14,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/jads3qps","slide":14,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/i94rulo7","slide":14,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/tgfa907u","slide":14,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/sf6t0v69","slide":14,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/cjetwzel","slide":14,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/dknu54v6","slide":14,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/qhcbu9wf","slide":14,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/ri5c3ud0","slide":14,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/0ned0jeh","slide":14,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/1onu9ov2","slide":14,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/elwby9wr","slide":14,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/zm5c7edw","slide":14,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"notes","id":"nt/gw6q55","slide":14,"text":"B04 — أنواع الـCookies\nمدة المرحلة: 0.5 ثانية.\n\nظهور بطاقة First-Party Cookies. Sequential Reveal، فرق التوقيت 0.2s، الحركة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/z3g3fn","slide":15,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/p0fe9ofi","slide":15,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/2xove9wr","slide":15,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/3yxc7exc","slide":15,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/gvmdcje1","slide":15,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/hwfu5ofm","slide":15,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/ut4va9wv","slide":15,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/fudcjexg","slide":15,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/0rqdo3e5","slide":15,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/1szeh8vq","slide":15,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/l4buhg7q","slide":15,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/k32d8b65","slide":15,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/z2tcf6pk","slide":15,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/y1kv6loz","slide":15,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/x0budg7e","slide":15,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/cz2t4b6t","slide":15,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/bytcb6p8","slide":15,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/qx0b21o3","slide":15,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/hwvup07y","slide":15,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/wvmdgv6d","slide":15,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/gbe583il","slide":15,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/1cn618j6","slide":15,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/e9wn6t0f","slide":15,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/fa5ozy10","slide":15,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/s7e543ip","slide":15,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/t8n6x8ja","slide":15,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/6lcn2t0j","slide":15,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/rm5ovy14","slide":15,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/4ju50jid","slide":15,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/5k36tojy","slide":15,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/7e1o3el0","slide":15,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/mds7a94f","slide":15,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/9g365o3q","slide":15,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/8fupcj25","slide":15,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/vilo7ylw","slide":15,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/uhc7etkb","slide":15,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/hk369o32","slide":15,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/z3g3fn","slide":15,"text":"B05 — أنواع الـCookies\nمدة المرحلة: 0.9 ثانية.\n\nظهور بطاقة Third-Party Cookies. Sequential Reveal، فرق التوقيت 0.2s، الحركة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/l2irbq","slide":16,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/m9srap4j","slide":16,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/9cja543u","slide":16,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/8ba9czmp","slide":16,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/ve1s7el0","slide":16,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/udsre94f","slide":16,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/hg3a9o36","slide":16,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/wfutgjml","slide":16,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/j2lsbelc","slide":16,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/ihcbi94r","slide":16,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/s7q94byt","slide":16,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/d8zadgfe","slide":16,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/qlor21g3","slide":16,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/rmhsb6h8","slide":16,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/0bq98by5","slide":16,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/1czahgfq","slide":16,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/e98r6lgz","slide":16,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/fahsf6xk","slide":16,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/ofatcvy1","slide":16,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/pgjal0fm","slide":16,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/xwfapg7q","slide":16,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/wv69wvq5","slide":16,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/buxsnqpk","slide":16,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/atorul8f","slide":16,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/l0zat072","slide":16,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/kz690vqh","slide":16,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/jyxsrqpw","slide":16,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/yxoryl8b","slide":16,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/14vahw7i","slide":16,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/03m9obqx","slide":16,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/qx0f2dkj","slide":16,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/ry9gbi14","slide":16,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/szix4n2p","slide":16,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/d0rydsja","slide":16,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/e10f6dkv","slide":16,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/fm9gfi1g","slide":16,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/0n2h8n2l","slide":16,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/l2irbq","slide":16,"text":"B06 — أنواع الـCookies\nمدة المرحلة: 3 ثانية.\n\nالتركيز على Session Cookies: Scale 105%، بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/zd6z22","slide":17,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/w3m58be1","slide":17,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/v2dof6xg","slide":17,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/a14n61wv","slide":17,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/90v6dwfa","slide":17,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/8fm54ry5","slide":17,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/netob6xk","slide":17,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/mdkn21gz","slide":17,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/twf6p0fu","slide":17,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/sb65gve9","slide":17,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/6ps321cb","slide":17,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/rq1kbmdw","slide":17,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/sral4ruh","slide":17,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/tsj2dwv2","slide":17,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/i18jyhcf","slide":17,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/jm1k7mdk","slide":17,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/kna10ru5","slide":17,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/5oj29wvq","slide":17,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/2xc3alcj","slide":17,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/3ilkj6d4","slide":17,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/z2d0bytg","slide":17,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/y14z2dsv","slide":17,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/l4fid8bm","slide":17,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/036h43a1","slide":17,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/n6x0fitc","slide":17,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/m5oz6ds7","slide":17,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/9sfihsbi","slide":17,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/876h8nax","slide":17,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/vuh0jito","slide":17,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/atozaxs3","slide":17,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/szqh07q1","slide":17,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/t0zy9s7m","slide":17,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/6x8zyx8b","slide":17,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/7yhg72pw","slide":17,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/kvqhwnq5","slide":17,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/5wzy5s7q","slide":17,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/i9ofud8z","slide":17,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/zd6z22","slide":17,"text":"B07 — أنواع الـCookies\nمدة المرحلة: 3 ثانية.\n\nالتركيز على Persistent Cookies: Scale 105%، بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/1zuy0d","slide":18,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/dkvy9wrm","slide":18,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/qhkfyhsv","slide":18,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/ridg7m9g","slide":18,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/07mx4bqx","slide":18,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/18vydgri","slide":18,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/e54f218r","slide":18,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/z6dgb69c","slide":18,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/gb2xs7at","slide":18,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/hcbe1cre","slide":18,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/50nah0jy","slide":18,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/kzetov2d","slide":18,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/jy5sfq1s","slide":18,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/ixwbm5k7","slide":18,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/to7ulkju","slide":18,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/snytsf29","slide":18,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/7mpcja1o","slide":18,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/61gbq5kj","slide":18,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/hsrupkj6","slide":18,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/grytwf2l","slide":18,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/07q58net","slide":18,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/l8zmhsve","slide":18,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/y58n6dwn","slide":18,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/z6h4fid8","slide":18,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/8ba5c7e5","slide":18,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/9cjm5cva","slide":18,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/m9snaxwz","slide":18,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/na1432dk","slide":18,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/of6l03el","slide":18,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/pgfm98v6","slide":18,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/7u58f6xo","slide":18,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/69w761g3","slide":18,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/twnqhgfu","slide":18,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/svep8by9","slide":18,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/j6lob6xs","slide":18,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/i5c721g7","slide":18,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/58nqdwfi","slide":18,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/1zuy0d","slide":18,"text":"B08 — أنواع الـCookies\nمدة المرحلة: 3 ثانية.\n\nالتركيز على First-Party Cookies: Scale 105%، بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/14ge99","slide":19,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/fm5472x0","slide":19,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/gne507el","slide":19,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/1onm9cv6","slide":19,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/6hcnuxwj","slide":19,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/ril43ix4","slide":19,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/sju5wnep","slide":19,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/tknm5sfa","slide":19,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/itc3qdwn","slide":19,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/jel4zix8","slide":19,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/f6dc3q5g","slide":19,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/u5kbulov","slide":19,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/h8vu50nm","slide":19,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/g7mdwvm1","slide":19,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/3adc7q5s","slide":19,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/294vyl47","slide":19,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/pcvu90ni","slide":19,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/4bmd0vmx","slide":19,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/jetcv658","slide":19,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/id0bm1on","slide":19,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/mt8fu9ob","slide":19,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/nuhg3epw","slide":19,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/ovqxwj6h","slide":19,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/9wjy5472","slide":19,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/e58fqp8f","slide":19,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/z6hwzup0","slide":19,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/07qxsz65","slide":19,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/1sze147q","slide":19,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/q1ofmp83","slide":19,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/r2xwvupo","slide":19,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/twni1sr6","slide":19,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/svuhsnql","slide":19,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/7ul0zi90","slide":19,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/6tczqd8v","slide":19,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/5s3ix8ra","slide":19,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/kruhonqp","slide":19,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/jql0vi94","slide":19,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/14ge99","slide":19,"text":"B09 — أنواع الـCookies\nمدة المرحلة: 3 ثانية.\n\nالتركيز على Third-Party Cookies: Scale 105%، بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/tyj1yw","slide":20,"title":"أنواع الـCookies","textShapes":10}
+{"kind":"textbox","id":"sh/sb6d4j6h","slide":20,"name":"types-heading/1","text":"أنواع الـCookies","textPreview":"أنواع الـCookies","textChars":16,"textLines":1,"bbox":[560,130,800,100]}
+{"kind":"textbox","id":"sh/raxwvy5w","slide":20,"name":"types-subheading/2","text":"مش كل الـCookies زي بعضها","textPreview":"مش كل الـCookies زي بعضها","textChars":25,"textLines":1,"bbox":[610,245,700,60]}
+{"kind":"shape","id":"sh/69ov2tob","slide":20,"name":"type-0/3","bbox":[250,360,650,230]}
+{"kind":"shape","id":"sh/58fetonq","slide":20,"name":"type-0/4","bbox":[296,430,95,95]}
+{"kind":"shape","id":"sh/476d0j65","slide":20,"name":"type-0/5","bbox":[296,430,95,95]}
+{"kind":"textbox","id":"sh/jmxcre5k","slide":20,"name":"type-0/6","text":"Session Cookies","textPreview":"Session Cookies","textChars":15,"textLines":1,"bbox":[425,405,435,65]}
+{"kind":"textbox","id":"sh/il4vy9of","slide":20,"name":"type-0/7","text":"مؤقتة ومرتبطة بالجلسة","textPreview":"مؤقتة ومرتبطة بالجلسة","textChars":21,"textLines":1,"bbox":[423,485,439,58]}
+{"kind":"shape","id":"sh/p4ze58nu","slide":20,"name":"type-1/8","bbox":[1020,360,650,230]}
+{"kind":"shape","id":"sh/o3qdcn6p","slide":20,"name":"type-1/9","bbox":[1066,440,95,82.65]}
+{"kind":"shape","id":"sh/yxkbqpgv","slide":20,"name":"type-1/10","bbox":[1066,463.25,95,0]}
+{"kind":"shape","id":"sh/zytsjux0","slide":20,"name":"type-1/11","bbox":[1089.75,430,0,19]}
+{"kind":"shape","id":"sh/0z2tszyl","slide":20,"name":"type-1/12","bbox":[1137.25,430,0,19]}
+{"kind":"shape","id":"sh/l0vulkf6","slide":20,"name":"type-1/13","bbox":[1086.75,477.5,7,7]}
+{"kind":"shape","id":"sh/q9kbm5gj","slide":20,"name":"type-1/14","bbox":[1086.75,498.4,7,7]}
+{"kind":"shape","id":"sh/batsfax4","slide":20,"name":"type-1/15","bbox":[1110.5,477.5,7,7]}
+{"kind":"shape","id":"sh/cb2tofyp","slide":20,"name":"type-1/16","bbox":[1110.5,498.4,7,7]}
+{"kind":"shape","id":"sh/dcbahkfa","slide":20,"name":"type-1/17","bbox":[1134.25,477.5,7,7]}
+{"kind":"shape","id":"sh/a54by9gn","slide":20,"name":"type-1/18","bbox":[1134.25,498.4,7,7]}
+{"kind":"textbox","id":"sh/v6dcrex8","slide":20,"name":"type-1/19","text":"Persistent Cookies","textPreview":"Persistent Cookies","textChars":18,"textLines":1,"bbox":[1195,405,435,65]}
+{"kind":"textbox","id":"sh/7ap8j6dk","slide":20,"name":"type-1/20","text":"لها مدة صلاحية محددة","textPreview":"لها مدة صلاحية محددة","textChars":20,"textLines":1,"bbox":[1193,485,439,58]}
+{"kind":"shape","id":"sh/69g7q1wf","slide":20,"name":"type-2/21","bbox":[250,680,650,230]}
+{"kind":"shape","id":"sh/tc7qlgvq","slide":20,"name":"type-2/22","bbox":[296,750,95,66.5]}
+{"kind":"shape","id":"sh/sbypsbe5","slide":20,"name":"type-2/23","bbox":[296,767.1,95,0]}
+{"kind":"shape","id":"sh/fep8n6dw","slide":20,"name":"type-2/24","bbox":[304.55,756.65,4.27,4.27]}
+{"kind":"shape","id":"sh/udgru1wb","slide":20,"name":"type-2/25","bbox":[313.1,756.65,4.27,4.27]}
+{"kind":"textbox","id":"sh/1g7qpgv2","slide":20,"name":"type-2/26","text":"First-Party Cookies","textPreview":"First-Party Cookies","textChars":19,"textLines":1,"bbox":[425,725,435,65]}
+{"kind":"textbox","id":"sh/gfy9wbeh","slide":20,"name":"type-2/27","text":"من الموقع اللي إنت فاتحه","textPreview":"من الموقع اللي إنت فاتحه","textChars":24,"textLines":1,"bbox":[423,805,439,58]}
+{"kind":"shape","id":"sh/3i98rqds","slide":20,"name":"type-3/28","bbox":[1020,680,650,230]}
+{"kind":"shape","id":"sh/2h0rylwn","slide":20,"name":"type-3/29","bbox":[1082.15,769,31.35,52.25]}
+{"kind":"shape","id":"sh/07ip8val","slide":20,"name":"type-3/30","bbox":[1113.5,769,31.35,52.25]}
+{"kind":"shape","id":"sh/l8bqh0b6","slide":20,"name":"type-3/31","bbox":[1082.15,821.25,62.7,0]}
+{"kind":"shape","id":"sh/y5076lsf","slide":20,"name":"type-3/32","bbox":[1100.5,756,26,26]}
+{"kind":"shape","id":"sh/z698fqt0","slide":20,"name":"type-3/33","bbox":[1069.15,808.25,26,26]}
+{"kind":"shape","id":"sh/cjip4bap","slide":20,"name":"type-3/34","bbox":[1131.85,808.25,26,26]}
+{"kind":"textbox","id":"sh/d4r6dgbu","slide":20,"name":"type-3/35","text":"Third-Party Cookies","textPreview":"Third-Party Cookies","textChars":19,"textLines":1,"bbox":[1195,725,435,65]}
+{"kind":"textbox","id":"sh/qh072lsj","slide":20,"name":"type-3/36","text":"من خدمة أو جهة أخرى","textPreview":"من خدمة أو جهة أخرى","textChars":19,"textLines":1,"bbox":[1193,805,439,58]}
+{"kind":"notes","id":"nt/tyj1yw","slide":20,"text":"B10 — أنواع الـCookies\nمدة المرحلة: 1 ثانية.\n\nعودة البطاقات الأربع إلى الحجم والعتامة الأصليين. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/qgb6v2","slide":21,"title":"إيه الفرق بينهم؟","textShapes":2}
+{"kind":"textbox","id":"sh/qd8vyxoj","slide":21,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/d0jetc7a","slide":21,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"notes","id":"nt/qgb6v2","slide":21,"text":"C01 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 1.6 ثانية.\n\nعنوان المقارنة. Fade In مدة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/wyx8kx","slide":22,"title":"إيه الفرق بينهم؟","textShapes":6}
+{"kind":"textbox","id":"sh/bahknatc","slide":22,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/cbqlwfax","slide":22,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/dcz2pkbi","slide":22,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/yd83ypsn","slide":22,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/zehkrut8","slide":22,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/0fal0fat","slide":22,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/lgj2tkbe","slide":22,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/ehojmlsj","slide":22,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/fixkfqt4","slide":22,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/ne58zytg","slide":22,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/mdwrqtsv","slide":22,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/9gnq18bm","slide":22,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/ofe9s3a1","slide":22,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/za58vet4","slide":22,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"notes","id":"nt/wyx8kx","slide":22,"text":"C02 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 0.6 ثانية.\n\nظهور بطاقة Cookies من الأسفل 0.4s، بفاصل 0.2s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/tkwgpl","slide":23,"title":"إيه الفرق بينهم؟","textShapes":10}
+{"kind":"textbox","id":"sh/7elkru1s","slide":23,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/8felkzid","slide":23,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/tgn2t4jy","slide":23,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/uhw3mp0j","slide":23,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/vi5kvu14","slide":23,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/g3elozip","slide":23,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/h4n2x4ja","slide":23,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/i5w3q90f","slide":23,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/3654ze10","slide":23,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/fe9szm18","slide":23,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/ed0r61kn","slide":23,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/1gra1wjy","slide":23,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/gfi98r2t","slide":23,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/7apsvm1w","slide":23,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/69gr2hkb","slide":23,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/tcraxwj2","slide":23,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/sbi94r2h","slide":23,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/b6ts761g","slide":23,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/q5krel0v","slide":23,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/m14v65k3","slide":23,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"notes","id":"nt/tkwgpl","slide":23,"text":"C03 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 0.6 ثانية.\n\nظهور بطاقة Cache من الأسفل 0.4s، بفاصل 0.2s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/gfeghh","slide":24,"title":"إيه الفرق بينهم؟","textShapes":14}
+{"kind":"textbox","id":"sh/l0redw7i","slide":24,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/yx0f2hor","slide":24,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/jy9wbmpc","slide":24,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/wbix0r61","slide":24,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/xcre9w76","slide":24,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/a90fyh8v","slide":24,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/ba9w7mpg","slide":24,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/g72xcb65","slide":24,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/hsvylg7q","slide":24,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/1crutkv2","slide":24,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/gbidkfux","slide":24,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/fa9cradc","slide":24,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/e90bi5cr","slide":24,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/t87up0v6","slide":24,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/snytgful","slide":24,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/rmpcnad0","slide":24,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/6lgbe5wf","slide":24,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/d4bu14va","slide":24,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/cj2dszup","slide":24,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/wzu5k76d","slide":24,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"shape","id":"sh/h036dc7y","slide":24,"name":"comparison-2/21","bbox":[1300,360,500,470]}
+{"kind":"shape","id":"sh/axcnixo7","slide":24,"name":"comparison-2/22","bbox":[1497,411,106,84]}
+{"kind":"shape","id":"sh/vylob2ps","slide":24,"name":"comparison-2/ellipse-1497-400","bbox":[1497,400,106,33.6]}
+{"kind":"shape","id":"sh/8va5gn61","slide":24,"name":"comparison-2/ellipse-1497-471.2","bbox":[1497,471.2,106,33.6]}
+{"kind":"textbox","id":"sh/9wj69s7m","slide":24,"name":"comparison-2/23","text":"Local Storage","textPreview":"Local Storage","textChars":13,"textLines":1,"bbox":[1332,549,436,66]}
+{"kind":"textbox","id":"sh/mtsnexob","slide":24,"name":"comparison-2/24","text":"تخزين محلي داخل المتصفح","textPreview":"تخزين محلي داخل المتصفح","textChars":23,"textLines":1,"bbox":[1330,640,440,44]}
+{"kind":"textbox","id":"sh/nu1o7ipw","slide":24,"name":"comparison-2/25","text":"مساحة أكبر نسبيًا","textPreview":"مساحة أكبر نسبيًا","textChars":17,"textLines":1,"bbox":[1330,691,440,44]}
+{"kind":"textbox","id":"sh/0ra5cn65","slide":24,"name":"comparison-2/26","text":"لا يُرسل تلقائيًا مع كل Request","textPreview":"لا يُرسل تلقائيًا مع كل Request","textChars":31,"textLines":1,"bbox":[1330,742,440,44]}
+{"kind":"notes","id":"nt/gfeghh","slide":24,"text":"C04 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 0.6 ثانية.\n\nظهور بطاقة Local Storage من الأسفل 0.4s، بفاصل 0.2s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/6apxhi","slide":25,"title":"إيه الفرق بينهم؟","textShapes":14}
+{"kind":"textbox","id":"sh/4val07y1","slide":25,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/ju1kr2hw","slide":25,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/its3yxgb","slide":25,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/t032xczy","slide":25,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/szul4ryd","slide":25,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/ry1kvmhs","slide":25,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/6xs32hg7","slide":25,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/94z2lsze","slide":25,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/83q1snyt","slide":25,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/ux8fupgf","slide":25,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/vyhwnux0","slide":25,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/wzaxwzyl","slide":25,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/hkjep4f6","slide":25,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/ilsfy9gr","slide":25,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/jm1grexw","slide":25,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/4nax0jeh","slide":25,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/5ojyt4f2","slide":25,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/6psf29wn","slide":25,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/rq1gvex8","slide":25,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/3ulwjedg","slide":25,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"shape","id":"sh/2tcvatcv","slide":25,"name":"comparison-2/21","bbox":[1300,360,500,470]}
+{"kind":"shape","id":"sh/pw3elov6","slide":25,"name":"comparison-2/22","bbox":[1497,411,106,84]}
+{"kind":"shape","id":"sh/ovuxcju1","slide":25,"name":"comparison-2/ellipse-1497-400","bbox":[1497,400,106,33.6]}
+{"kind":"shape","id":"sh/fqlwfed4","slide":25,"name":"comparison-2/ellipse-1497-471.2","bbox":[1497,471.2,106,33.6]}
+{"kind":"textbox","id":"sh/epsv69cj","slide":25,"name":"comparison-2/23","text":"Local Storage","textPreview":"Local Storage","textChars":13,"textLines":1,"bbox":[1332,549,436,66]}
+{"kind":"textbox","id":"sh/1s3ehova","slide":25,"name":"comparison-2/24","text":"تخزين محلي داخل المتصفح","textPreview":"تخزين محلي داخل المتصفح","textChars":23,"textLines":1,"bbox":[1330,640,440,44]}
+{"kind":"textbox","id":"sh/grud8jup","slide":25,"name":"comparison-2/25","text":"مساحة أكبر نسبيًا","textPreview":"مساحة أكبر نسبيًا","textChars":17,"textLines":1,"bbox":[1330,691,440,44]}
+{"kind":"textbox","id":"sh/rm1wbud8","slide":25,"name":"comparison-2/26","text":"لا يُرسل تلقائيًا مع كل Request","textPreview":"لا يُرسل تلقائيًا مع كل Request","textChars":31,"textLines":1,"bbox":[1330,742,440,44]}
+{"kind":"notes","id":"nt/6apxhi","slide":25,"text":"C05 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 4 ثانية.\n\nالتركيز على Cookies: Scale 106% وGlow بلون البطاقة. بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/1obhc7","slide":26,"title":"إيه الفرق بينهم؟","textShapes":14}
+{"kind":"textbox","id":"sh/2dwvu98r","slide":26,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/p0nep472","slide":26,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/4fedwjqh","slide":26,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/b25wrep8","slide":26,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/q1wfy98n","slide":26,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/d47eto7e","slide":26,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/c3ex0j6t","slide":26,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/76lwfup4","slide":26,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/65cvmp8j","slide":26,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/cn2tsnyp","slide":26,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/xobalsfa","slide":26,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/alkbqdgj","slide":26,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/bmtsjix4","slide":26,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/kbmtgnyl","slide":26,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/lcvapsf6","slide":26,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/y94buxgf","slide":26,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/zadsnix0","slide":26,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/0fitk3yh","slide":26,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/1grad8f2","slide":26,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/hcjqhkrq","slide":26,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"shape","id":"sh/gba98zq5","slide":26,"name":"comparison-2/21","bbox":[1300,360,500,470]}
+{"kind":"shape","id":"sh/fa18fu9k","slide":26,"name":"comparison-2/22","bbox":[1497,411,106,84]}
+{"kind":"shape","id":"sh/u9sr6p8z","slide":26,"name":"comparison-2/ellipse-1497-400","bbox":[1497,400,106,33.6]}
+{"kind":"shape","id":"sh/pg3ql47m","slide":26,"name":"comparison-2/ellipse-1497-471.2","bbox":[1497,471.2,106,33.6]}
+{"kind":"textbox","id":"sh/4fu9czqh","slide":26,"name":"comparison-2/23","text":"Local Storage","textPreview":"Local Storage","textChars":13,"textLines":1,"bbox":[1332,549,436,66]}
+{"kind":"textbox","id":"sh/3el8ju9w","slide":26,"name":"comparison-2/24","text":"تخزين محلي داخل المتصفح","textPreview":"تخزين محلي داخل المتصفح","textChars":23,"textLines":1,"bbox":[1330,640,440,44]}
+{"kind":"textbox","id":"sh/2dsrap8b","slide":26,"name":"comparison-2/25","text":"مساحة أكبر نسبيًا","textPreview":"مساحة أكبر نسبيًا","textChars":17,"textLines":1,"bbox":[1330,691,440,44]}
+{"kind":"textbox","id":"sh/d43qp47y","slide":26,"name":"comparison-2/26","text":"لا يُرسل تلقائيًا مع كل Request","textPreview":"لا يُرسل تلقائيًا مع كل Request","textChars":31,"textLines":1,"bbox":[1330,742,440,44]}
+{"kind":"notes","id":"nt/1obhc7","slide":26,"text":"C06 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 4 ثانية.\n\nالتركيز على Cache: Scale 106% وGlow بلون البطاقة. بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/kupf1w","slide":27,"title":"إيه الفرق بينهم؟","textShapes":14}
+{"kind":"textbox","id":"sh/sr6t8j6l","slide":27,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/rqxsfep0","slide":27,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/6pob69of","slide":27,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/1wzulo72","slide":27,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/gv6tcj6h","slide":27,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/fuxsjepw","slide":27,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/etoba9ob","slide":27,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/pkzup87y","slide":27,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/ojqtg36d","slide":27,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/ytwbe9kb","slide":27,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/zu5cnelw","slide":27,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/kvetgj2h","slide":27,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/lwnup432","slide":27,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/mxwbi9kn","slide":27,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/7y5crel8","slide":27,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/8jetkj2d","slide":27,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/9k7uto3y","slide":27,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/21cb6pk3","slide":27,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/n2lsfulo","slide":27,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/r6h8nq1g","slide":27,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"shape","id":"sh/658rel0v","slide":27,"name":"comparison-2/21","bbox":[1300,360,500,470]}
+{"kind":"shape","id":"sh/t8zqp0jm","slide":27,"name":"comparison-2/22","bbox":[1497,411,106,84]}
+{"kind":"shape","id":"sh/s7q9gvi1","slide":27,"name":"comparison-2/ellipse-1497-400","bbox":[1497,400,106,33.6]}
+{"kind":"shape","id":"sh/j2h8j61k","slide":27,"name":"comparison-2/ellipse-1497-471.2","bbox":[1497,471.2,106,33.6]}
+{"kind":"textbox","id":"sh/i1ora10z","slide":27,"name":"comparison-2/23","text":"Local Storage","textPreview":"Local Storage","textChars":13,"textLines":1,"bbox":[1332,549,436,66]}
+{"kind":"textbox","id":"sh/54zqlgjq","slide":27,"name":"comparison-2/24","text":"تخزين محلي داخل المتصفح","textPreview":"تخزين محلي داخل المتصفح","textChars":23,"textLines":1,"bbox":[1330,640,440,44]}
+{"kind":"textbox","id":"sh/43q9cbi5","slide":27,"name":"comparison-2/25","text":"مساحة أكبر نسبيًا","textPreview":"مساحة أكبر نسبيًا","textChars":17,"textLines":1,"bbox":[1330,691,440,44]}
+{"kind":"textbox","id":"sh/ny1sva1o","slide":27,"name":"comparison-2/26","text":"لا يُرسل تلقائيًا مع كل Request","textPreview":"لا يُرسل تلقائيًا مع كل Request","textChars":31,"textLines":1,"bbox":[1330,742,440,44]}
+{"kind":"notes","id":"nt/kupf1w","slide":27,"text":"C07 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 4 ثانية.\n\nالتركيز على Local Storage: Scale 106% وGlow بلون البطاقة. بقية البطاقات 30%. Magic Move 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}
+{"kind":"slide","id":"sl/gmrgae","slide":28,"title":"إيه الفرق بينهم؟","textShapes":15}
+{"kind":"textbox","id":"sh/lsv690ba","slide":28,"name":"compare-heading/1","text":"إيه الفرق بينهم؟","textPreview":"إيه الفرق بينهم؟","textChars":16,"textLines":1,"bbox":[560,90,800,95]}
+{"kind":"textbox","id":"sh/ypknylsj","slide":28,"name":"compare-subtitle/2","text":"Cookies vs Cache vs Local Storage","textPreview":"Cookies vs Cache vs Local Storage","textChars":33,"textLines":1,"bbox":[535,200,850,55]}
+{"kind":"shape","id":"sh/jqto7qt4","slide":28,"name":"comparison-0/3","bbox":[120,360,500,470]}
+{"kind":"shape","id":"sh/wn25wvat","slide":28,"name":"comparison-0/4","bbox":[310,398,120,120]}
+{"kind":"shape","id":"sh/xob65gbe","slide":28,"name":"comparison-0/5","bbox":[346,426.8,13.8,13.8]}
+{"kind":"shape","id":"sh/a1knulsn","slide":28,"name":"comparison-0/6","bbox":[383.2,422,9.6,9.6]}
+{"kind":"shape","id":"sh/bmto3qt8","slide":28,"name":"comparison-0/7","bbox":[394,454.4,15.6,15.6]}
+{"kind":"shape","id":"sh/gj6p8fax","slide":28,"name":"comparison-0/8","bbox":[354.4,466.4,14.4,14.4]}
+{"kind":"shape","id":"sh/hkf6hkri","slide":28,"name":"comparison-0/9","bbox":[376,491.6,9.6,9.6]}
+{"kind":"shape","id":"sh/d8bulgba","slide":28,"name":"comparison-0/10","bbox":[332.8,486.8,7.8,7.8]}
+{"kind":"textbox","id":"sh/s72dsbap","slide":28,"name":"comparison-0/11","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[152,549,436,66]}
+{"kind":"textbox","id":"sh/r6tcj6t4","slide":28,"name":"comparison-0/12","text":"بيانات صغيرة","textPreview":"بيانات صغيرة","textChars":12,"textLines":1,"bbox":[150,640,440,44]}
+{"kind":"textbox","id":"sh/q50vq1sz","slide":28,"name":"comparison-0/13","text":"تساعد في الجلسات والتفضيلات","textPreview":"تساعد في الجلسات والتفضيلات","textChars":27,"textLines":1,"bbox":[150,691,440,44]}
+{"kind":"textbox","id":"sh/54ruhwbe","slide":28,"name":"comparison-0/14","text":"قد تُرسل مع طلبات الموقع","textPreview":"قد تُرسل مع طلبات الموقع","textChars":24,"textLines":1,"bbox":[150,742,440,44]}
+{"kind":"shape","id":"sh/4jidorat","slide":28,"name":"comparison-1/15","bbox":[710,360,500,470]}
+{"kind":"shape","id":"sh/3i9cf6t8","slide":28,"name":"comparison-1/16","bbox":[900,398,120,120]}
+{"kind":"textbox","id":"sh/ih0vm1sn","slide":28,"name":"comparison-1/17","text":"Cache","textPreview":"Cache","textChars":5,"textLines":1,"bbox":[742,549,436,66]}
+{"kind":"textbox","id":"sh/p0vet0bi","slide":28,"name":"comparison-1/18","text":"يخزن صور وملفات الموقع","textPreview":"يخزن صور وملفات الموقع","textChars":22,"textLines":1,"bbox":[740,640,440,44]}
+{"kind":"textbox","id":"sh/ofmd0vax","slide":28,"name":"comparison-1/19","text":"هدفه الأساسي السرعة","textPreview":"هدفه الأساسي السرعة","textChars":19,"textLines":1,"bbox":[740,691,440,44]}
+{"kind":"textbox","id":"sh/8juxwzi9","slide":28,"name":"comparison-1/20","text":"يقلل إعادة التحميل","textPreview":"يقلل إعادة التحميل","textChars":18,"textLines":1,"bbox":[740,742,440,44]}
+{"kind":"shape","id":"sh/9k3y54ju","slide":28,"name":"comparison-2/21","bbox":[1300,360,500,470]}
+{"kind":"shape","id":"sh/mhcfu903","slide":28,"name":"comparison-2/22","bbox":[1497,411,106,84]}
+{"kind":"shape","id":"sh/nilw3u1o","slide":28,"name":"comparison-2/ellipse-1497-400","bbox":[1497,400,106,33.6]}
+{"kind":"shape","id":"sh/0faxszix","slide":28,"name":"comparison-2/ellipse-1497-471.2","bbox":[1497,471.2,106,33.6]}
+{"kind":"textbox","id":"sh/lgje14ji","slide":28,"name":"comparison-2/23","text":"Local Storage","textPreview":"Local Storage","textChars":13,"textLines":1,"bbox":[1332,549,436,66]}
+{"kind":"textbox","id":"sh/ydsfqp07","slide":28,"name":"comparison-2/24","text":"تخزين محلي داخل المتصفح","textPreview":"تخزين محلي داخل المتصفح","textChars":23,"textLines":1,"bbox":[1330,640,440,44]}
+{"kind":"textbox","id":"sh/ze1wzu1s","slide":28,"name":"comparison-2/25","text":"مساحة أكبر نسبيًا","textPreview":"مساحة أكبر نسبيًا","textChars":17,"textLines":1,"bbox":[1330,691,440,44]}
+{"kind":"textbox","id":"sh/cbaxofi1","slide":28,"name":"comparison-2/26","text":"لا يُرسل تلقائيًا مع كل Request","textPreview":"لا يُرسل تلقائيًا مع كل Request","textChars":31,"textLines":1,"bbox":[1330,742,440,44]}
+{"kind":"shape","id":"sh/dcjexkjm","slide":28,"name":"summary/27","bbox":[310,900,1300,90]}
+{"kind":"textbox","id":"sh/fmhg7al8","slide":28,"name":"summary/28","text":"Cookies للجلسة • Cache للسرعة • Local Storage للتخزين المحلي","textPreview":"Cookies للجلسة • Cache للسرعة • Local Storage للتخزين المحلي","textChars":60,"textLines":1,"bbox":[340,917,1240,56]}
+{"kind":"notes","id":"nt/gmrgae","slide":28,"text":"C08 — Cookies vs Cache vs Local Storage\nمدة المرحلة: 2.6 ثانية.\n\nعودة البطاقات الثلاث إلى حالتها الطبيعية. الشريط الختامي: Fade In مدة 0.4s.\n\nالانتقال اليدوي المقترح في Keynote: Magic Move، مدة 0.4 ثانية، Ease Out.\nالفترات محسوبة لكل مقطع على حدة.\nجميع العناصر أشكال ونصوص قابلة للتعديل. لا يوجد صوت."}

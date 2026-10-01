@@ -7,22 +7,20 @@ import RoleSelectionPage from './pages/RoleSelectionPage';
 import DashboardPage from './pages/DashboardPage';
 import ProtectedRoute from './components/shared/ProtectedRoute';
 import ActivationPage from './pages/ActivationPage';
-import AuthCallbackPage from './pages/AuthCallbackPage';
 
 const AppRoutes: React.FC = () => {
-  const { currentUser, token } = useAuth();
+  const { currentUser } = useAuth();
 
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
       <Route path="/activate/:token" element={<ActivationPage />} />
-      <Route path="/auth/callback" element={<AuthCallbackPage />} />
       
       <Route 
         path="/" 
         element={
-          token && currentUser ? <Navigate to="/dashboard" replace /> : <Navigate to="/login" replace />
+          currentUser ? <Navigate to={currentUser.role ? '/dashboard' : '/select-role'} replace /> : <Navigate to="/login" replace />
         } 
       />
 

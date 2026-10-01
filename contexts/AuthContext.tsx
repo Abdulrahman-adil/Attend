@@ -1,197 +1,115 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  useEffect,
-  useCallback,
-  ReactNode,
-} from 'react'
-import { useNavigate, useLocation } from 'react-router-dom'
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { User, UserRole } from '../types'
 import { API_URL } from '../src/config'
 
-interface AuthResult {
-  success: boolean
-  message: string
-  user?: User
-}
+interface AuthResult { success: boolean; message: string; user?: User }
 
 interface AuthContextType {
   currentUser: User | null
-  token: string | null
+  csrfToken: string | null
   loading: boolean
-  login: (name: string, password: string) => Promise<AuthResult>
-  register: (
-    name: string,
-    email: string,
-    password: string,
-  ) => Promise<{ success: boolean; message: string }>
-  logout: () => void
-  updateUserRole: (
-    role: UserRole,
-  ) => Promise<{ success: boolean; message: string }>
-  handleAuthSuccess: (token: string, user: User) => void
+  login: (email: string, password: string) => Promise<AuthResult>
+  register: (name: string, email: string, password: string) => Promise<AuthResult>
+  logout: () => Promise<void>
+  createOrganization: (companyName: string, timezone: string) => Promise<AuthResult>
+  apiFetch: (input: string, init?: RequestInit) => Promise<Response>
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined)
 
+const json = async (response: Response): Promise<Record<string, unknown>> => {
+  try { return await response.json() as Record<string, unknown> } catch { return {} }
+}
+const messageFor = (data: Record<string, unknown>, fallback: string) => typeof data.message === 'string' ? data.message : fallback
+
 export const useAuth = () => {
   const context = useContext(AuthContext)
-  if (context === undefined) {
-    throw new Error('useAuth must be used within an AuthProvider')
-  }
+  if (!context) throw new Error('useAuth must be used within an AuthProvider')
   return context
 }
 
-interface AuthProviderProps {
-  children: ReactNode
-}
-
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
+export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
-  const [token, setToken] = useState<string | null>(() =>
-    localStorage.getItem('authToken'),
-  )
+  const [csrfToken, setCsrfToken] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
-  const location = useLocation()
 
-  const logout = useCallback(() => {
-    setCurrentUser(null)
-    setToken(null)
-    localStorage.removeItem('authToken')
-    localStorage.removeItem('currentUser')
-    navigate('/login', { replace: true })
-  }, [navigate])
+  const applySession = useCallback((data: Record<string, unknown>) => {
+    const user = data.user as User | undefined
+    const csrf = typeof data.csrfToken === 'string' ? data.csrfToken : null
+    if (!user || !csrf) throw new Error('The server returned an incomplete session.')
+    setCurrentUser(user)
+    setCsrfToken(csrf)
+    return user
+  }, [])
+
+  const apiFetch = useCallback(async (input: string, init: RequestInit = {}) => {
+    const headers = new Headers(init.headers)
+    const method = (init.method || 'GET').toUpperCase()
+    if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
+    return fetch(input, { ...init, headers, credentials: 'same-origin' })
+  }, [csrfToken])
+
+  const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null) }, [])
 
   useEffect(() => {
-    if (token) {
-      const storedUser = localStorage.getItem('currentUser')
-      if (storedUser) {
-        try {
-          const user = JSON.parse(storedUser)
-          setCurrentUser(user)
-          if (
-            user &&
-            !user.role &&
-            !location.pathname.startsWith('/activate') &&
-            location.pathname !== '/select-role' &&
-            !location.pathname.startsWith('/auth/callback')
-          ) {
-            navigate('/select-role', { replace: true })
-          }
-        } catch (e) {
-          console.error('Failed to parse user from local storage', e)
-          logout()
-        }
-      } else {
-        logout()
-      }
+    let active = true
+    const restore = async () => {
+      try {
+        const response = await fetch(`${API_URL}/auth/session`, { credentials: 'same-origin' })
+        const data = await json(response)
+        if (active && response.ok) applySession(data)
+      } finally { if (active) setLoading(false) }
     }
-    setLoading(false)
-  }, [token, navigate, location.pathname, logout])
+    void restore()
+    return () => { active = false }
+  }, [applySession])
 
-  const handleAuthSuccess = (token: string, user: User) => {
-    localStorage.setItem('authToken', token)
-    localStorage.setItem('currentUser', JSON.stringify(user))
-    setToken(token)
-    setCurrentUser(user)
-    if (user && !user.role) {
-      navigate('/select-role', { replace: true })
-    } else {
-      navigate('/dashboard', { replace: true })
-    }
-  }
-
-  const login = async (name: string, password: string): Promise<AuthResult> => {
+  const login = useCallback(async (email: string, password: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, password }),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ email, password }),
       })
-      const data = await response.json()
-      if (!response.ok) throw new Error(data.message || 'Login failed')
-      handleAuthSuccess(data.token, data.user)
-      return { success: true, message: 'Login successful', user: data.user }
-    } catch (err) {
-      if (err instanceof Error) {
-        return { success: false, message: err.message }
-      } else {
-        return { success: false, message: 'An unknown error occurred' }
-      }
-    }
-  }
+      const data = await json(response)
+      if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in.') }
+      const user = applySession(data)
+      navigate(user.role ? '/dashboard' : '/select-role', { replace: true })
+      return { success: true, message: 'Signed in.', user }
+    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
+  }, [applySession, navigate])
 
-  const register = async (name: string, email: string, password: string) => {
+  const register = useCallback(async (name: string, email: string, password: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/register`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, password }),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ name, email, password }),
       })
-      const data = await response.json()
-      if (!response.ok) throw new Error(data.message || 'Registration failed')
-      return { success: true, message: data.message }
-    } catch (err) {
-      if (err instanceof Error) {
-        return { success: false, message: err.message }
-      } else {
-        return { success: false, message: 'An unknown error occurred' }
-      }
-    }
-  }
+      const data = await json(response)
+      return response.ok ? { success: true, message: messageFor(data, 'Account created.') } : { success: false, message: messageFor(data, 'Unable to create the account.') }
+    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
+  }, [])
 
-  const updateUserRole = async (role: UserRole) => {
-    if (!token) return { success: false, message: 'Not authenticated' }
+  const createOrganization = useCallback(async (companyName: string, timezone: string): Promise<AuthResult> => {
     try {
-      const response = await fetch(`${API_URL}/users/role`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ role }),
+      const response = await apiFetch(`${API_URL}/users/role`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ role: UserRole.MANAGER, companyName, timezone }),
       })
-      const data = await response.json()
-      if (!response.ok) throw new Error(data.message || 'Failed to update role')
-      if (currentUser) {
-        const updatedUser = {
-          ...currentUser,
-          role: data.role,
-          companyId: data.companyId || currentUser.companyId,
-        }
-        setCurrentUser(updatedUser)
-        localStorage.setItem('currentUser', JSON.stringify(updatedUser))
-      }
-      return { success: true, message: data.message }
-    } catch (err) {
-      if (err instanceof Error) {
-        return { success: false, message: err.message }
-      } else {
-        return { success: false, message: 'An unknown error occurred' }
-      }
-    }
-  }
+      const data = await json(response)
+      if (!response.ok) return { success: false, message: messageFor(data, 'Unable to create the organization.') }
+      const user = data.user as User | undefined
+      if (!user) return { success: false, message: 'The organization was created, but the session could not be refreshed.' }
+      setCurrentUser(user)
+      return { success: true, message: messageFor(data, 'Organization created.'), user }
+    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
+  }, [apiFetch])
 
-  const value = {
-    currentUser,
-    token,
-    loading,
-    login,
-    register,
-    logout,
-    updateUserRole,
-    handleAuthSuccess,
-  }
+  const logout = useCallback(async () => {
+    try { await apiFetch(`${API_URL}/auth/logout`, { method: 'POST' }) }
+    finally { clearSession(); navigate('/login', { replace: true }) }
+  }, [apiFetch, clearSession, navigate])
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-900">
-        <p className="text-white">Loading Application...</p>
-      </div>
-    )
-  }
-
+  const value = useMemo(() => ({ currentUser, csrfToken, loading, login, register, logout, createOrganization, apiFetch }),
+    [apiFetch, createOrganization, csrfToken, currentUser, loading, login, logout, register])
+  if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-900"><p>Loading application…</p></div>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

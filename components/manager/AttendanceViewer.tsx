@@ -7,38 +7,33 @@ const AttendanceViewer: React.FC = () => {
   const [employees, setEmployees] = useState<User[]>([]);
   const [selectedEmployeeId, setSelectedEmployeeId] = useState<string>('');
   const [attendance, setAttendance] = useState<AttendanceRecord[]>([]);
-  const { token } = useAuth();
+  const { apiFetch } = useAuth();
 
   useEffect(() => {
     const fetchEmployees = async () => {
-        if (token) {
-            const response = await fetch(`${API_URL}/employees`, {
-                headers: { 'Authorization': `Bearer ${token}` }
-            });
+            const response = await apiFetch(`${API_URL}/employees`);
             const data = await response.json();
-            setEmployees(data);
-            if (data.length > 0) {
-                setSelectedEmployeeId(data[0].id);
+            const items = data.items || [];
+            setEmployees(items);
+            if (items.length > 0) {
+                setSelectedEmployeeId(String(items[0].id));
             }
-        }
     };
     fetchEmployees();
-  }, [token]);
+  }, [apiFetch]);
 
   useEffect(() => {
     const fetchAttendance = async () => {
-        if (selectedEmployeeId && token) {
-            const response = await fetch(`${API_URL}/attendance/${selectedEmployeeId}`, {
-                headers: { 'Authorization': `Bearer ${token}` }
-            });
+        if (selectedEmployeeId) {
+            const response = await apiFetch(`${API_URL}/attendance/${selectedEmployeeId}`);
             const data = await response.json();
-            setAttendance(data);
+            setAttendance(data.items || []);
         } else {
             setAttendance([]);
         }
     };
     fetchAttendance();
-  }, [selectedEmployeeId, token]);
+  }, [apiFetch, selectedEmployeeId]);
 
   const formatTime = (isoString?: string) => {
     if (!isoString) return 'N/A';

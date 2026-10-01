@@ -1,0 +1,336 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/qwfmcj",
+    "id": "qwfmcj",
+    "slide": 8,
+    "layoutId": "a24e021a-7080-40ef-a201-992df89d1d12",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1920,
+      "height": 1080
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      ".SF NS"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "a24e021a-7080-40ef-a201-992df89d1d12",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "05992438-d9aa-4d0f-92fa-274c5437e7d0",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qxcvalw3",
+      "id": "1",
+      "name": "browser/1",
+      "bbox": [
+        360,
+        140,
+        1200,
+        700
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#12172E",
+      "lineColor": "rgba(0, 217, 255, 0.45)",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/d0ne50vu",
+      "id": "2",
+      "name": "browser/2",
+      "bbox": [
+        362,
+        142,
+        1196,
+        70
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#191F38",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/czedcve9",
+      "id": "3",
+      "name": "browser/3",
+      "bbox": [
+        390,
+        167,
+        14,
+        14
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#8B7BFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3alwzqds",
+      "id": "4",
+      "name": "browser/4",
+      "bbox": [
+        417,
+        167,
+        14,
+        14
+      ],
+      "geometry": "ellipse",
+      "fillColor": "#00D9FF",
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/29cv6lw7",
+      "id": "5",
+      "name": "browser/5",
+      "bbox": [
+        490,
+        156,
+        950,
+        40
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#0B1024",
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/pw3e1gvy",
+      "id": "6",
+      "name": "browser/6",
+      "bbox": [
+        520,
+        161,
+        890,
+        28
+      ],
+      "geometry": "rect",
+      "text": "shop.example",
+      "textPreview": "shop.example",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": ".SF NS",
+        "color": "#8A93A6",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "wrap": "none",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "shop.example"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "shop.example",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": ".SF NS",
+            "color": "#8A93A6",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "shop.example",
+              "fontSize": 22,
+              "typeface": ".SF NS",
+              "color": "#8A93A6",
+              "alignment": "left"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4vud8bed",
+      "id": "7",
+      "name": "browser/7",
+      "bbox": [
+        360,
+        212,
+        1200,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "rgba(0, 217, 255, 0.18)",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/n6pwbadw",
+      "id": "8",
+      "name": "cart/8",
+      "bbox": [
+        907.56,
+        389.68,
+        71.76,
+        88.32
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#8B7BFF",
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m5wfi5wb",
+      "id": "9",
+      "name": "cart/9",
+      "bbox": [
+        982.08,
+        367.6,
+        71.76,
+        110.4
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFB800",
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/4j6hc7e5",
+      "id": "10",
+      "name": "cart/10",
+      "bbox": [
+        822,
+        340,
+        276,
+        276
+      ],
+      "geometry": "custom",
+      "lineColor": "#00D9FF",
+      "lineWidth": 6
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5kfilsfq",
+      "id": "11",
+      "name": "cart/11",
+      "bbox": [
+        915.84,
+        549.76,
+        124.2,
+        0
+      ],
+      "geometry": "line",
+      "lineColor": "#00D9FF",
+      "lineWidth": 5
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixozaxwz",
+      "id": "12",
+      "name": "cart/12",
+      "bbox": [
+        907.56,
+        571.84,
+        27.6,
+        27.6
+      ],
+      "geometry": "ellipse",
+      "lineColor": "#00D9FF",
+      "lineWidth": 5
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ix0j2xk",
+      "id": "13",
+      "name": "cart/13",
+      "bbox": [
+        1020.72,
+        571.84,
+        27.6,
+        27.6
+      ],
+      "geometry": "ellipse",
+      "lineColor": "#00D9FF",
+      "lineWidth": 5
+    }
+  ],
+  "composeRuns": []
+}

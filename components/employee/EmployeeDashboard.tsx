@@ -13,28 +13,20 @@ interface DashboardData {
 }
 
 const EmployeeDashboard: React.FC = () => {
-  const { currentUser, token } = useAuth()
+  const { currentUser, apiFetch } = useAuth()
   const location = useGeolocation()
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
 
   const fetchData = useCallback(async () => {
-    if (token) {
-      setLoading(true)
-      try {
-        const response = await fetch(`${API_URL}/attendance/dashboard`, {
-          headers: { Authorization: `Bearer ${token}` },
-        })
-        if (!response.ok) throw new Error('Failed to load dashboard data.')
-        const data = await response.json()
-        setDashboardData(data)
-      } catch (error) {
-        console.error(error)
-      } finally {
-        setLoading(false)
-      }
-    }
-  }, [token])
+    setLoading(true)
+    try {
+      const response = await apiFetch(`${API_URL}/attendance/dashboard`)
+      if (!response.ok) throw new Error('Failed to load dashboard data.')
+      setDashboardData(await response.json())
+    } catch (error) { console.error(error) }
+    finally { setLoading(false) }
+  }, [apiFetch])
 
   useEffect(() => {
     fetchData()

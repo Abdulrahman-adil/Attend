@@ -1,0 +1,484 @@
+{"kind":"deck","id":"pr/yqsxlq","name":"Deck"}
+{"kind":"layout","layoutId":"05992438-d9aa-4d0f-92fa-274c5437e7d0","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"a24e021a-7080-40ef-a201-992df89d1d12","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/1tusop","slide":1,"title":"example.com","textShapes":1}
+{"kind":"shape","id":"sh/kb2x0bmd","slide":1,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/jatw7qls","slide":1,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/y90fyl47","slide":1,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/t0bed03u","slide":1,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/sz2x4vm9","slide":1,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/7ytwbqlo","slide":1,"name":"browser/6","text":"example.com","textPreview":"example.com","textChars":11,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/6xkf2l43","slide":1,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/h4vyh03q","slide":1,"name":"browser/8","bbox":[420,259,492,22]}
+{"kind":"shape","id":"sh/g3mx8vm5","slide":1,"name":"browser/9","bbox":[420,312,624,10]}
+{"kind":"shape","id":"sh/6t07qh4n","slide":1,"name":"browser/10","bbox":[420,346,624,10]}
+{"kind":"shape","id":"sh/ru9ozml8","slide":1,"name":"browser/11","bbox":[420,380,444,10]}
+{"kind":"shape","id":"sh/svips7mt","slide":1,"name":"browser/12","bbox":[1140,262,300,210]}
+{"kind":"shape","id":"sh/twr61c3e","slide":1,"name":"browser/13","bbox":[420,522,294,130]}
+{"kind":"shape","id":"sh/eh07uh4z","slide":1,"name":"browser/14","bbox":[442,551,180,9]}
+{"kind":"shape","id":"sh/fi9o3ml4","slide":1,"name":"browser/15","bbox":[442,575,216,9]}
+{"kind":"shape","id":"sh/gjipwrmp","slide":1,"name":"browser/16","bbox":[762,522,294,130]}
+{"kind":"shape","id":"sh/1kr65w3a","slide":1,"name":"browser/17","bbox":[784,551,180,9]}
+{"kind":"shape","id":"sh/u1wnix4f","slide":1,"name":"browser/18","bbox":[784,575,216,9]}
+{"kind":"shape","id":"sh/vmpori50","slide":1,"name":"browser/19","bbox":[1104,522,294,130]}
+{"kind":"shape","id":"sh/zu1c3uhg","slide":1,"name":"browser/20","bbox":[1126,551,180,9]}
+{"kind":"shape","id":"sh/ytsbapgv","slide":1,"name":"browser/21","bbox":[1126,575,216,9]}
+{"kind":"notes","id":"nt/1tusop","slide":1,"text":"S1-1\nالمشهد 1 — نافذة الموافقة (0:00 – 0:12)\nزمن هذه الشريحة: 0.0–3.5 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"تقريبًا مفيش موقع بتفتحه دلوقتي إلا ويظهرلك إشعار... بيدوس على Accept All عشان الرسالة تختفي ونعرف ندخل الموقع وخلاص.\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع (x,y من أعلى-يسار، 1920×1080) | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | إطار متصفح (Rounded Rect) | 360, 140 | 1200×700 | خلفية `#12172E`، حد `#00D9FF` 1px، Glow خفيف | Scale Up | 0.0s | Soft Pop |\n| 1 | شريط عنوان وهمي + دائرتين ملونتين | 390, 170 | 1140×40 | رمادي فاتح | Fade In | 0.2s | — |\n| 1 | محتوى موقع وهمي (خطوط نص رمادية) | 420, 240 | 1080×400 | `#8A93A6` | Fade In | 0.3s | — |\n| 2 | نافذة Cookies المنبثقة من الأسفل | 460, 640 | 1000×220 | خلفية `#0A0E27` مع حد `#8B7BFF` | Move In (Bottom) | 0.0s (شريحة جديدة) | Subtle Whoosh |\n| 2 | نص: \"نستخدم ملفات تعريف الارتباط لتحسين تجربتك\" | 500, 670 | 900×60 | أبيض | Fade In | 0.15s | — |\n| 2 | زر Accept All | 500, 760 | 220×64 | خلفية `#00D9FF`، نص أسود Bold | Fade In | 0.3s | — |\n| 2 | زر Reject | 760, 760 | 180×64 | حد فقط، شفاف | Fade In | 0.35s | — |\n| 2 | مؤشر ماوس (شكل بسيط) | يبدأ 900,900 → ينتهي 610,790 | 40×40 | أبيض | Move In (مسار مخصص عبر Magic Move للشريحة 3) | 0.5s | — |\n| 3 | (نفس عناصر شريحة 2 + المؤشر فوق زر Accept مباشرة + Ripple صغير) | 610, 790 | — | — | Magic Move من شريحة 2 | — | Mouse Click |\n| 3 | نافذة Cookies بالكامل تختفي | — | — | — | Build Out → Fade (سريع 0.2s) | 0.1s بعد الكليك | — |\n| 3 | أيقونة Cookie صغيرة تظهر وسط الشاشة للحظة (0.4s) ثم تختفي | 920, 470 | 80×80 | `#FFB800` | Scale Up ثم Fade Out | 0.3s | Digital Tick |\n| 3 | نص شاشة كبير: **\"Accept All?\"** | وسط الشاشة، 700, 850 | — | أبيض، 64pt | Fade In | 0.6s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/13zzfe","slide":2,"title":"example.com","textShapes":4}
+{"kind":"shape","id":"sh/d4vypgvm","slide":2,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/q14ze1cb","slide":2,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/r2dgn6dw","slide":2,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/4z2hcru5","slide":2,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/50bylwvq","slide":2,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/ixkzahwz","slide":2,"name":"browser/6","text":"example.com","textPreview":"example.com","textChars":11,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/3ytgjmdk","slide":2,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/ov6hovu9","slide":2,"name":"browser/8","bbox":[420,259,492,22]}
+{"kind":"shape","id":"sh/9wfix0vu","slide":2,"name":"browser/9","bbox":[420,312,624,10]}
+{"kind":"shape","id":"sh/hcjudkjy","slide":2,"name":"browser/10","bbox":[420,346,624,10]}
+{"kind":"shape","id":"sh/gbad4f2d","slide":2,"name":"browser/11","bbox":[420,380,444,10]}
+{"kind":"shape","id":"sh/va1cba1s","slide":2,"name":"browser/12","bbox":[1140,262,300,210]}
+{"kind":"shape","id":"sh/u9sv25k7","slide":2,"name":"browser/13","bbox":[420,522,294,130]}
+{"kind":"shape","id":"sh/98ju90j2","slide":2,"name":"browser/14","bbox":[442,551,180,9]}
+{"kind":"shape","id":"sh/87at0v2h","slide":2,"name":"browser/15","bbox":[442,575,216,9]}
+{"kind":"shape","id":"sh/7mhc7qlw","slide":2,"name":"browser/16","bbox":[762,522,294,130]}
+{"kind":"shape","id":"sh/ml8bylkb","slide":2,"name":"browser/17","bbox":[784,551,180,9]}
+{"kind":"shape","id":"sh/d43ul4j6","slide":2,"name":"browser/18","bbox":[784,575,216,9]}
+{"kind":"shape","id":"sh/s3udcz2l","slide":2,"name":"browser/19","bbox":[1104,522,294,130]}
+{"kind":"shape","id":"sh/cn2x83ax","slide":2,"name":"browser/20","bbox":[1126,551,180,9]}
+{"kind":"shape","id":"sh/dobeh8ri","slide":2,"name":"browser/21","bbox":[1126,575,216,9]}
+{"kind":"shape","id":"sh/qlkfmtsr","slide":2,"name":"consent/22","bbox":[460,640,1000,220]}
+{"kind":"textbox","id":"sh/bmtwfy9c","slide":2,"name":"consent/23","text":"نستخدم ملفات تعريف الارتباط لتحسين تجربتك","textPreview":"نستخدم ملفات تعريف الارتباط لتحسين تجربتك","textChars":41,"textLines":1,"bbox":[500,666,920,66]}
+{"kind":"shape","id":"sh/oj2xkjal","slide":2,"name":"accept/24","bbox":[500,760,220,64]}
+{"kind":"textbox","id":"sh/pkbedor6","slide":2,"name":"accept/25","text":"Accept All","textPreview":"Accept All","textChars":10,"textLines":1,"bbox":[500,764,220,54]}
+{"kind":"shape","id":"sh/2h0fitsv","slide":2,"name":"reject/26","bbox":[760,760,180,64]}
+{"kind":"textbox","id":"sh/3i9wby90","slide":2,"name":"reject/27","text":"Reject","textPreview":"Reject","textChars":6,"textLines":1,"bbox":[760,764,180,54]}
+{"kind":"shape","id":"sh/gfixgjap","slide":2,"name":"cursor/28","bbox":[890,894,49,49]}
+{"kind":"notes","id":"nt/13zzfe","slide":2,"text":"S1-2\nالمشهد 1 — نافذة الموافقة (0:00 – 0:12)\nزمن هذه الشريحة: 3.5–8.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"تقريبًا مفيش موقع بتفتحه دلوقتي إلا ويظهرلك إشعار... بيدوس على Accept All عشان الرسالة تختفي ونعرف ندخل الموقع وخلاص.\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع (x,y من أعلى-يسار، 1920×1080) | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | إطار متصفح (Rounded Rect) | 360, 140 | 1200×700 | خلفية `#12172E`، حد `#00D9FF` 1px، Glow خفيف | Scale Up | 0.0s | Soft Pop |\n| 1 | شريط عنوان وهمي + دائرتين ملونتين | 390, 170 | 1140×40 | رمادي فاتح | Fade In | 0.2s | — |\n| 1 | محتوى موقع وهمي (خطوط نص رمادية) | 420, 240 | 1080×400 | `#8A93A6` | Fade In | 0.3s | — |\n| 2 | نافذة Cookies المنبثقة من الأسفل | 460, 640 | 1000×220 | خلفية `#0A0E27` مع حد `#8B7BFF` | Move In (Bottom) | 0.0s (شريحة جديدة) | Subtle Whoosh |\n| 2 | نص: \"نستخدم ملفات تعريف الارتباط لتحسين تجربتك\" | 500, 670 | 900×60 | أبيض | Fade In | 0.15s | — |\n| 2 | زر Accept All | 500, 760 | 220×64 | خلفية `#00D9FF`، نص أسود Bold | Fade In | 0.3s | — |\n| 2 | زر Reject | 760, 760 | 180×64 | حد فقط، شفاف | Fade In | 0.35s | — |\n| 2 | مؤشر ماوس (شكل بسيط) | يبدأ 900,900 → ينتهي 610,790 | 40×40 | أبيض | Move In (مسار مخصص عبر Magic Move للشريحة 3) | 0.5s | — |\n| 3 | (نفس عناصر شريحة 2 + المؤشر فوق زر Accept مباشرة + Ripple صغير) | 610, 790 | — | — | Magic Move من شريحة 2 | — | Mouse Click |\n| 3 | نافذة Cookies بالكامل تختفي | — | — | — | Build Out → Fade (سريع 0.2s) | 0.1s بعد الكليك | — |\n| 3 | أيقونة Cookie صغيرة تظهر وسط الشاشة للحظة (0.4s) ثم تختفي | 920, 470 | 80×80 | `#FFB800` | Scale Up ثم Fade Out | 0.3s | Digital Tick |\n| 3 | نص شاشة كبير: **\"Accept All?\"** | وسط الشاشة، 700, 850 | — | أبيض، 64pt | Fade In | 0.6s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/bw487n","slide":3,"title":"example.com","textShapes":2}
+{"kind":"shape","id":"sh/wrq5kr65","slide":3,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/bqx4bmpk","slide":3,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/aponi1of","slide":3,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/9ofm9w7u","slide":3,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/on65gr69","slide":3,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/n2x47mpo","slide":3,"name":"browser/6","text":"example.com","textPreview":"example.com","textChars":11,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/m1oneho3","slide":3,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/tkj6lg7y","slide":3,"name":"browser/8","bbox":[420,259,492,22]}
+{"kind":"shape","id":"sh/sja5sb6d","slide":3,"name":"browser/9","bbox":[420,312,624,10]}
+{"kind":"shape","id":"sh/2psnidov","slide":3,"name":"browser/10","bbox":[420,346,624,10]}
+{"kind":"shape","id":"sh/nq1obipg","slide":3,"name":"browser/11","bbox":[420,380,444,10]}
+{"kind":"shape","id":"sh/ora5kn6l","slide":3,"name":"browser/12","bbox":[1140,262,300,210]}
+{"kind":"shape","id":"sh/9sj6ds76","slide":3,"name":"browser/13","bbox":[420,522,294,130]}
+{"kind":"shape","id":"sh/el8nedoj","slide":3,"name":"browser/14","bbox":[442,551,180,9]}
+{"kind":"shape","id":"sh/fm147ip4","slide":3,"name":"browser/15","bbox":[442,575,216,9]}
+{"kind":"shape","id":"sh/0na5g36p","slide":3,"name":"browser/16","bbox":[762,522,294,130]}
+{"kind":"shape","id":"sh/1ojm987a","slide":3,"name":"browser/17","bbox":[784,551,180,9]}
+{"kind":"shape","id":"sh/yhcnqxo3","slide":3,"name":"browser/18","bbox":[784,575,216,9]}
+{"kind":"shape","id":"sh/jiloj2po","slide":3,"name":"browser/19","bbox":[1104,522,294,130]}
+{"kind":"shape","id":"sh/v2dkbu50","slide":3,"name":"browser/20","bbox":[1126,551,180,9]}
+{"kind":"shape","id":"sh/u14j2p4f","slide":3,"name":"browser/21","bbox":[1126,575,216,9]}
+{"kind":"shape","id":"sh/h4f2d4nq","slide":3,"name":"cursor/22","bbox":[605,789,49,49]}
+{"kind":"shape","id":"sh/g36l4zml","slide":3,"name":"ripple/23","bbox":[584,770,56,56]}
+{"kind":"shape","id":"sh/3qxkfe5w","slide":3,"name":"cookie/24","bbox":[920,470,80,80]}
+{"kind":"shape","id":"sh/i5o3694b","slide":3,"name":"cookie/25","bbox":[944,489.2,9.2,9.2]}
+{"kind":"shape","id":"sh/5sf2h4n2","slide":3,"name":"cookie/26","bbox":[968.8,486,6.4,6.4]}
+{"kind":"shape","id":"sh/4r6l8jmh","slide":3,"name":"cookie/27","bbox":[976,507.6,10.4,10.4]}
+{"kind":"shape","id":"sh/ruhkje58","slide":3,"name":"cookie/28","bbox":[949.6,515.6,9.6,9.6]}
+{"kind":"shape","id":"sh/qto3a94n","slide":3,"name":"cookie/29","bbox":[964,532.4,6.4,6.4]}
+{"kind":"shape","id":"sh/ozq10j2l","slide":3,"name":"cookie/30","bbox":[935.2,529.2,5.2,5.2]}
+{"kind":"textbox","id":"sh/p0z29oj6","slide":3,"name":"accept-question/31","text":"Accept All?","textPreview":"Accept All?","textChars":11,"textLines":1,"bbox":[650,874,620,98]}
+{"kind":"notes","id":"nt/bw487n","slide":3,"text":"S1-3\nالمشهد 1 — نافذة الموافقة (0:00 – 0:12)\nزمن هذه الشريحة: 8.0–12.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"تقريبًا مفيش موقع بتفتحه دلوقتي إلا ويظهرلك إشعار... بيدوس على Accept All عشان الرسالة تختفي ونعرف ندخل الموقع وخلاص.\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع (x,y من أعلى-يسار، 1920×1080) | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | إطار متصفح (Rounded Rect) | 360, 140 | 1200×700 | خلفية `#12172E`، حد `#00D9FF` 1px، Glow خفيف | Scale Up | 0.0s | Soft Pop |\n| 1 | شريط عنوان وهمي + دائرتين ملونتين | 390, 170 | 1140×40 | رمادي فاتح | Fade In | 0.2s | — |\n| 1 | محتوى موقع وهمي (خطوط نص رمادية) | 420, 240 | 1080×400 | `#8A93A6` | Fade In | 0.3s | — |\n| 2 | نافذة Cookies المنبثقة من الأسفل | 460, 640 | 1000×220 | خلفية `#0A0E27` مع حد `#8B7BFF` | Move In (Bottom) | 0.0s (شريحة جديدة) | Subtle Whoosh |\n| 2 | نص: \"نستخدم ملفات تعريف الارتباط لتحسين تجربتك\" | 500, 670 | 900×60 | أبيض | Fade In | 0.15s | — |\n| 2 | زر Accept All | 500, 760 | 220×64 | خلفية `#00D9FF`، نص أسود Bold | Fade In | 0.3s | — |\n| 2 | زر Reject | 760, 760 | 180×64 | حد فقط، شفاف | Fade In | 0.35s | — |\n| 2 | مؤشر ماوس (شكل بسيط) | يبدأ 900,900 → ينتهي 610,790 | 40×40 | أبيض | Move In (مسار مخصص عبر Magic Move للشريحة 3) | 0.5s | — |\n| 3 | (نفس عناصر شريحة 2 + المؤشر فوق زر Accept مباشرة + Ripple صغير) | 610, 790 | — | — | Magic Move من شريحة 2 | — | Mouse Click |\n| 3 | نافذة Cookies بالكامل تختفي | — | — | — | Build Out → Fade (سريع 0.2s) | 0.1s بعد الكليك | — |\n| 3 | أيقونة Cookie صغيرة تظهر وسط الشاشة للحظة (0.4s) ثم تختفي | 920, 470 | 80×80 | `#FFB800` | Scale Up ثم Fade Out | 0.3s | Digital Tick |\n| 3 | نص شاشة كبير: **\"Accept All?\"** | وسط الشاشة، 700, 850 | — | أبيض، 64pt | Fade In | 0.6s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/w769ix","slide":4,"title":"?","textShapes":3}
+{"kind":"shape","id":"sh/cfmlwfad","slide":4,"name":"cookie/1","bbox":[860,340,200,200]}
+{"kind":"shape","id":"sh/bed43ats","slide":4,"name":"cookie/2","bbox":[920,388,23,23]}
+{"kind":"shape","id":"sh/adk3u5s7","slide":4,"name":"cookie/3","bbox":[982,380,16,16]}
+{"kind":"shape","id":"sh/pcbm10bm","slide":4,"name":"cookie/4","bbox":[1000,434,26,26]}
+{"kind":"shape","id":"sh/ob2lsfa1","slide":4,"name":"cookie/5","bbox":[934,454,24,24]}
+{"kind":"shape","id":"sh/natkzatw","slide":4,"name":"cookie/6","bbox":[970,496,16,16]}
+{"kind":"shape","id":"sh/29k3q5sb","slide":4,"name":"cookie/7","bbox":[898,488,13,13]}
+{"kind":"textbox","id":"sh/18b2x0bq","slide":4,"name":"question-0/8","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[720,350,80,96]}
+{"kind":"textbox","id":"sh/072lovu5","slide":4,"name":"question-1/9","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[1120,305,80,96]}
+{"kind":"textbox","id":"sh/udwvit8r","slide":4,"name":"question-2/10","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[1045,580,80,96]}
+{"kind":"notes","id":"nt/w769ix","slide":4,"text":"S2-1\nالمشهد 2 — ما الذي وافقت عليه؟ (0:12 – 0:22)\nزمن هذه الشريحة: 12.0–16.5 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"لكن عمرك سألت نفسك: إيه هي الـCookies دي أصلًا؟... وهل الموقع كده بقى يقدر يعرف معلومات عنك أو يتابعك؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | أيقونة Cookie (من نهاية المشهد السابق) تكبر وتنتقل لوسط الشاشة | 860, 340 | 200×200 | `#FFB800` | Magic Move (من الحجم الصغير في المشهد 1) | 0.0s | — |\n| 1 | تحول شكل الـ Cookie إلى أيقونة \"ملف بيانات\" (مستند صغير بخطوط) داخل نفس الدائرة | نفس الموضع | 200×200 | `#FFB800` outline | Magic Move (تبديل شكل بسيط بين شريحتين) | 0.3s | Digital Tick |\n| 1 | 3 علامات استفهام صغيرة حول الأيقونة | حول 860,340 بمسافة 140px | 40×40 لكل | `#8B7BFF` | Fade In Sequential (delay 0.15s بين كل واحدة) | 0.4s | — |\n| 2 | 3 مربعات (Rounded Rect) تظهر بالتتابع أسفل الأيقونة | 260,700 / 810,700 / 1360,700 | 350×140 لكل | خلفية `#12172E` حد `#00D9FF` | Move In (Bottom) Sequential delay 0.2s | 0.6s | Soft Pop ×3 |\n| 2 | نص داخل كل مربع: \"معلومات عنك؟\" / \"تفضيلاتك؟\" / \"تتبع نشاطك؟\" | وسط كل مربع | — | أبيض 28pt | Fade In مع المربع | — | — |\n| 2 | 3 خطوط رفيعة متحركة تصل من الأيقونة لكل مربع | من 860,440 لكل مربع | خط 2pt | `#00D9FF` @40% | Line Draw Sequential | 0.7s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/j4yngs","slide":5,"title":"معلومات عنك؟","textShapes":3}
+{"kind":"shape","id":"sh/r2xwrqdc","slide":5,"name":"data-file/1","bbox":[860,340,200,200]}
+{"kind":"shape","id":"sh/s3qxkvux","slide":5,"name":"data-file/2","bbox":[860,340,200,200]}
+{"kind":"shape","id":"sh/d4zet0v2","slide":5,"name":"data-file/3","bbox":[860,340,200,200]}
+{"kind":"shape","id":"sh/idofelcf","slide":5,"name":"data-file/4","bbox":[938,432,50,0]}
+{"kind":"shape","id":"sh/jexwnqd0","slide":5,"name":"data-file/5","bbox":[938,456,50,0]}
+{"kind":"shape","id":"sh/4f6xgvul","slide":5,"name":"data-file/6","bbox":[938,480,36,0]}
+{"kind":"shape","id":"sh/5gfep0v6","slide":5,"name":"branch-0/7","bbox":[435,540,525,160]}
+{"kind":"shape","id":"sh/298fq5cz","slide":5,"name":"option-0/8","bbox":[245,700,380,140]}
+{"kind":"textbox","id":"sh/nahgzadk","slide":5,"name":"option-0/9","text":"معلومات عنك؟","textPreview":"معلومات عنك؟","textChars":12,"textLines":1,"bbox":[265,739,340,64]}
+{"kind":"shape","id":"sh/3yx8rmdw","slide":5,"name":"branch-1/10","bbox":[960,540,0,160]}
+{"kind":"shape","id":"sh/2x47yhcb","slide":5,"name":"option-1/11","bbox":[770,700,380,140]}
+{"kind":"textbox","id":"sh/p0fqtcv2","slide":5,"name":"option-1/12","text":"تفضيلاتك؟","textPreview":"تفضيلاتك؟","textChars":9,"textLines":1,"bbox":[790,739,340,64]}
+{"kind":"shape","id":"sh/4z6p07uh","slide":5,"name":"branch-2/13","bbox":[960,540,525,160]}
+{"kind":"shape","id":"sh/r2x8vmd8","slide":5,"name":"option-2/14","bbox":[1295,700,380,140]}
+{"kind":"textbox","id":"sh/q1or2hcn","slide":5,"name":"option-2/15","text":"تتبع نشاطك؟","textPreview":"تتبع نشاطك؟","textChars":11,"textLines":1,"bbox":[1315,739,340,64]}
+{"kind":"notes","id":"nt/j4yngs","slide":5,"text":"S2-2\nالمشهد 2 — ما الذي وافقت عليه؟ (0:12 – 0:22)\nزمن هذه الشريحة: 16.5–22.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"لكن عمرك سألت نفسك: إيه هي الـCookies دي أصلًا؟... وهل الموقع كده بقى يقدر يعرف معلومات عنك أو يتابعك؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | أيقونة Cookie (من نهاية المشهد السابق) تكبر وتنتقل لوسط الشاشة | 860, 340 | 200×200 | `#FFB800` | Magic Move (من الحجم الصغير في المشهد 1) | 0.0s | — |\n| 1 | تحول شكل الـ Cookie إلى أيقونة \"ملف بيانات\" (مستند صغير بخطوط) داخل نفس الدائرة | نفس الموضع | 200×200 | `#FFB800` outline | Magic Move (تبديل شكل بسيط بين شريحتين) | 0.3s | Digital Tick |\n| 1 | 3 علامات استفهام صغيرة حول الأيقونة | حول 860,340 بمسافة 140px | 40×40 لكل | `#8B7BFF` | Fade In Sequential (delay 0.15s بين كل واحدة) | 0.4s | — |\n| 2 | 3 مربعات (Rounded Rect) تظهر بالتتابع أسفل الأيقونة | 260,700 / 810,700 / 1360,700 | 350×140 لكل | خلفية `#12172E` حد `#00D9FF` | Move In (Bottom) Sequential delay 0.2s | 0.6s | Soft Pop ×3 |\n| 2 | نص داخل كل مربع: \"معلومات عنك؟\" / \"تفضيلاتك؟\" / \"تتبع نشاطك؟\" | وسط كل مربع | — | أبيض 28pt | Fade In مع المربع | — | — |\n| 2 | 3 خطوط رفيعة متحركة تصل من الأيقونة لكل مربع | من 860,440 لكل مربع | خط 2pt | `#00D9FF` @40% | Line Draw Sequential | 0.7s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/rznizh","slide":6,"title":"User","textShapes":3}
+{"kind":"shape","id":"sh/7a1gnqdo","slide":6,"name":"node-0/1","bbox":[200,460,260,160]}
+{"kind":"textbox","id":"sh/8bahgvu9","slide":6,"name":"node-0/2","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[210,500,240,52]}
+{"kind":"shape","id":"sh/9cjyp0vu","slide":6,"name":"node-1/3","bbox":[830,460,260,160]}
+{"kind":"textbox","id":"sh/udszilcz","slide":6,"name":"node-1/4","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[840,500,240,52]}
+{"kind":"shape","id":"sh/ve10rqdk","slide":6,"name":"node-2/5","bbox":[1460,460,260,160]}
+{"kind":"textbox","id":"sh/wfahkvu5","slide":6,"name":"node-2/6","text":"Website Server","textPreview":"Website Server","textChars":14,"textLines":1,"bbox":[1470,500,240,52]}
+{"kind":"shape","id":"sh/hg3it0vq","slide":6,"name":"user-icon/7","bbox":[312.08,308,35.84,35.84]}
+{"kind":"shape","id":"sh/qh8z61cv","slide":6,"name":"user-icon/8","bbox":[274,308,112,112]}
+{"kind":"shape","id":"sh/bihgf6dg","slide":6,"name":"browser-icon/9","bbox":[904,315,112,78.4]}
+{"kind":"shape","id":"sh/bmx07e50","slide":6,"name":"browser-icon/10","bbox":[904,335.16,112,0]}
+{"kind":"shape","id":"sh/qloze9of","slide":6,"name":"browser-icon/11","bbox":[914.08,322.84,5.04,5.04]}
+{"kind":"shape","id":"sh/d8fi9on6","slide":6,"name":"browser-icon/12","bbox":[924.16,322.84,5.04,5.04]}
+{"kind":"shape","id":"sh/c76hgj6l","slide":6,"name":"server-icon/13","bbox":[1534,295,112,24.64]}
+{"kind":"shape","id":"sh/3ixg3u54","slide":6,"name":"server-icon/14","bbox":[1545.2,303.96,5.6,5.6]}
+{"kind":"shape","id":"sh/2h4za9oj","slide":6,"name":"server-icon/15","bbox":[1565.36,306.76,58.24,0]}
+{"kind":"shape","id":"sh/pkfy54nu","slide":6,"name":"server-icon/16","bbox":[1534,326.36,112,24.64]}
+{"kind":"shape","id":"sh/oj6hcz69","slide":6,"name":"server-icon/17","bbox":[1545.2,335.32,5.6,5.6]}
+{"kind":"shape","id":"sh/fedgzu5s","slide":6,"name":"server-icon/18","bbox":[1565.36,338.12,58.24,0]}
+{"kind":"shape","id":"sh/ed4z6po7","slide":6,"name":"server-icon/19","bbox":[1534,357.72,112,24.64]}
+{"kind":"shape","id":"sh/i9kzip8z","slide":6,"name":"server-icon/20","bbox":[1545.2,366.68,5.6,5.6]}
+{"kind":"shape","id":"sh/jat0ru9k","slide":6,"name":"server-icon/21","bbox":[1565.36,369.48,58.24,0]}
+{"kind":"shape","id":"sh/4bmhkzq5","slide":6,"name":"request-user/22","bbox":[480,540,323,0]}
+{"kind":"shape","id":"sh/5cvitkrq","slide":6,"name":"request-user/23","bbox":[789,530,14,20]}
+{"kind":"shape","id":"sh/6d4jmp8b","slide":6,"name":"request-server/24","bbox":[1110,540,320,0]}
+{"kind":"shape","id":"sh/red0vu9w","slide":6,"name":"request-server/25","bbox":[1416,530,14,20]}
+{"kind":"notes","id":"nt/rznizh","slide":6,"text":"S3-1\nالمشهد 3 — تسجيل الدخول (0:22 – 0:34)\nزمن هذه الشريحة: 22.0–28.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"ولو الـCookies مجرد ملفات صغيرة، إزاي بتخلي الموقع يفتكر إنك سجلت دخول قبل كده؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | مربع \"User\" (أيقونة شخص + label) | 200, 460 | 260×160 | `#8B7BFF` | Fade In | 0.0s | — |\n| 1 | مربع \"Browser\" | 830, 460 | 260×160 | `#00D9FF` | Fade In | 0.2s | — |\n| 1 | مربع \"Website Server\" | 1460, 460 | 260×160 | `#8B7BFF` | Fade In | 0.4s | — |\n| 1 | سهم/خط متحرك: User → Browser | بين المربعين | — | أبيض | Line Draw | 0.6s | — |\n| 1 | سهم/خط متحرك: Browser → Server | بين المربعين | — | أبيض | Line Draw | 0.8s | Digital Tick |\n| 2 | أيقونة Cookie صغيرة تتحرك من Server رجوعًا إلى Browser على نفس مسار الخط | مسار: 1460,540 → 830,540 | 60×60 | `#FFB800` | Move In (مسار مخصص، أو Magic Move لموضعين) | 0.0s (شريحة جديدة) | Subtle Whoosh |\n| 2 | نص داخل مربع Browser: **\"Logged In\"** | وسط مربع Browser | — | أخضر مينت 24pt | Fade In | 0.4s | Soft Pop |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/fnuqxp","slide":7,"title":"User","textShapes":4}
+{"kind":"shape","id":"sh/kvilofa5","slide":7,"name":"node-0/1","bbox":[200,460,260,160]}
+{"kind":"textbox","id":"sh/zu94vatk","slide":7,"name":"node-0/2","text":"User","textPreview":"User","textChars":4,"textLines":1,"bbox":[210,500,240,52]}
+{"kind":"shape","id":"sh/yt03m5sz","slide":7,"name":"node-1/3","bbox":[830,460,260,160]}
+{"kind":"textbox","id":"sh/90rm1kbm","slide":7,"name":"node-1/4","text":"Browser","textPreview":"Browser","textChars":7,"textLines":1,"bbox":[840,500,240,52]}
+{"kind":"shape","id":"sh/8zilsfa1","slide":7,"name":"node-2/5","bbox":[1460,460,260,160]}
+{"kind":"textbox","id":"sh/7y94zatw","slide":7,"name":"node-2/6","text":"Website Server","textPreview":"Website Server","textChars":14,"textLines":1,"bbox":[1470,500,240,52]}
+{"kind":"shape","id":"sh/mx03q5sb","slide":7,"name":"user-icon/7","bbox":[312.08,308,35.84,35.84]}
+{"kind":"shape","id":"sh/p47mpgbi","slide":7,"name":"user-icon/8","bbox":[274,308,112,112]}
+{"kind":"shape","id":"sh/o3ylgvux","slide":7,"name":"browser-icon/9","bbox":[904,315,112,78.4]}
+{"kind":"shape","id":"sh/yhcfmx4z","slide":7,"name":"browser-icon/10","bbox":[904,335.16,112,0]}
+{"kind":"shape","id":"sh/zilwf25k","slide":7,"name":"browser-icon/11","bbox":[914.08,322.84,5.04,5.04]}
+{"kind":"shape","id":"sh/kjuxo7m5","slide":7,"name":"browser-icon/12","bbox":[924.16,322.84,5.04,5.04]}
+{"kind":"shape","id":"sh/lknyhsnq","slide":7,"name":"server-icon/13","bbox":[1534,295,112,24.64]}
+{"kind":"shape","id":"sh/mlwfqx4b","slide":7,"name":"server-icon/14","bbox":[1545.2,303.96,5.6,5.6]}
+{"kind":"shape","id":"sh/7m5gj25w","slide":7,"name":"server-icon/15","bbox":[1565.36,306.76,58.24,0]}
+{"kind":"shape","id":"sh/8nexs7m1","slide":7,"name":"server-icon/16","bbox":[1534,326.36,112,24.64]}
+{"kind":"shape","id":"sh/9onylcnm","slide":7,"name":"server-icon/17","bbox":[1545.2,335.32,5.6,5.6]}
+{"kind":"shape","id":"sh/upwfuh47","slide":7,"name":"server-icon/18","bbox":[1565.36,338.12,58.24,0]}
+{"kind":"shape","id":"sh/vq5gnmls","slide":7,"name":"server-icon/19","bbox":[1534,357.72,112,24.64]}
+{"kind":"shape","id":"sh/rupwbm10","slide":7,"name":"server-icon/20","bbox":[1545.2,366.68,5.6,5.6]}
+{"kind":"shape","id":"sh/6tgfihkf","slide":7,"name":"server-icon/21","bbox":[1565.36,369.48,58.24,0]}
+{"kind":"shape","id":"sh/dg7edwjq","slide":7,"name":"request-user/22","bbox":[480,540,323,0]}
+{"kind":"shape","id":"sh/sfyxkr2l","slide":7,"name":"request-user/23","bbox":[789,530,14,20]}
+{"kind":"shape","id":"sh/jq5w721o","slide":7,"name":"request-server/24","bbox":[1110,540,320,0]}
+{"kind":"shape","id":"sh/ipwvexk3","slide":7,"name":"request-server/25","bbox":[1416,530,14,20]}
+{"kind":"shape","id":"sh/5s7e9cju","slide":7,"name":"return/26","bbox":[1090,720,340,0]}
+{"kind":"shape","id":"sh/4rydg729","slide":7,"name":"return/27","bbox":[1090,710,14,20]}
+{"kind":"shape","id":"sh/vm5w321s","slide":7,"name":"session-cookie/28","bbox":[991,680,80,80]}
+{"kind":"shape","id":"sh/ulwvaxk7","slide":7,"name":"session-cookie/29","bbox":[1015,699.2,9.2,9.2]}
+{"kind":"shape","id":"sh/kratk3i5","slide":7,"name":"session-cookie/30","bbox":[1039.8,696,6.4,6.4]}
+{"kind":"shape","id":"sh/ls3ud8zq","slide":7,"name":"session-cookie/31","bbox":[1047,717.6,10.4,10.4]}
+{"kind":"shape","id":"sh/ypsbit0z","slide":7,"name":"session-cookie/32","bbox":[1020.6,725.6,9.6,9.6]}
+{"kind":"shape","id":"sh/zq1cbyhk","slide":7,"name":"session-cookie/33","bbox":[1035,742.4,6.4,6.4]}
+{"kind":"shape","id":"sh/8vuto3i1","slide":7,"name":"session-cookie/34","bbox":[1006.2,739.2,5.2,5.2]}
+{"kind":"textbox","id":"sh/9w3uh8zm","slide":7,"name":"logged-in/35","text":"Logged In","textPreview":"Logged In","textChars":9,"textLines":1,"bbox":[850,560,220,42]}
+{"kind":"notes","id":"nt/fnuqxp","slide":7,"text":"S3-2\nالمشهد 3 — تسجيل الدخول (0:22 – 0:34)\nزمن هذه الشريحة: 28.0–34.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"ولو الـCookies مجرد ملفات صغيرة، إزاي بتخلي الموقع يفتكر إنك سجلت دخول قبل كده؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | مربع \"User\" (أيقونة شخص + label) | 200, 460 | 260×160 | `#8B7BFF` | Fade In | 0.0s | — |\n| 1 | مربع \"Browser\" | 830, 460 | 260×160 | `#00D9FF` | Fade In | 0.2s | — |\n| 1 | مربع \"Website Server\" | 1460, 460 | 260×160 | `#8B7BFF` | Fade In | 0.4s | — |\n| 1 | سهم/خط متحرك: User → Browser | بين المربعين | — | أبيض | Line Draw | 0.6s | — |\n| 1 | سهم/خط متحرك: Browser → Server | بين المربعين | — | أبيض | Line Draw | 0.8s | Digital Tick |\n| 2 | أيقونة Cookie صغيرة تتحرك من Server رجوعًا إلى Browser على نفس مسار الخط | مسار: 1460,540 → 830,540 | 60×60 | `#FFB800` | Move In (مسار مخصص، أو Magic Move لموضعين) | 0.0s (شريحة جديدة) | Subtle Whoosh |\n| 2 | نص داخل مربع Browser: **\"Logged In\"** | وسط مربع Browser | — | أخضر مينت 24pt | Fade In | 0.4s | Soft Pop |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/qwfmcj","slide":8,"title":"shop.example","textShapes":1}
+{"kind":"shape","id":"sh/qxcvalw3","slide":8,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/d0ne50vu","slide":8,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/czedcve9","slide":8,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/3alwzqds","slide":8,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/29cv6lw7","slide":8,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/pw3e1gvy","slide":8,"name":"browser/6","text":"shop.example","textPreview":"shop.example","textChars":12,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/4vud8bed","slide":8,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/n6pwbadw","slide":8,"name":"cart/8","bbox":[907.56,389.68,71.76,88.32]}
+{"kind":"shape","id":"sh/m5wfi5wb","slide":8,"name":"cart/9","bbox":[982.08,367.6,71.76,110.4]}
+{"kind":"shape","id":"sh/4j6hc7e5","slide":8,"name":"cart/10","bbox":[822,340,276,276]}
+{"kind":"shape","id":"sh/5kfilsfq","slide":8,"name":"cart/11","bbox":[915.84,549.76,124.2,0]}
+{"kind":"shape","id":"sh/ixozaxwz","slide":8,"name":"cart/12","bbox":[907.56,571.84,27.6,27.6]}
+{"kind":"shape","id":"sh/3ix0j2xk","slide":8,"name":"cart/13","bbox":[1020.72,571.84,27.6,27.6]}
+{"kind":"notes","id":"nt/qwfmcj","slide":8,"text":"S4-1\nالمشهد 4 — سلة المشتريات (0:34 – 0:44)\nزمن هذه الشريحة: 34.0–37.2 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي متجر إلكتروني بيفتكر المنتجات اللي حطيتها في السلة، حتى لو قفلت الموقع ورجعتله بعد فترة؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | أيقونة عربة تسوق (خط بسيط outline) | وسط، 860, 400 | 220×200 | `#00D9FF` | Scale Up | 0.0s | — |\n| 1 | منتج 1 يدخل العربة | يبدأ خارج الشاشة يسار → 900,420 | 80×80 | `#8B7BFF` | Move In (Left) | 0.3s | Soft Pop |\n| 1 | منتج 2 يدخل العربة | → 960,420 | 80×80 | `#FFB800` | Move In (Left) | 0.5s | Soft Pop |\n| 2 | نافذة المتصفح (المستخدمة في مشهد 1) تُغلق — Fade Out كامل الشاشة | — | — | — | Build Out Fade | 0.0s | Subtle Whoosh |\n| 2 | أيقونة ساعة/رمز مرور وقت بسيط تظهر وتختفي بسرعة (0.5s) | وسط | 100×100 | رمادي فاتح | Fade In→Out | 0.2s | Digital Tick |\n| 3 | المتصفح يُفتح من جديد (Magic Move من الشفافية للظهور الكامل) | نفس موضع المشهد 1 | — | — | Magic Move | 0.0s | — |\n| 3 | العربة تظهر بنفس المنتجين بداخلها | نفس موضع الشريحة 1 | — | — | Fade In | 0.2s | — |\n| 3 | أيقونة Cookie صغيرة بجانب العربة | 1120, 400 | 70×70 | `#FFB800` | Fade In | 0.4s | — |\n| 3 | نص شاشة: **\"Your cart is still here\"** | أسفل العربة، 760, 700 | — | أبيض 40pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/l8pmev","slide":9,"title":"Slide 9","textShapes":0}
+{"kind":"shape","id":"sh/upgbi10f","slide":9,"name":"clock/1","bbox":[895,450,130,130]}
+{"kind":"shape","id":"sh/hc7adwz6","slide":9,"name":"clock/2","bbox":[895,450,130,130]}
+{"kind":"notes","id":"nt/l8pmev","slide":9,"text":"S4-2\nالمشهد 4 — سلة المشتريات (0:34 – 0:44)\nزمن هذه الشريحة: 37.2–39.5 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي متجر إلكتروني بيفتكر المنتجات اللي حطيتها في السلة، حتى لو قفلت الموقع ورجعتله بعد فترة؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | أيقونة عربة تسوق (خط بسيط outline) | وسط، 860, 400 | 220×200 | `#00D9FF` | Scale Up | 0.0s | — |\n| 1 | منتج 1 يدخل العربة | يبدأ خارج الشاشة يسار → 900,420 | 80×80 | `#8B7BFF` | Move In (Left) | 0.3s | Soft Pop |\n| 1 | منتج 2 يدخل العربة | → 960,420 | 80×80 | `#FFB800` | Move In (Left) | 0.5s | Soft Pop |\n| 2 | نافذة المتصفح (المستخدمة في مشهد 1) تُغلق — Fade Out كامل الشاشة | — | — | — | Build Out Fade | 0.0s | Subtle Whoosh |\n| 2 | أيقونة ساعة/رمز مرور وقت بسيط تظهر وتختفي بسرعة (0.5s) | وسط | 100×100 | رمادي فاتح | Fade In→Out | 0.2s | Digital Tick |\n| 3 | المتصفح يُفتح من جديد (Magic Move من الشفافية للظهور الكامل) | نفس موضع المشهد 1 | — | — | Magic Move | 0.0s | — |\n| 3 | العربة تظهر بنفس المنتجين بداخلها | نفس موضع الشريحة 1 | — | — | Fade In | 0.2s | — |\n| 3 | أيقونة Cookie صغيرة بجانب العربة | 1120, 400 | 70×70 | `#FFB800` | Fade In | 0.4s | — |\n| 3 | نص شاشة: **\"Your cart is still here\"** | أسفل العربة، 760, 700 | — | أبيض 40pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/leyylj","slide":10,"title":"shop.example","textShapes":2}
+{"kind":"shape","id":"sh/rql0ry14","slide":10,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/sruh032p","slide":10,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/ts3it8ja","slide":10,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/ilszutkn","slide":10,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/jm10ny18","slide":10,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/4nahwj2d","slide":10,"name":"browser/6","text":"shop.example","textPreview":"shop.example","textChars":12,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/5ojipojy","slide":10,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/2hwj6d0r","slide":10,"name":"cart/8","bbox":[907.56,369.68,71.76,88.32]}
+{"kind":"shape","id":"sh/3i50zi1c","slide":10,"name":"cart/9","bbox":[982.08,347.6,71.76,110.4]}
+{"kind":"shape","id":"sh/vmpkbux0","slide":10,"name":"cart/10","bbox":[822,320,276,276]}
+{"kind":"shape","id":"sh/ulw3ipgf","slide":10,"name":"cart/11","bbox":[915.84,529.76,124.2,0]}
+{"kind":"shape","id":"sh/ho72d4fq","slide":10,"name":"cart/12","bbox":[907.56,551.84,27.6,27.6]}
+{"kind":"shape","id":"sh/wnylkzyl","slide":10,"name":"cart/13","bbox":[1020.72,551.84,27.6,27.6]}
+{"kind":"shape","id":"sh/jqpkfuxw","slide":10,"name":"cart-cookie/14","bbox":[1135,390,80,80]}
+{"kind":"shape","id":"sh/ipg3m9gb","slide":10,"name":"cart-cookie/15","bbox":[1159,409.2,9.2,9.2]}
+{"kind":"shape","id":"sh/5s72h4f2","slide":10,"name":"cart-cookie/16","bbox":[1183.8,406,6.4,6.4]}
+{"kind":"shape","id":"sh/4ryl8zyh","slide":10,"name":"cart-cookie/17","bbox":[1191,427.6,10.4,10.4]}
+{"kind":"shape","id":"sh/ru94jex8","slide":10,"name":"cart-cookie/18","bbox":[1164.6,435.6,9.6,9.6]}
+{"kind":"shape","id":"sh/6tg3a9gn","slide":10,"name":"cart-cookie/19","bbox":[1179,452.4,6.4,6.4]}
+{"kind":"shape","id":"sh/m14fyh4r","slide":10,"name":"cart-cookie/20","bbox":[1150.2,449.2,5.2,5.2]}
+{"kind":"textbox","id":"sh/nmdwr2lc","slide":10,"name":"cart-caption/21","text":"Your cart is still here","textPreview":"Your cart is still here","textChars":23,"textLines":1,"bbox":[560,686,800,75]}
+{"kind":"notes","id":"nt/leyylj","slide":10,"text":"S4-3\nالمشهد 4 — سلة المشتريات (0:34 – 0:44)\nزمن هذه الشريحة: 39.5–44.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي متجر إلكتروني بيفتكر المنتجات اللي حطيتها في السلة، حتى لو قفلت الموقع ورجعتله بعد فترة؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | أيقونة عربة تسوق (خط بسيط outline) | وسط، 860, 400 | 220×200 | `#00D9FF` | Scale Up | 0.0s | — |\n| 1 | منتج 1 يدخل العربة | يبدأ خارج الشاشة يسار → 900,420 | 80×80 | `#8B7BFF` | Move In (Left) | 0.3s | Soft Pop |\n| 1 | منتج 2 يدخل العربة | → 960,420 | 80×80 | `#FFB800` | Move In (Left) | 0.5s | Soft Pop |\n| 2 | نافذة المتصفح (المستخدمة في مشهد 1) تُغلق — Fade Out كامل الشاشة | — | — | — | Build Out Fade | 0.0s | Subtle Whoosh |\n| 2 | أيقونة ساعة/رمز مرور وقت بسيط تظهر وتختفي بسرعة (0.5s) | وسط | 100×100 | رمادي فاتح | Fade In→Out | 0.2s | Digital Tick |\n| 3 | المتصفح يُفتح من جديد (Magic Move من الشفافية للظهور الكامل) | نفس موضع المشهد 1 | — | — | Magic Move | 0.0s | — |\n| 3 | العربة تظهر بنفس المنتجين بداخلها | نفس موضع الشريحة 1 | — | — | Fade In | 0.2s | — |\n| 3 | أيقونة Cookie صغيرة بجانب العربة | 1120, 400 | 70×70 | `#FFB800` | Fade In | 0.4s | — |\n| 3 | نص شاشة: **\"Your cart is still here\"** | أسفل العربة، 760, 700 | — | أبيض 40pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/udn6t1","slide":11,"title":"search.example","textShapes":2}
+{"kind":"shape","id":"sh/4nmlcbud","slide":11,"name":"search-browser/1","bbox":[460,265,1000,500]}
+{"kind":"shape","id":"sh/3md436t8","slide":11,"name":"search-browser/2","bbox":[462,267,996,70]}
+{"kind":"shape","id":"sh/2l43a1cn","slide":11,"name":"search-browser/3","bbox":[490,292,14,14]}
+{"kind":"shape","id":"sh/hkv21gb2","slide":11,"name":"search-browser/4","bbox":[517,292,14,14]}
+{"kind":"shape","id":"sh/gz2l8buh","slide":11,"name":"search-browser/5","bbox":[590,281,750,40]}
+{"kind":"textbox","id":"sh/fytkz6tw","slide":11,"name":"search-browser/6","text":"search.example","textPreview":"search.example","textChars":14,"textLines":1,"bbox":[620,286,690,28]}
+{"kind":"shape","id":"sh/uxk361cb","slide":11,"name":"search-browser/7","bbox":[460,337,1000,0]}
+{"kind":"shape","id":"sh/twb2xwbq","slide":11,"name":"search-field/8","bbox":[570,382,780,70]}
+{"kind":"textbox","id":"sh/sv2l4rul","slide":11,"name":"search-field/9","text":"Headphones","textPreview":"Headphones","textChars":10,"textLines":1,"bbox":[614,392,675,50]}
+{"kind":"shape","id":"sh/y1c3mlo3","slide":11,"name":"headphones/10","bbox":[850,494,200,200]}
+{"kind":"shape","id":"sh/j25kfq5o","slide":11,"name":"headphones/11","bbox":[872,580,40,80]}
+{"kind":"shape","id":"sh/k3elob69","slide":11,"name":"headphones/12","bbox":[988,580,40,80]}
+{"kind":"notes","id":"nt/udn6t1","slide":11,"text":"S5-1\nالمشهد 5 — الإعلانات والتتبع (0:44 – 0:54)\nزمن هذه الشريحة: 44.0–47.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي أحيانًا تبحث عن منتج معين، وبعدها تلاقي إعلاناته بتظهرلك في مواقع تانية؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة موقع بحث بسيطة + أيقونة سماعة/لابتوب في مربع بحث | 460, 300 | 1000×500 | خلفية `#12172E` | Scale Up | 0.0s | — |\n| 2 | نافذة موقع ثانٍ (تصميم مختلف قليلًا) تظهر بجانب الأولى (Split screen مؤقت) | يسار: نفس نافذة البحث مصغّرة 200,240 (760×500) / يمين: موقع جديد 960,240 (760×500) | — | — | Move In (Left لليسار، Right لليمين) متزامن | 0.0s | Subtle Whoosh |\n| 2 | إعلان لنفس المنتج يظهر داخل الموقع الثاني | داخل النافذة اليمنى، 1080,380 | 400×240 | حد `#FF7A59` | Scale Up | 0.4s | Soft Pop |\n| 3 | خط متقطع (Dashed Line) يصل بين النافذتين | بين النافذتين | 2pt dashed | `#FF7A59` | Line Draw | 0.0s | — |\n| 3 | عنوان صغير: **\"Tracking Cookies?\"** | أعلى المنتصف، 760, 140 | — | `#FF7A59` 36pt | Fade In | 0.3s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/mca0f4","slide":12,"title":"search.example","textShapes":5}
+{"kind":"shape","id":"sh/n2dknql0","slide":12,"name":"search-browser/1","bbox":[180,260,740,500]}
+{"kind":"shape","id":"sh/o3m1gv25","slide":12,"name":"search-browser/2","bbox":[182,262,736,70]}
+{"kind":"shape","id":"sh/p4f2p03q","slide":12,"name":"search-browser/3","bbox":[210,287,14,14]}
+{"kind":"shape","id":"sh/a5oji5kb","slide":12,"name":"search-browser/4","bbox":[237,287,14,14]}
+{"kind":"shape","id":"sh/b6xkralw","slide":12,"name":"search-browser/5","bbox":[310,276,490,40]}
+{"kind":"textbox","id":"sh/cr61kv2h","slide":12,"name":"search-browser/6","text":"search.example","textPreview":"search.example","textChars":14,"textLines":1,"bbox":[340,281,430,28]}
+{"kind":"shape","id":"sh/xsf2t0j2","slide":12,"name":"search-browser/7","bbox":[180,332,740,0]}
+{"kind":"shape","id":"sh/ytojm5kn","slide":12,"name":"second-browser/8","bbox":[1000,260,740,500]}
+{"kind":"shape","id":"sh/zuxkva18","slide":12,"name":"second-browser/9","bbox":[1002,262,736,70]}
+{"kind":"shape","id":"sh/vahkvup4","slide":12,"name":"second-browser/10","bbox":[1030,287,14,14]}
+{"kind":"shape","id":"sh/u98j2poj","slide":12,"name":"second-browser/11","bbox":[1057,287,14,14]}
+{"kind":"shape","id":"sh/hcj2x47u","slide":12,"name":"second-browser/12","bbox":[1130,276,490,40]}
+{"kind":"textbox","id":"sh/gbal4z69","slide":12,"name":"second-browser/13","text":"daily.example","textPreview":"daily.example","textChars":13,"textLines":1,"bbox":[1160,281,430,28]}
+{"kind":"shape","id":"sh/76hkraps","slide":12,"name":"second-browser/14","bbox":[1000,332,740,0]}
+{"kind":"shape","id":"sh/658jy5o7","slide":12,"name":"search-field/15","bbox":[235,378,630,66]}
+{"kind":"textbox","id":"sh/t8z2tk7y","slide":12,"name":"search-field/16","text":"Headphones","textPreview":"Headphones","textChars":10,"textLines":1,"bbox":[270,386,550,48]}
+{"kind":"shape","id":"sh/87q10f6d","slide":12,"name":"headphones/17","bbox":[458,495,184,184]}
+{"kind":"shape","id":"sh/r21k3e5w","slide":12,"name":"headphones/18","bbox":[478.24,574.12,36.8,73.6]}
+{"kind":"shape","id":"sh/q1s3a9or","slide":12,"name":"headphones/19","bbox":[584.96,574.12,36.8,73.6]}
+{"kind":"shape","id":"sh/2xwn2d8z","slide":12,"name":"ad/20","bbox":[1090,395,560,287]}
+{"kind":"textbox","id":"sh/ny5ovi94","slide":12,"name":"ad/21","text":"Ad","textPreview":"Ad","textChars":2,"textLines":1,"bbox":[1114,410,60,32]}
+{"kind":"shape","id":"sh/oze54nqp","slide":12,"name":"ad/22","bbox":[1273,433,174,174]}
+{"kind":"shape","id":"sh/p0n6xs7a","slide":12,"name":"ad/23","bbox":[1292.14,507.82,34.8,69.6]}
+{"kind":"shape","id":"sh/a1wn6d8v","slide":12,"name":"ad/24","bbox":[1393.06,507.82,34.8,69.6]}
+{"kind":"textbox","id":"sh/b2pozipg","slide":12,"name":"ad/25","text":"Headphones","textPreview":"Headphones","textChars":10,"textLines":1,"bbox":[1160,621,420,44]}
+{"kind":"notes","id":"nt/mca0f4","slide":12,"text":"S5-2\nالمشهد 5 — الإعلانات والتتبع (0:44 – 0:54)\nزمن هذه الشريحة: 47.0–50.2 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي أحيانًا تبحث عن منتج معين، وبعدها تلاقي إعلاناته بتظهرلك في مواقع تانية؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة موقع بحث بسيطة + أيقونة سماعة/لابتوب في مربع بحث | 460, 300 | 1000×500 | خلفية `#12172E` | Scale Up | 0.0s | — |\n| 2 | نافذة موقع ثانٍ (تصميم مختلف قليلًا) تظهر بجانب الأولى (Split screen مؤقت) | يسار: نفس نافذة البحث مصغّرة 200,240 (760×500) / يمين: موقع جديد 960,240 (760×500) | — | — | Move In (Left لليسار، Right لليمين) متزامن | 0.0s | Subtle Whoosh |\n| 2 | إعلان لنفس المنتج يظهر داخل الموقع الثاني | داخل النافذة اليمنى، 1080,380 | 400×240 | حد `#FF7A59` | Scale Up | 0.4s | Soft Pop |\n| 3 | خط متقطع (Dashed Line) يصل بين النافذتين | بين النافذتين | 2pt dashed | `#FF7A59` | Line Draw | 0.0s | — |\n| 3 | عنوان صغير: **\"Tracking Cookies?\"** | أعلى المنتصف، 760, 140 | — | `#FF7A59` 36pt | Fade In | 0.3s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/wf3f8o","slide":13,"title":"search.example","textShapes":6}
+{"kind":"shape","id":"sh/dgjmx8z2","slide":13,"name":"search-browser/1","bbox":[180,260,740,500]}
+{"kind":"shape","id":"sh/qd8n2d0r","slide":13,"name":"search-browser/2","bbox":[182,262,736,70]}
+{"kind":"shape","id":"sh/re14vyhc","slide":13,"name":"search-browser/3","bbox":[210,287,14,14]}
+{"kind":"shape","id":"sh/0ja58nit","slide":13,"name":"search-browser/4","bbox":[237,287,14,14]}
+{"kind":"shape","id":"sh/1kjm1sze","slide":13,"name":"search-browser/5","bbox":[310,276,490,40]}
+{"kind":"textbox","id":"sh/ehsn6d0n","slide":13,"name":"search-browser/6","text":"search.example","textPreview":"search.example","textChars":14,"textLines":1,"bbox":[340,281,430,28]}
+{"kind":"shape","id":"sh/zi14zih8","slide":13,"name":"search-browser/7","bbox":[180,332,740,0]}
+{"kind":"shape","id":"sh/gnq5wjip","slide":13,"name":"second-browser/8","bbox":[1000,260,740,500]}
+{"kind":"shape","id":"sh/hozmpoza","slide":13,"name":"second-browser/9","bbox":[1002,262,736,70]}
+{"kind":"shape","id":"sh/lore18fy","slide":13,"name":"second-browser/10","bbox":[1030,287,14,14]}
+{"kind":"shape","id":"sh/0nix83ed","slide":13,"name":"second-browser/11","bbox":[1057,287,14,14]}
+{"kind":"shape","id":"sh/zm9wzyxs","slide":13,"name":"second-browser/12","bbox":[1130,276,490,40]}
+{"kind":"textbox","id":"sh/yl0f6tw7","slide":13,"name":"second-browser/13","text":"daily.example","textPreview":"daily.example","textChars":13,"textLines":1,"bbox":[1160,281,430,28]}
+{"kind":"shape","id":"sh/9sbe58fu","slide":13,"name":"second-browser/14","bbox":[1000,332,740,0]}
+{"kind":"shape","id":"sh/8r2xc3e9","slide":13,"name":"search-field/15","bbox":[235,378,630,66]}
+{"kind":"textbox","id":"sh/nqtw3ixo","slide":13,"name":"search-field/16","text":"Headphones","textPreview":"Headphones","textChars":10,"textLines":1,"bbox":[270,386,550,48]}
+{"kind":"shape","id":"sh/mpkfadw3","slide":13,"name":"headphones/17","bbox":[458,495,184,184]}
+{"kind":"shape","id":"sh/xgby9svq","slide":13,"name":"headphones/18","bbox":[478.24,574.12,36.8,73.6]}
+{"kind":"shape","id":"sh/wv2xgnel","slide":13,"name":"headphones/19","bbox":[584.96,574.12,36.8,73.6]}
+{"kind":"shape","id":"sh/gzahcrmh","slide":13,"name":"ad/20","bbox":[1090,395,560,287]}
+{"kind":"textbox","id":"sh/h0ji5w32","slide":13,"name":"ad/21","text":"Ad","textPreview":"Ad","textChars":2,"textLines":1,"bbox":[1114,410,60,32]}
+{"kind":"shape","id":"sh/uxszah4r","slide":13,"name":"ad/22","bbox":[1273,433,174,174]}
+{"kind":"shape","id":"sh/vy1g3mlw","slide":13,"name":"ad/23","bbox":[1292.14,507.82,34.8,69.6]}
+{"kind":"shape","id":"sh/4nuhgbmt","slide":13,"name":"ad/24","bbox":[1393.06,507.82,34.8,69.6]}
+{"kind":"textbox","id":"sh/po3i9g3e","slide":13,"name":"ad/25","text":"Headphones","textPreview":"Headphones","textChars":10,"textLines":1,"bbox":[1160,621,420,44]}
+{"kind":"shape","id":"sh/i1cze14n","slide":13,"name":"tracking-link/26","bbox":[815,815,290,0]}
+{"kind":"shape","id":"sh/32l076l8","slide":13,"name":"tracking-link/27","bbox":[815,770,0,45]}
+{"kind":"shape","id":"sh/krqh47m9","slide":13,"name":"tracking-link/28","bbox":[1105,770,0,45]}
+{"kind":"textbox","id":"sh/lszyxc3u","slide":13,"name":"tracking-title/29","text":"Tracking Cookies?","textPreview":"Tracking Cookies?","textChars":17,"textLines":1,"bbox":[580,120,760,78]}
+{"kind":"notes","id":"nt/wf3f8o","slide":13,"text":"S5-3\nالمشهد 5 — الإعلانات والتتبع (0:44 – 0:54)\nزمن هذه الشريحة: 50.2–54.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وإزاي أحيانًا تبحث عن منتج معين، وبعدها تلاقي إعلاناته بتظهرلك في مواقع تانية؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة موقع بحث بسيطة + أيقونة سماعة/لابتوب في مربع بحث | 460, 300 | 1000×500 | خلفية `#12172E` | Scale Up | 0.0s | — |\n| 2 | نافذة موقع ثانٍ (تصميم مختلف قليلًا) تظهر بجانب الأولى (Split screen مؤقت) | يسار: نفس نافذة البحث مصغّرة 200,240 (760×500) / يمين: موقع جديد 960,240 (760×500) | — | — | Move In (Left لليسار، Right لليمين) متزامن | 0.0s | Subtle Whoosh |\n| 2 | إعلان لنفس المنتج يظهر داخل الموقع الثاني | داخل النافذة اليمنى، 1080,380 | 400×240 | حد `#FF7A59` | Scale Up | 0.4s | Soft Pop |\n| 3 | خط متقطع (Dashed Line) يصل بين النافذتين | بين النافذتين | 2pt dashed | `#FF7A59` | Line Draw | 0.0s | — |\n| 3 | عنوان صغير: **\"Tracking Cookies?\"** | أعلى المنتصف، 760, 140 | — | `#FF7A59` 36pt | Fade In | 0.3s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/7ge1uz","slide":14,"title":"Useful","textShapes":2}
+{"kind":"shape","id":"sh/juhkbe9o","slide":14,"name":"divider/1","bbox":[960,95,0,905]}
+{"kind":"textbox","id":"sh/4fqlkzq9","slide":14,"name":"useful-title/2","text":"Useful","textPreview":"Useful","textChars":6,"textLines":1,"bbox":[225,142,490,83]}
+{"kind":"textbox","id":"sh/5gz2d4ru","slide":14,"name":"tracking-title/3","text":"Tracking","textPreview":"Tracking","textChars":8,"textLines":1,"bbox":[1205,142,490,83]}
+{"kind":"shape","id":"sh/6h83m98f","slide":14,"name":"cookie/4","bbox":[860,380,200,200]}
+{"kind":"shape","id":"sh/rih4fe90","slide":14,"name":"cookie/5","bbox":[920,428,23,23]}
+{"kind":"shape","id":"sh/sjqlojql","slide":14,"name":"cookie/6","bbox":[982,420,16,16]}
+{"kind":"shape","id":"sh/tkjmhor6","slide":14,"name":"cookie/7","bbox":[1000,474,26,26]}
+{"kind":"shape","id":"sh/mlo3ap8b","slide":14,"name":"cookie/8","bbox":[934,494,24,24]}
+{"kind":"shape","id":"sh/7mxk3u9w","slide":14,"name":"cookie/9","bbox":[970,536,16,16]}
+{"kind":"shape","id":"sh/ja9gny5w","slide":14,"name":"cookie/10","bbox":[898,528,13,13]}
+{"kind":"notes","id":"nt/7ge1uz","slide":14,"text":"S6-1\nالمشهد 6 — هل كل الكوكيز سيئة؟ (0:54 – 1:06)\nزمن هذه الشريحة: 54.0–58.5 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"هل كل ده بيحصل بسبب الـCookies؟... ولا هي جزء أساسي المواقع محتاجاه عشان تشتغل بشكل طبيعي؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | خط فاصل عمودي في المنتصف | 960, 0 | 2pt | `#00D9FF` @30% | Line Draw | 0.0s | — |\n| 1 | عنوان الجانب الأيسر: **\"Useful\"** | 300, 120 | — | Mint `#34E5A8` 44pt | Move In (Left) | 0.1s | — |\n| 1 | عنوان الجانب الأيمن: **\"Tracking\"** | 1400, 120 | — | Coral `#FF7A59` 44pt | Move In (Right) | 0.1s | — |\n| 1 | أيقونة Cookie في المنتصف تمامًا | 860, 460 | 200×200 | `#FFB800` | Scale Up | 0.3s | Soft Pop |\n| 2 | 3 عناصر يسار: Login / Language / Shopping Cart (Sequential) | 220–600, 550–850 (متدرج رأسيًا) | 380×90 لكل | خلفية `#12172E` حد Mint | Move In (Left) Sequential delay 0.15s | 0.0s | — |\n| 2 | 3 عناصر يمين: Interests / Ads / Activity (Sequential) | 1320–1700, 550–850 | 380×90 لكل | خلفية `#12172E` حد Coral | Move In (Right) Sequential delay 0.15s | 0.0s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/ust1ay","slide":15,"title":"Useful","textShapes":8}
+{"kind":"shape","id":"sh/5srm5s3a","slide":15,"name":"divider/1","bbox":[960,95,0,905]}
+{"kind":"textbox","id":"sh/ipgnudkz","slide":15,"name":"useful-title/2","text":"Useful","textPreview":"Useful","textChars":6,"textLines":1,"bbox":[225,142,490,83]}
+{"kind":"textbox","id":"sh/jqp43ilk","slide":15,"name":"tracking-title/3","text":"Tracking","textPreview":"Tracking","textChars":8,"textLines":1,"bbox":[1205,142,490,83]}
+{"kind":"shape","id":"sh/svi50n21","slide":15,"name":"cookie/4","bbox":[860,380,200,200]}
+{"kind":"shape","id":"sh/twr69s3m","slide":15,"name":"cookie/5","bbox":[920,428,23,23]}
+{"kind":"shape","id":"sh/6t0nyxkv","slide":15,"name":"cookie/6","bbox":[982,420,16,16]}
+{"kind":"shape","id":"sh/ru9o72lg","slide":15,"name":"cookie/7","bbox":[1000,474,26,26]}
+{"kind":"shape","id":"sh/8ze5o32x","slide":15,"name":"cookie/8","bbox":[934,494,24,24]}
+{"kind":"shape","id":"sh/907mx832","slide":15,"name":"cookie/9","bbox":[970,536,16,16]}
+{"kind":"shape","id":"sh/twbqpo7y","slide":15,"name":"cookie/10","bbox":[898,528,13,13]}
+{"kind":"shape","id":"sh/sv29wj6d","slide":15,"name":"use-0/11","bbox":[250,475,440,94]}
+{"kind":"textbox","id":"sh/rat8neps","slide":15,"name":"use-0/12","text":"Login","textPreview":"Login","textChars":5,"textLines":1,"bbox":[275,490,390,60]}
+{"kind":"shape","id":"sh/69kruto7","slide":15,"name":"use-1/13","bbox":[250,614,440,94]}
+{"kind":"textbox","id":"sh/10vat8nu","slide":15,"name":"use-1/14","text":"Language","textPreview":"Language","textChars":8,"textLines":1,"bbox":[275,629,390,60]}
+{"kind":"shape","id":"sh/gzm90369","slide":15,"name":"use-2/15","bbox":[250,753,440,94]}
+{"kind":"textbox","id":"sh/fydsryp4","slide":15,"name":"use-2/16","text":"Shopping Cart","textPreview":"Shopping Cart","textChars":13,"textLines":1,"bbox":[275,768,390,60]}
+{"kind":"shape","id":"sh/exkrytoj","slide":15,"name":"track-0/17","bbox":[1230,475,440,94]}
+{"kind":"textbox","id":"sh/p4vax8n6","slide":15,"name":"track-0/18","text":"Interests","textPreview":"Interests","textChars":9,"textLines":1,"bbox":[1255,490,390,60]}
+{"kind":"shape","id":"sh/o3m9436l","slide":15,"name":"track-1/19","bbox":[1230,614,440,94]}
+{"kind":"textbox","id":"sh/8jelgbit","slide":15,"name":"track-1/20","text":"Ads","textPreview":"Ads","textChars":3,"textLines":1,"bbox":[1255,629,390,60]}
+{"kind":"shape","id":"sh/9kn2pgze","slide":15,"name":"track-2/21","bbox":[1230,753,440,94]}
+{"kind":"textbox","id":"sh/mhw3e103","slide":15,"name":"track-2/22","text":"Activity","textPreview":"Activity","textChars":8,"textLines":1,"bbox":[1255,768,390,60]}
+{"kind":"notes","id":"nt/ust1ay","slide":15,"text":"S6-2\nالمشهد 6 — هل كل الكوكيز سيئة؟ (0:54 – 1:06)\nزمن هذه الشريحة: 58.5–66.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"هل كل ده بيحصل بسبب الـCookies؟... ولا هي جزء أساسي المواقع محتاجاه عشان تشتغل بشكل طبيعي؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | خط فاصل عمودي في المنتصف | 960, 0 | 2pt | `#00D9FF` @30% | Line Draw | 0.0s | — |\n| 1 | عنوان الجانب الأيسر: **\"Useful\"** | 300, 120 | — | Mint `#34E5A8` 44pt | Move In (Left) | 0.1s | — |\n| 1 | عنوان الجانب الأيمن: **\"Tracking\"** | 1400, 120 | — | Coral `#FF7A59` 44pt | Move In (Right) | 0.1s | — |\n| 1 | أيقونة Cookie في المنتصف تمامًا | 860, 460 | 200×200 | `#FFB800` | Scale Up | 0.3s | Soft Pop |\n| 2 | 3 عناصر يسار: Login / Language / Shopping Cart (Sequential) | 220–600, 550–850 (متدرج رأسيًا) | 380×90 لكل | خلفية `#12172E` حد Mint | Move In (Left) Sequential delay 0.15s | 0.0s | — |\n| 2 | 3 عناصر يمين: Interests / Ads / Activity (Sequential) | 1320–1700, 550–850 | 380×90 لكل | خلفية `#12172E` حد Coral | Move In (Right) Sequential delay 0.15s | 0.0s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/742tbp","slide":16,"title":"What are","textShapes":4}
+{"kind":"shape","id":"sh/jils7idw","slide":16,"name":"road-line/1","bbox":[250,540,1415,0]}
+{"kind":"shape","id":"sh/kju90neh","slide":16,"name":"road-0/2","bbox":[130,450,325,180]}
+{"kind":"textbox","id":"sh/5k3a9sv2","slide":16,"name":"road-0/3","text":"What are\nCookies?","textPreview":"What are | Cookies?","textChars":17,"textLines":2,"bbox":[150,478,285,124]}
+{"kind":"shape","id":"sh/6lcr2xwn","slide":16,"name":"road-1/4","bbox":[575,450,325,180]}
+{"kind":"textbox","id":"sh/7mlsb2d8","slide":16,"name":"road-1/5","text":"What do\nthey store?","textPreview":"What do | they store?","textChars":19,"textLines":2,"bbox":[595,478,285,124]}
+{"kind":"shape","id":"sh/snu947ed","slide":16,"name":"road-2/6","bbox":[1020,450,325,180]}
+{"kind":"textbox","id":"sh/tonadcvy","slide":16,"name":"road-2/7","text":"Cookie\nTypes","textPreview":"Cookie | Types","textChars":12,"textLines":2,"bbox":[1040,478,285,124]}
+{"kind":"shape","id":"sh/mp8rqtw3","slide":16,"name":"road-3/8","bbox":[1465,450,325,180]}
+{"kind":"textbox","id":"sh/nq18zydo","slide":16,"name":"road-3/9","text":"Privacy\n& Consent","textPreview":"Privacy | & Consent","textChars":17,"textLines":2,"bbox":[1485,478,285,124]}
+{"kind":"notes","id":"nt/742tbp","slide":16,"text":"S7-1\nالمشهد 7 — ما سنتعلمه (1:06 – 1:16)\nزمن هذه الشريحة: 66.0–67.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"عشان كده، في الفيديو ده هنعرف ببساطة يعني إيه Cookies، وإيه المعلومات اللي ممكن تتخزن فيها...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | 4 مربعات متصلة بخط أفقي واحد، تظهر معًا خافتة (Opacity 40%) | موزعة أفقيًا: 140 / 620 / 1100 / 1580، y=460 | 340×160 لكل | خلفية `#12172E` حد `#00D9FF` | Fade In (كلها معًا) | 0.0s | — |\n| 1 | نص كل مربع: \"What are Cookies?\" / \"What do they store?\" / \"Cookie Types\" / \"Privacy & Consent\" | وسط كل مربع | — | أبيض 26pt | Fade In مع المربع | — | — |\n| 2 | مربع 1 فقط بـ Opacity 100% + تكبير بسيط (Focus)، الباقي 30% | نفس موضع مربع 1، مكبّر ×1.1 | — | — | Magic Move (Focus) | 0.0s | Digital Tick |\n| 3 | مربع 2 يصبح 100%، الباقي (شامل 1) يرجع 30% | موضع مربع 2 | — | — | Magic Move | 0.0s | Digital Tick |\n| 4 | مربع 3 ثم 4 بنفس المنطق (يمكن دمجهما في شريحة واحدة بحركة سريعة متتابعة) | مواضع 3 و4 | — | — | Magic Move Sequential | 0.0s / 0.3s | Digital Tick ×2 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/w91evl","slide":17,"title":"What are","textShapes":4}
+{"kind":"shape","id":"sh/ih8rmdcf","slide":17,"name":"road-line/1","bbox":[250,540,1415,0]}
+{"kind":"shape","id":"sh/54zqhsvq","slide":17,"name":"road-0/2","bbox":[113.75,441,357.5,198]}
+{"kind":"textbox","id":"sh/43q9onul","slide":17,"name":"road-0/3","text":"What are\nCookies?","textPreview":"What are | Cookies?","textChars":17,"textLines":2,"bbox":[133.75,469,317.5,142]}
+{"kind":"shape","id":"sh/vex8bydo","slide":17,"name":"road-1/4","bbox":[575,450,325,180]}
+{"kind":"textbox","id":"sh/udo7idc3","slide":17,"name":"road-1/5","text":"What do\nthey store?","textPreview":"What do | they store?","textChars":19,"textLines":2,"bbox":[595,478,285,124]}
+{"kind":"shape","id":"sh/hgzqd8vu","slide":17,"name":"road-2/6","bbox":[1020,450,325,180]}
+{"kind":"textbox","id":"sh/wfq9k3u9","slide":17,"name":"road-2/7","text":"Cookie\nTypes","textPreview":"Cookie | Types","textChars":12,"textLines":2,"bbox":[1040,478,285,124]}
+{"kind":"shape","id":"sh/7ax87yds","slide":17,"name":"road-3/8","bbox":[1465,450,325,180]}
+{"kind":"textbox","id":"sh/m9o7etc7","slide":17,"name":"road-3/9","text":"Privacy\n& Consent","textPreview":"Privacy | & Consent","textChars":17,"textLines":2,"bbox":[1485,478,285,124]}
+{"kind":"notes","id":"nt/w91evl","slide":17,"text":"S7-2\nالمشهد 7 — ما سنتعلمه (1:06 – 1:16)\nزمن هذه الشريحة: 67.0–69.5 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"عشان كده، في الفيديو ده هنعرف ببساطة يعني إيه Cookies، وإيه المعلومات اللي ممكن تتخزن فيها...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | 4 مربعات متصلة بخط أفقي واحد، تظهر معًا خافتة (Opacity 40%) | موزعة أفقيًا: 140 / 620 / 1100 / 1580، y=460 | 340×160 لكل | خلفية `#12172E` حد `#00D9FF` | Fade In (كلها معًا) | 0.0s | — |\n| 1 | نص كل مربع: \"What are Cookies?\" / \"What do they store?\" / \"Cookie Types\" / \"Privacy & Consent\" | وسط كل مربع | — | أبيض 26pt | Fade In مع المربع | — | — |\n| 2 | مربع 1 فقط بـ Opacity 100% + تكبير بسيط (Focus)، الباقي 30% | نفس موضع مربع 1، مكبّر ×1.1 | — | — | Magic Move (Focus) | 0.0s | Digital Tick |\n| 3 | مربع 2 يصبح 100%، الباقي (شامل 1) يرجع 30% | موضع مربع 2 | — | — | Magic Move | 0.0s | Digital Tick |\n| 4 | مربع 3 ثم 4 بنفس المنطق (يمكن دمجهما في شريحة واحدة بحركة سريعة متتابعة) | مواضع 3 و4 | — | — | Magic Move Sequential | 0.0s / 0.3s | Digital Tick ×2 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/4c8fwt","slide":18,"title":"What are","textShapes":4}
+{"kind":"shape","id":"sh/mt0ni5sf","slide":18,"name":"road-line/1","bbox":[250,540,1415,0]}
+{"kind":"shape","id":"sh/9gbmd0b6","slide":18,"name":"road-0/2","bbox":[130,450,325,180]}
+{"kind":"textbox","id":"sh/8fi5kfal","slide":18,"name":"road-0/3","text":"What are\nCookies?","textPreview":"What are | Cookies?","textChars":17,"textLines":2,"bbox":[150,478,285,124]}
+{"kind":"shape","id":"sh/vit4fatw","slide":18,"name":"road-1/4","bbox":[558.75,441,357.5,198]}
+{"kind":"textbox","id":"sh/ahknm5sr","slide":18,"name":"road-1/5","text":"What do\nthey store?","textPreview":"What do | they store?","textChars":19,"textLines":2,"bbox":[578.75,469,317.5,142]}
+{"kind":"shape","id":"sh/xkbmhkb2","slide":18,"name":"road-2/6","bbox":[1020,450,325,180]}
+{"kind":"textbox","id":"sh/wj25ofah","slide":18,"name":"road-2/7","text":"Cookie\nTypes","textPreview":"Cookie | Types","textChars":12,"textLines":2,"bbox":[1040,478,285,124]}
+{"kind":"shape","id":"sh/bmp43qts","slide":18,"name":"road-3/8","bbox":[1465,450,325,180]}
+{"kind":"textbox","id":"sh/qlg3als7","slide":18,"name":"road-3/9","text":"Privacy\n& Consent","textPreview":"Privacy | & Consent","textChars":17,"textLines":2,"bbox":[1485,478,285,124]}
+{"kind":"notes","id":"nt/4c8fwt","slide":18,"text":"S7-3\nالمشهد 7 — ما سنتعلمه (1:06 – 1:16)\nزمن هذه الشريحة: 69.5–72.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"عشان كده، في الفيديو ده هنعرف ببساطة يعني إيه Cookies، وإيه المعلومات اللي ممكن تتخزن فيها...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | 4 مربعات متصلة بخط أفقي واحد، تظهر معًا خافتة (Opacity 40%) | موزعة أفقيًا: 140 / 620 / 1100 / 1580، y=460 | 340×160 لكل | خلفية `#12172E` حد `#00D9FF` | Fade In (كلها معًا) | 0.0s | — |\n| 1 | نص كل مربع: \"What are Cookies?\" / \"What do they store?\" / \"Cookie Types\" / \"Privacy & Consent\" | وسط كل مربع | — | أبيض 26pt | Fade In مع المربع | — | — |\n| 2 | مربع 1 فقط بـ Opacity 100% + تكبير بسيط (Focus)، الباقي 30% | نفس موضع مربع 1، مكبّر ×1.1 | — | — | Magic Move (Focus) | 0.0s | Digital Tick |\n| 3 | مربع 2 يصبح 100%، الباقي (شامل 1) يرجع 30% | موضع مربع 2 | — | — | Magic Move | 0.0s | Digital Tick |\n| 4 | مربع 3 ثم 4 بنفس المنطق (يمكن دمجهما في شريحة واحدة بحركة سريعة متتابعة) | مواضع 3 و4 | — | — | Magic Move Sequential | 0.0s / 0.3s | Digital Tick ×2 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/kpw7e2","slide":19,"title":"What are","textShapes":4}
+{"kind":"shape","id":"sh/4rypc7qd","slide":19,"name":"road-line/1","bbox":[250,540,1415,0]}
+{"kind":"shape","id":"sh/jqpoj2ps","slide":19,"name":"road-0/2","bbox":[130,450,325,180]}
+{"kind":"textbox","id":"sh/ipg7ax87","slide":19,"name":"road-0/3","text":"What are\nCookies?","textPreview":"What are | Cookies?","textChars":17,"textLines":2,"bbox":[150,478,285,124]}
+{"kind":"shape","id":"sh/ho76hs7m","slide":19,"name":"road-1/4","bbox":[575,450,325,180]}
+{"kind":"textbox","id":"sh/wnep8nqh","slide":19,"name":"road-1/5","text":"What do\nthey store?","textPreview":"What do | they store?","textChars":19,"textLines":2,"bbox":[595,478,285,124]}
+{"kind":"shape","id":"sh/vm5ofipw","slide":19,"name":"road-2/6","bbox":[1003.75,441,357.5,198]}
+{"kind":"textbox","id":"sh/ulw76d8b","slide":19,"name":"road-2/7","text":"Cookie\nTypes","textPreview":"Cookie | Types","textChars":12,"textLines":2,"bbox":[1023.75,469,317.5,142]}
+{"kind":"shape","id":"sh/90n6d87q","slide":19,"name":"road-3/8","bbox":[1448.75,441,357.5,198]}
+{"kind":"textbox","id":"sh/8zep4nq5","slide":19,"name":"road-3/9","text":"Privacy\n& Consent","textPreview":"Privacy | & Consent","textChars":17,"textLines":2,"bbox":[1468.75,469,317.5,142]}
+{"kind":"notes","id":"nt/kpw7e2","slide":19,"text":"S7-4\nالمشهد 7 — ما سنتعلمه (1:06 – 1:16)\nزمن هذه الشريحة: 72.0–76.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"عشان كده، في الفيديو ده هنعرف ببساطة يعني إيه Cookies، وإيه المعلومات اللي ممكن تتخزن فيها...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | 4 مربعات متصلة بخط أفقي واحد، تظهر معًا خافتة (Opacity 40%) | موزعة أفقيًا: 140 / 620 / 1100 / 1580، y=460 | 340×160 لكل | خلفية `#12172E` حد `#00D9FF` | Fade In (كلها معًا) | 0.0s | — |\n| 1 | نص كل مربع: \"What are Cookies?\" / \"What do they store?\" / \"Cookie Types\" / \"Privacy & Consent\" | وسط كل مربع | — | أبيض 26pt | Fade In مع المربع | — | — |\n| 2 | مربع 1 فقط بـ Opacity 100% + تكبير بسيط (Focus)، الباقي 30% | نفس موضع مربع 1، مكبّر ×1.1 | — | — | Magic Move (Focus) | 0.0s | Digital Tick |\n| 3 | مربع 2 يصبح 100%، الباقي (شامل 1) يرجع 30% | موضع مربع 2 | — | — | Magic Move | 0.0s | Digital Tick |\n| 4 | مربع 3 ثم 4 بنفس المنطق (يمكن دمجهما في شريحة واحدة بحركة سريعة متتابعة) | مواضع 3 و4 | — | — | Magic Move Sequential | 0.0s / 0.3s | Digital Tick ×2 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/dury9w","slide":20,"title":"Elements","textShapes":10}
+{"kind":"shape","id":"sh/cvadwzep","slide":20,"name":"devtools/1","bbox":[260,160,1400,760]}
+{"kind":"textbox","id":"sh/bu1c3ux4","slide":20,"name":"devtools/2","text":"Elements","textPreview":"Elements","textChars":8,"textLines":1,"bbox":[305,184,165,45]}
+{"kind":"textbox","id":"sh/atsvupwj","slide":20,"name":"devtools/3","text":"Console","textPreview":"Console","textChars":7,"textLines":1,"bbox":[510,184,145,45]}
+{"kind":"textbox","id":"sh/lk3e94f6","slide":20,"name":"devtools/4","text":"Application / Storage","textPreview":"Application / Storage","textChars":21,"textLines":1,"bbox":[700,184,370,45]}
+{"kind":"shape","id":"sh/kjud0ze1","slide":20,"name":"devtools/5","bbox":[700,243,370,0]}
+{"kind":"shape","id":"sh/zylc7uxg","slide":20,"name":"devtools/6","bbox":[260,245,1400,0]}
+{"kind":"textbox","id":"sh/yxcvypwv","slide":20,"name":"cookie-table/7","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[304,267,300,43]}
+{"kind":"shape","id":"sh/1ozux0f2","slide":20,"name":"cookie-table/8","bbox":[300,326,1320,66]}
+{"kind":"textbox","id":"sh/0nqdoveh","slide":20,"name":"cookie-table/9","text":"Name","textPreview":"Name","textChars":4,"textLines":1,"bbox":[320,336,350,43]}
+{"kind":"textbox","id":"sh/edkjmxg3","slide":20,"name":"cookie-table/10","text":"Value","textPreview":"Value","textChars":5,"textLines":1,"bbox":[705,336,250,43]}
+{"kind":"textbox","id":"sh/fet0v2xo","slide":20,"name":"cookie-table/11","text":"Domain","textPreview":"Domain","textChars":6,"textLines":1,"bbox":[1060,336,490,43]}
+{"kind":"shape","id":"sh/gf21o7y9","slide":20,"name":"cookie-row/12","bbox":[300,398,1320,65]}
+{"kind":"textbox","id":"sh/1gbixcfu","slide":20,"name":"cookie-row/13","text":"username","textPreview":"username","textChars":8,"textLines":1,"bbox":[320,407,350,45]}
+{"kind":"textbox","id":"sh/2hkjqhgf","slide":20,"name":"cookie-row/14","text":"Abdo","textPreview":"Abdo","textChars":4,"textLines":1,"bbox":[705,407,250,45]}
+{"kind":"textbox","id":"sh/32t0zmxk","slide":20,"name":"cookie-row/15","text":"localhost","textPreview":"localhost","textChars":9,"textLines":1,"bbox":[1060,407,490,45]}
+{"kind":"notes","id":"nt/dury9w","slide":20,"text":"S8-1\nالمشهد 8 — الجزء العملي (1:16 – 1:28)\nزمن هذه الشريحة: 76.0–82.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"والأهم من الكلام النظري: هنفتح المتصفح ونشوف الـCookies بنفسنا...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة DevTools وهمية (محاكاة بسيطة، مستطيل بحواف دائرية + شريط تبويبات) | 260, 160 | 1400×760 | خلفية `#0D1224` حد `#00D9FF` | Scale Up | 0.0s | Soft Pop |\n| 1 | تبويب \"Application/Storage\" مظلل | داخل شريط التبويبات | — | `#00D9FF` underline | Fade In | 0.3s | — |\n| 1 | صف Cookie تجريبي (اسم/قيمة) | 300, 320 | 1100×60 | نص أبيض على خلفية `#12172E` | Fade In | 0.4s | — |\n| 2 | نافذة كود صغيرة بجانبها | 300, 500 | 1100×180 | خلفية `#000000` حد `#8B7BFF` | Move In (Bottom) | 0.0s | — |\n| 2 | نص الكود: `document.cookie = \"username=Abdo\";` | وسط النافذة | — | Monospace (SF Mono) — الكلمات الأساسية بلون `#00D9FF`، النص بلون أبيض | Fade In (سطر واحد فقط، بدون Typewriter معقد) | 0.2s | — |\n| 2 | 3 كلمات تظهر بالتتابع أسفل الكود: Create / Read / Delete | 400,760 / 780,760 / 1160,760 | — | `#FFB800` 32pt Bold | Fade In Sequential delay 0.25s | 0.5s | Digital Tick ×3 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/upntzh","slide":21,"title":"Elements","textShapes":15}
+{"kind":"shape","id":"sh/pszmhwv2","slide":21,"name":"devtools/1","bbox":[260,160,1400,760]}
+{"kind":"textbox","id":"sh/2pon61wr","slide":21,"name":"devtools/2","text":"Elements","textPreview":"Elements","textChars":8,"textLines":1,"bbox":[305,184,165,45]}
+{"kind":"textbox","id":"sh/nqx4f6dc","slide":21,"name":"devtools/3","text":"Console","textPreview":"Console","textChars":7,"textLines":1,"bbox":[510,184,145,45]}
+{"kind":"textbox","id":"sh/cfq5cbet","slide":21,"name":"devtools/4","text":"Application / Storage","textPreview":"Application / Storage","textChars":21,"textLines":1,"bbox":[700,184,370,45]}
+{"kind":"shape","id":"sh/xgzmlgve","slide":21,"name":"devtools/5","bbox":[700,243,370,0]}
+{"kind":"shape","id":"sh/ad8na1wn","slide":21,"name":"devtools/6","bbox":[260,245,1400,0]}
+{"kind":"textbox","id":"sh/beh4j6d8","slide":21,"name":"cookie-table/7","text":"Cookies","textPreview":"Cookies","textChars":7,"textLines":1,"bbox":[304,267,300,43]}
+{"kind":"shape","id":"sh/kja5gve5","slide":21,"name":"cookie-table/8","bbox":[300,326,1320,66]}
+{"kind":"textbox","id":"sh/lkjmpgva","slide":21,"name":"cookie-table/9","text":"Name","textPreview":"Name","textChars":4,"textLines":1,"bbox":[320,336,350,43]}
+{"kind":"textbox","id":"sh/hwnih83q","slide":21,"name":"cookie-table/10","text":"Value","textPreview":"Value","textChars":5,"textLines":1,"bbox":[705,336,250,43]}
+{"kind":"textbox","id":"sh/gveho3m5","slide":21,"name":"cookie-table/11","text":"Domain","textPreview":"Domain","textChars":6,"textLines":1,"bbox":[1060,336,490,43]}
+{"kind":"shape","id":"sh/vu50fylk","slide":21,"name":"cookie-row/12","bbox":[300,398,1320,65]}
+{"kind":"textbox","id":"sh/utczmd4f","slide":21,"name":"cookie-row/13","text":"username","textPreview":"username","textChars":8,"textLines":1,"bbox":[320,407,350,45]}
+{"kind":"textbox","id":"sh/5knils32","slide":21,"name":"cookie-row/14","text":"Abdo","textPreview":"Abdo","textChars":4,"textLines":1,"bbox":[705,407,250,45]}
+{"kind":"textbox","id":"sh/4jehsn2h","slide":21,"name":"cookie-row/15","text":"localhost","textPreview":"localhost","textChars":9,"textLines":1,"bbox":[1060,407,490,45]}
+{"kind":"shape","id":"sh/3i50jilw","slide":21,"name":"code/16","bbox":[300,527,1320,174]}
+{"kind":"textbox","id":"sh/ihwzqd4b","slide":21,"name":"code/17","text":"document.cookie","textPreview":"document.cookie","textChars":15,"textLines":1,"bbox":[348,581,470,62]}
+{"kind":"textbox","id":"sh/lo3y9o3i","slide":21,"name":"code/18","text":"= \"username=Abdo\";","textPreview":"= \"username=Abdo\";","textChars":18,"textLines":1,"bbox":[804,581,770,62]}
+{"kind":"textbox","id":"sh/knuhgjmx","slide":21,"name":"action-0/19","text":"Create","textPreview":"Create","textChars":6,"textLines":1,"bbox":[330,771,360,66]}
+{"kind":"textbox","id":"sh/c7ehwjut","slide":21,"name":"action-1/20","text":"Read","textPreview":"Read","textChars":4,"textLines":1,"bbox":[765,771,360,66]}
+{"kind":"textbox","id":"sh/x87ipobe","slide":21,"name":"action-2/21","text":"Delete","textPreview":"Delete","textChars":6,"textLines":1,"bbox":[1200,771,360,66]}
+{"kind":"notes","id":"nt/upntzh","slide":21,"text":"S8-2\nالمشهد 8 — الجزء العملي (1:16 – 1:28)\nزمن هذه الشريحة: 82.0–88.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"والأهم من الكلام النظري: هنفتح المتصفح ونشوف الـCookies بنفسنا...\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة DevTools وهمية (محاكاة بسيطة، مستطيل بحواف دائرية + شريط تبويبات) | 260, 160 | 1400×760 | خلفية `#0D1224` حد `#00D9FF` | Scale Up | 0.0s | Soft Pop |\n| 1 | تبويب \"Application/Storage\" مظلل | داخل شريط التبويبات | — | `#00D9FF` underline | Fade In | 0.3s | — |\n| 1 | صف Cookie تجريبي (اسم/قيمة) | 300, 320 | 1100×60 | نص أبيض على خلفية `#12172E` | Fade In | 0.4s | — |\n| 2 | نافذة كود صغيرة بجانبها | 300, 500 | 1100×180 | خلفية `#000000` حد `#8B7BFF` | Move In (Bottom) | 0.0s | — |\n| 2 | نص الكود: `document.cookie = \"username=Abdo\";` | وسط النافذة | — | Monospace (SF Mono) — الكلمات الأساسية بلون `#00D9FF`، النص بلون أبيض | Fade In (سطر واحد فقط، بدون Typewriter معقد) | 0.2s | — |\n| 2 | 3 كلمات تظهر بالتتابع أسفل الكود: Create / Read / Delete | 400,760 / 780,760 / 1160,760 | — | `#FFB800` 32pt Bold | Fade In Sequential delay 0.25s | 0.5s | Digital Tick ×3 |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/9whcen","slide":22,"title":"example.com","textShapes":5}
+{"kind":"shape","id":"sh/kb2hsbap","slide":22,"name":"browser/1","bbox":[360,140,1200,700]}
+{"kind":"shape","id":"sh/jat0z6t4","slide":22,"name":"browser/2","bbox":[362,142,1196,70]}
+{"kind":"shape","id":"sh/i90zq1sz","slide":22,"name":"browser/3","bbox":[390,167,14,14]}
+{"kind":"shape","id":"sh/x8rixwbe","slide":22,"name":"browser/4","bbox":[417,167,14,14]}
+{"kind":"shape","id":"sh/w7ihorat","slide":22,"name":"browser/5","bbox":[490,156,950,40]}
+{"kind":"textbox","id":"sh/v690v6t8","slide":22,"name":"browser/6","text":"example.com","textPreview":"example.com","textChars":11,"textLines":1,"bbox":[520,161,890,28]}
+{"kind":"shape","id":"sh/a50zm1sn","slide":22,"name":"browser/7","bbox":[360,212,1200,0]}
+{"kind":"shape","id":"sh/94rytwb2","slide":22,"name":"browser/8","bbox":[420,259,492,22]}
+{"kind":"shape","id":"sh/o3ihkrah","slide":22,"name":"browser/9","bbox":[420,312,624,10]}
+{"kind":"shape","id":"sh/it4byl8z","slide":22,"name":"browser/10","bbox":[420,346,624,10]}
+{"kind":"shape","id":"sh/juds7qpk","slide":22,"name":"browser/11","bbox":[420,380,444,10]}
+{"kind":"shape","id":"sh/kvmt0bq5","slide":22,"name":"browser/12","bbox":[1140,262,300,210]}
+{"kind":"shape","id":"sh/5wva9g7q","slide":22,"name":"browser/13","bbox":[420,522,294,130]}
+{"kind":"shape","id":"sh/a5kru183","slide":22,"name":"browser/14","bbox":[442,551,180,9]}
+{"kind":"shape","id":"sh/v6ts36po","slide":22,"name":"browser/15","bbox":[442,575,216,9]}
+{"kind":"shape","id":"sh/w7m9wbqt","slide":22,"name":"browser/16","bbox":[762,522,294,130]}
+{"kind":"shape","id":"sh/xsva5g7e","slide":22,"name":"browser/17","bbox":[784,551,180,9]}
+{"kind":"shape","id":"sh/m1krq18r","slide":22,"name":"browser/18","bbox":[784,575,216,9]}
+{"kind":"shape","id":"sh/n2tsz69c","slide":22,"name":"browser/19","bbox":[1104,522,294,130]}
+{"kind":"shape","id":"sh/b6p87254","slide":22,"name":"browser/20","bbox":[1126,551,180,9]}
+{"kind":"shape","id":"sh/q5g7yxoj","slide":22,"name":"browser/21","bbox":[1126,575,216,9]}
+{"kind":"shape","id":"sh/d8rq9sna","slide":22,"name":"consent/22","bbox":[460,640,1000,220]}
+{"kind":"textbox","id":"sh/c7yp076p","slide":22,"name":"consent/23","text":"نستخدم ملفات تعريف الارتباط لتحسين تجربتك","textPreview":"نستخدم ملفات تعريف الارتباط لتحسين تجربتك","textChars":41,"textLines":1,"bbox":[500,666,920,66]}
+{"kind":"shape","id":"sh/za98b25g","slide":22,"name":"accept/24","bbox":[500,760,220,64]}
+{"kind":"textbox","id":"sh/y9072xov","slide":22,"name":"accept/25","text":"Accept All","textPreview":"Accept All","textChars":10,"textLines":1,"bbox":[500,764,220,54]}
+{"kind":"shape","id":"sh/lcrqdcn6","slide":22,"name":"reject/26","bbox":[760,760,180,64]}
+{"kind":"textbox","id":"sh/0bip476l","slide":22,"name":"reject/27","text":"Reject","textPreview":"Reject","textChars":6,"textLines":1,"bbox":[760,764,180,54]}
+{"kind":"shape","id":"sh/fe5ozipw","slide":22,"name":"cursor/28","bbox":[624,793,49,49]}
+{"kind":"shape","id":"sh/udw7qdob","slide":22,"name":"thought/29","bbox":[706,741,52,52]}
+{"kind":"textbox","id":"sh/kju50jm9","slide":22,"name":"thought/30","text":"?","textPreview":"?","textChars":1,"textLines":1,"bbox":[707,740,50,49]}
+{"kind":"shape","id":"sh/5k3m94nu","slide":22,"name":"thought/31","bbox":[692,790,9,9]}
+{"kind":"shape","id":"sh/ihc3y943","slide":22,"name":"thought/32","bbox":[681,806,5,5]}
+{"kind":"notes","id":"nt/9whcen","slide":22,"text":"S9-1\nالمشهد 9 — النهاية والانتقال للشرح (1:28 – 1:38)\nزمن هذه الشريحة: 88.0–92.2 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وبعد الفيديو، لما يظهرلك زرار Accept All مرة تانية... يلا نبدأ الأول بأهم سؤال: إيه هي الـCookies؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة الموافقة تعود (نفس تصميم المشهد 1، شريحة 2) | نفس موضع المشهد 1 | — | — | Magic Move (عودة من شكل مصغّر أو Fade) | 0.0s | Subtle Whoosh |\n| 1 | مؤشر الماوس يتوقف فوق المنطقة بدون كليك | فوق زر Accept All لكن بدون Ripple | — | — | Move In، بدون Click SFX هذه المرة | 0.3s | — |\n| 1 | علامة تفكير صغيرة (🤔ـ بشكل بسيط outline، ليس إيموجي) بجانب المؤشر | بجانب المؤشر | 50×50 | `#8B7BFF` | Fade In | 0.6s | — |\n| 2 | كل عناصر المشهد (المتصفح، النافذة، الأيقونات المتفرقة من المشاهد السابقة) تتجمع بصريًا نحو المنتصف وتتلاشى | من مواضعها المتفرقة → 960,540 ثم Fade Out | — | — | Magic Move ثم Fade Out | 0.0s | — |\n| 3 | خلفية فارغة (الجرادينت فقط) | — | — | — | — | — | — |\n| 3 | العنوان النهائي: **\"يعني إيه Cookies؟\"** | وسط، 960,460 | — | أبيض Bold 88pt | Scale Up | 0.2s | Soft Pop |\n| 3 | العنوان الفرعي: **\"How Websites Remember You\"** | أسفل العنوان، 960,580 | — | `#00D9FF` 32pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/zz4vpv","slide":23,"title":"example.com","textShapes":1}
+{"kind":"shape","id":"sh/a9czm94n","slide":23,"name":"browser/1","bbox":[696,374,528,308]}
+{"kind":"shape","id":"sh/xc3ih43y","slide":23,"name":"browser/2","bbox":[698,376,524,70]}
+{"kind":"shape","id":"sh/wbu1ojmt","slide":23,"name":"browser/3","bbox":[726,401,14,14]}
+{"kind":"shape","id":"sh/jy50jel4","slide":23,"name":"browser/4","bbox":[753,401,14,14]}
+{"kind":"shape","id":"sh/ydcjq94j","slide":23,"name":"browser/5","bbox":[826,390,278,40]}
+{"kind":"textbox","id":"sh/l0nilo3a","slide":23,"name":"browser/6","text":"example.com","textPreview":"example.com","textChars":11,"textLines":1,"bbox":[856,395,218,28]}
+{"kind":"shape","id":"sh/kze1sjmp","slide":23,"name":"browser/7","bbox":[696,446,528,0]}
+{"kind":"shape","id":"sh/z2107u50","slide":23,"name":"cookie/8","bbox":[900,461,120,120]}
+{"kind":"shape","id":"sh/ehszep4f","slide":23,"name":"cookie/9","bbox":[936,489.8,13.8,13.8]}
+{"kind":"shape","id":"sh/wrm1o3a5","slide":23,"name":"cookie/10","bbox":[973.2,485,9.6,9.6]}
+{"kind":"shape","id":"sh/xsvix8rq","slide":23,"name":"cookie/11","bbox":[984,517.4,15.6,15.6]}
+{"kind":"shape","id":"sh/a54jmtsz","slide":23,"name":"cookie/12","bbox":[944.4,529.4,14.4,14.4]}
+{"kind":"shape","id":"sh/bqd0vy9k","slide":23,"name":"cookie/13","bbox":[966,554.6,9.6,9.6]}
+{"kind":"shape","id":"sh/kv61sna1","slide":23,"name":"cookie/14","bbox":[922.8,549.8,7.8,7.8]}
+{"kind":"shape","id":"sh/lwfi18rm","slide":23,"name":"user/15","bbox":[699.8,409,22.4,22.4]}
+{"kind":"shape","id":"sh/ytojqdsv","slide":23,"name":"user/16","bbox":[676,409,70,70]}
+{"kind":"shape","id":"sh/jux0zi9g","slide":23,"name":"cart/17","bbox":[1166.35,446.3,22.1,27.2]}
+{"kind":"shape","id":"sh/0z2hgjax","slide":23,"name":"cart/18","bbox":[1189.3,439.5,22.1,34]}
+{"kind":"shape","id":"sh/10bipori","slide":23,"name":"cart/19","bbox":[1140,431,85,85]}
+{"kind":"shape","id":"sh/1w3ytk36","slide":23,"name":"cart/20","bbox":[1168.9,495.6,38.25,0]}
+{"kind":"shape","id":"sh/gvuhkf2l","slide":23,"name":"cart/21","bbox":[1166.35,502.4,8.5,8.5]}
+{"kind":"shape","id":"sh/fulgral0","slide":23,"name":"cart/22","bbox":[1201.2,502.4,8.5,8.5]}
+{"kind":"shape","id":"sh/etcfi5kf","slide":23,"name":"file/23","bbox":[930,652,70,70]}
+{"kind":"shape","id":"sh/pknyxkj2","slide":23,"name":"file/24","bbox":[930,652,70,70]}
+{"kind":"shape","id":"sh/ozehof2x","slide":23,"name":"file/25","bbox":[930,652,70,70]}
+{"kind":"shape","id":"sh/3y5gva1c","slide":23,"name":"file/26","bbox":[957.3,684.2,17.5,0]}
+{"kind":"shape","id":"sh/2xczmpkr","slide":23,"name":"file/27","bbox":[957.3,692.6,17.5,0]}
+{"kind":"shape","id":"sh/dony14je","slide":23,"name":"file/28","bbox":[957.3,701,12.6,0]}
+{"kind":"notes","id":"nt/zz4vpv","slide":23,"text":"S9-2\nالمشهد 9 — النهاية والانتقال للشرح (1:28 – 1:38)\nزمن هذه الشريحة: 92.2–94.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وبعد الفيديو، لما يظهرلك زرار Accept All مرة تانية... يلا نبدأ الأول بأهم سؤال: إيه هي الـCookies؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة الموافقة تعود (نفس تصميم المشهد 1، شريحة 2) | نفس موضع المشهد 1 | — | — | Magic Move (عودة من شكل مصغّر أو Fade) | 0.0s | Subtle Whoosh |\n| 1 | مؤشر الماوس يتوقف فوق المنطقة بدون كليك | فوق زر Accept All لكن بدون Ripple | — | — | Move In، بدون Click SFX هذه المرة | 0.3s | — |\n| 1 | علامة تفكير صغيرة (🤔ـ بشكل بسيط outline، ليس إيموجي) بجانب المؤشر | بجانب المؤشر | 50×50 | `#8B7BFF` | Fade In | 0.6s | — |\n| 2 | كل عناصر المشهد (المتصفح، النافذة، الأيقونات المتفرقة من المشاهد السابقة) تتجمع بصريًا نحو المنتصف وتتلاشى | من مواضعها المتفرقة → 960,540 ثم Fade Out | — | — | Magic Move ثم Fade Out | 0.0s | — |\n| 3 | خلفية فارغة (الجرادينت فقط) | — | — | — | — | — | — |\n| 3 | العنوان النهائي: **\"يعني إيه Cookies؟\"** | وسط، 960,460 | — | أبيض Bold 88pt | Scale Up | 0.2s | Soft Pop |\n| 3 | العنوان الفرعي: **\"How Websites Remember You\"** | أسفل العنوان، 960,580 | — | `#00D9FF` 32pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}
+{"kind":"slide","id":"sl/hj33yp","slide":24,"title":"يعني إيه Cookies؟","textShapes":2}
+{"kind":"textbox","id":"sh/hcvytsb6","slide":24,"name":"final-title/1","text":"يعني إيه Cookies؟","textPreview":"يعني إيه Cookies؟","textChars":17,"textLines":1,"bbox":[360,417,1200,150]}
+{"kind":"textbox","id":"sh/up4zixcf","slide":24,"name":"final-subtitle/2","text":"How Websites Remember You","textPreview":"How Websites Remember You","textChars":25,"textLines":1,"bbox":[410,583,1100,70]}
+{"kind":"notes","id":"nt/hj33yp","slide":24,"text":"S9-3\nالمشهد 9 — النهاية والانتقال للشرح (1:28 – 1:38)\nزمن هذه الشريحة: 94.0–98.0 ثانية.\n\nالتعليق الصوتي للمشهد:\n\"وبعد الفيديو، لما يظهرلك زرار Accept All مرة تانية... يلا نبدأ الأول بأهم سؤال: إيه هي الـCookies؟\"\n\nتوجيهات الحركة والتوقيت من المخطط:\n| # | العنصر | الموضع | الحجم | اللون | الحركة | التأخير | SFX |\n|---|---|---|---|---|---|---|---|\n| 1 | نافذة الموافقة تعود (نفس تصميم المشهد 1، شريحة 2) | نفس موضع المشهد 1 | — | — | Magic Move (عودة من شكل مصغّر أو Fade) | 0.0s | Subtle Whoosh |\n| 1 | مؤشر الماوس يتوقف فوق المنطقة بدون كليك | فوق زر Accept All لكن بدون Ripple | — | — | Move In، بدون Click SFX هذه المرة | 0.3s | — |\n| 1 | علامة تفكير صغيرة (🤔ـ بشكل بسيط outline، ليس إيموجي) بجانب المؤشر | بجانب المؤشر | 50×50 | `#8B7BFF` | Fade In | 0.6s | — |\n| 2 | كل عناصر المشهد (المتصفح، النافذة، الأيقونات المتفرقة من المشاهد السابقة) تتجمع بصريًا نحو المنتصف وتتلاشى | من مواضعها المتفرقة → 960,540 ثم Fade Out | — | — | Magic Move ثم Fade Out | 0.0s | — |\n| 3 | خلفية فارغة (الجرادينت فقط) | — | — | — | — | — | — |\n| 3 | العنوان النهائي: **\"يعني إيه Cookies؟\"** | وسط، 960,460 | — | أبيض Bold 88pt | Scale Up | 0.2s | Soft Pop |\n| 3 | العنوان الفرعي: **\"How Websites Remember You\"** | أسفل العنوان، 960,580 | — | `#00D9FF` 32pt | Fade In | 0.5s | — |\n\nالمؤثرات الصوتية أسماء مقترحة فقط؛ لا توجد ملفات صوتية مضمّنة."}

@@ -1,9 +1,14 @@
 
 const express = require('express');
-const { addEmployee, getEmployees } = require('../controllers/employeeController');
-const { protect, manager } = require('../middleware/authMiddleware');
-const router = express.Router();
+const { wrap } = require('../lib/http');
 
-router.route('/').post(protect, manager, addEmployee).get(protect, manager, getEmployees);
+function createEmployeeRoutes({ auth, controller }) {
+  const router = express.Router();
+  router.use(auth.protect, auth.manager);
+  router.route('/').post(wrap(controller.add)).get(wrap(controller.list));
+  router.post('/:id/resend', wrap(controller.resend));
+  router.delete('/:id', wrap(controller.remove));
+  return router;
+}
 
-module.exports = router;
+module.exports = { createEmployeeRoutes };

@@ -1,9 +1,12 @@
-
 const express = require('express');
-const { updateUserRole } = require('../controllers/userController');
-const { protect } = require('../middleware/authMiddleware');
-const router = express.Router();
+const { wrap } = require('../lib/http');
 
-router.route('/role').post(protect, updateUserRole);
+function createUserRoutes({ auth, controller, employeeController }) {
+  const router = express.Router();
+  router.post('/role', auth.protect, wrap(controller.setRole));
+  // Keep the existing URL, using tenant-scoped archival instead of deletion.
+  router.delete('/users/:id', auth.protect, auth.manager, wrap(employeeController.remove));
+  return router;
+}
 
-module.exports = router;
+module.exports = { createUserRoutes };

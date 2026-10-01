@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import { API_URL } from '../src/config'
 
 const RegisterPage: React.FC = () => {
   const [name, setName] = useState('')
@@ -29,7 +28,7 @@ const RegisterPage: React.FC = () => {
   }
 
   const handleGoogleLogin = () => {
-    window.location.href = `${API_URL}/auth/google`
+    setError('Google sign-in is not available yet. Please register with your email and password.')
   }
 
   return (

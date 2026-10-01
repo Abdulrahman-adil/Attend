@@ -1,0 +1,715 @@
+[
+  {
+    "id": "S1-1",
+    "scene": 1,
+    "part": 1,
+    "duration": 3.5,
+    "start": 0,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "browser",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S1-2",
+    "scene": 1,
+    "part": 2,
+    "duration": 4.5,
+    "start": 3.5,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "consent",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "accept",
+        "delay": 0.3,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "reject",
+        "delay": 0.35,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "cursor",
+        "delay": 0.5,
+        "dur": 0.5,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S1-3",
+    "scene": 1,
+    "part": 3,
+    "duration": 4,
+    "start": 8,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "ripple",
+        "delay": 0,
+        "dur": 0.2,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "ripple",
+        "delay": 0.3,
+        "dur": 0.2,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "cookie",
+        "delay": 0.3,
+        "dur": 0.4,
+        "effect": "zoom",
+        "exit": false
+      },
+      {
+        "group": "cookie",
+        "delay": 1.15,
+        "dur": 0.2,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "accept-question",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S2-1",
+    "scene": 2,
+    "part": 1,
+    "duration": 4.5,
+    "start": 12,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "question-0",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "question-1",
+        "delay": 0.55,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "question-2",
+        "delay": 0.7,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S2-2",
+    "scene": 2,
+    "part": 2,
+    "duration": 5.5,
+    "start": 16.5,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "option-0",
+        "delay": 0.6,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "branch-0",
+        "delay": 0.7,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "option-1",
+        "delay": 0.8,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "branch-1",
+        "delay": 0.8999999999999999,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "option-2",
+        "delay": 1,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "branch-2",
+        "delay": 1.1,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S3-1",
+    "scene": 3,
+    "part": 1,
+    "duration": 6,
+    "start": 22,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "node-0",
+        "delay": 0,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "user-icon",
+        "delay": 0,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "node-1",
+        "delay": 0.2,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "browser-icon",
+        "delay": 0.2,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "node-2",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "server-icon",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "request-user",
+        "delay": 0.6000000000000001,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "request-server",
+        "delay": 0.6000000000000001,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S3-2",
+    "scene": 3,
+    "part": 2,
+    "duration": 6,
+    "start": 28,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "session-cookie",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "logged-in",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S4-1",
+    "scene": 4,
+    "part": 1,
+    "duration": 3.2,
+    "start": 34,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "cart",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S4-2",
+    "scene": 4,
+    "part": 2,
+    "duration": 2.3,
+    "start": 37.2,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "clock",
+        "delay": 0.2,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "clock",
+        "delay": 1.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      }
+    ]
+  },
+  {
+    "id": "S4-3",
+    "scene": 4,
+    "part": 3,
+    "duration": 4.5,
+    "start": 39.5,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "cart",
+        "delay": 0.2,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "cart-cookie",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "cart-caption",
+        "delay": 0.5,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S5-1",
+    "scene": 5,
+    "part": 1,
+    "duration": 3,
+    "start": 44,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "search-browser",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      },
+      {
+        "group": "search-field",
+        "delay": 0.2,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "headphones",
+        "delay": 0.35,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S5-2",
+    "scene": 5,
+    "part": 2,
+    "duration": 3.2,
+    "start": 47,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "second-browser",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "ad",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "zoom",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S5-3",
+    "scene": 5,
+    "part": 3,
+    "duration": 3.8,
+    "start": 50.2,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "tracking-link",
+        "delay": 0,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "tracking-title",
+        "delay": 0.3,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S6-1",
+    "scene": 6,
+    "part": 1,
+    "duration": 4.5,
+    "start": 54,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "divider",
+        "delay": 0,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "useful-title",
+        "delay": 0.1,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "tracking-title",
+        "delay": 0.1,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "cookie",
+        "delay": 0.3,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S6-2",
+    "scene": 6,
+    "part": 2,
+    "duration": 7.5,
+    "start": 58.5,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "use-0",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "use-1",
+        "delay": 0.15,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "use-2",
+        "delay": 0.3,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "track-0",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "track-1",
+        "delay": 0.15,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      },
+      {
+        "group": "track-2",
+        "delay": 0.3,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S7-1",
+    "scene": 7,
+    "part": 1,
+    "duration": 1,
+    "start": 66,
+    "transition": "magic move",
+    "builds": []
+  },
+  {
+    "id": "S7-2",
+    "scene": 7,
+    "part": 2,
+    "duration": 2.5,
+    "start": 67,
+    "transition": "magic move",
+    "builds": []
+  },
+  {
+    "id": "S7-3",
+    "scene": 7,
+    "part": 3,
+    "duration": 2.5,
+    "start": 69.5,
+    "transition": "magic move",
+    "builds": []
+  },
+  {
+    "id": "S7-4",
+    "scene": 7,
+    "part": 4,
+    "duration": 4,
+    "start": 72,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "road-3",
+        "delay": 1.7,
+        "dur": 0.4,
+        "effect": "zoom",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S8-1",
+    "scene": 8,
+    "part": 1,
+    "duration": 6,
+    "start": 76,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "devtools",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      },
+      {
+        "group": "cookie-table",
+        "delay": 0.3,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "cookie-row",
+        "delay": 0.4,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S8-2",
+    "scene": 8,
+    "part": 2,
+    "duration": 6,
+    "start": 82,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "action-0",
+        "delay": 0.5,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "action-1",
+        "delay": 0.75,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "action-2",
+        "delay": 1,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      },
+      {
+        "group": "code",
+        "delay": 0,
+        "dur": 0.5,
+        "effect": "fly",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S9-1",
+    "scene": 9,
+    "part": 1,
+    "duration": 4.2,
+    "start": 88,
+    "transition": "magic move",
+    "builds": [
+      {
+        "group": "thought",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  },
+  {
+    "id": "S9-2",
+    "scene": 9,
+    "part": 2,
+    "duration": 1.8,
+    "start": 92.2,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "browser",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "cookie",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "user",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "cart",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      },
+      {
+        "group": "file",
+        "delay": 0.6,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": true
+      }
+    ]
+  },
+  {
+    "id": "S9-3",
+    "scene": 9,
+    "part": 3,
+    "duration": 4,
+    "start": 94,
+    "transition": "dissolve",
+    "builds": [
+      {
+        "group": "final-title",
+        "delay": 0.2,
+        "dur": 0.5,
+        "effect": "zoom",
+        "exit": false
+      },
+      {
+        "group": "final-subtitle",
+        "delay": 0.5,
+        "dur": 0.4,
+        "effect": "fade",
+        "exit": false
+      }
+    ]
+  }
+]

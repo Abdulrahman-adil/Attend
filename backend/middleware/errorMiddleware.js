@@ -1,16 +1,16 @@
-
+const { HttpError } = require('../lib/http');
 const notFound = (req, res, next) => {
-  const error = new Error(`Not Found - ${req.originalUrl}`);
-  res.status(404);
-  next(error);
+  next(Object.assign(new Error('Route not found.'), { status: 404, code: 'NOT_FOUND' }));
 };
 
 const errorHandler = (err, req, res, next) => {
-  const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
+  if (res.headersSent) return next(err);
+  const statusCode = Number.isInteger(err.status) && err.status >= 400 && err.status <= 599 ? err.status : 500;
+  const unexpected = statusCode >= 500 && !(err instanceof HttpError);
   res.status(statusCode).json({
- 
-    message: err.message || 'Internal Server Error',
-    stack: process.env.NODE_ENV === 'production' ? null : err.stack,
+    message: unexpected ? 'Internal Server Error' : err.message || 'Request failed.',
+    code: unexpected ? 'INTERNAL_ERROR' : err.code || 'REQUEST_FAILED',
+    ...(req.app.get('env') !== 'production' ? { stack: err.stack } : {}),
   });
 };
 

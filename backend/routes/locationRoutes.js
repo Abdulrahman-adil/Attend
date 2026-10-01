@@ -1,13 +1,14 @@
 
 const express = require('express');
-const { addLocation, getLocations, deleteLocation } = require('../controllers/locationController');
-const { protect, manager } = require('../middleware/authMiddleware');
-const router = express.Router();
+const { wrap } = require('../lib/http');
 
-router.route('/')
-  .post(protect, manager, addLocation)
-  .get(protect, getLocations); // Both manager and employee can get locations
+function createLocationRoutes({ auth, controller }) {
+  const router = express.Router();
+  router.use(auth.protect);
+  router.get('/', wrap(controller.list));
+  router.post('/', auth.manager, wrap(controller.add));
+  router.delete('/:id', auth.manager, wrap(controller.retire));
+  return router;
+}
 
-router.route('/:id').delete(protect, manager, deleteLocation);
-
-module.exports = router;
+module.exports = { createLocationRoutes };

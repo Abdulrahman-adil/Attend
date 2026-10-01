@@ -1,129 +1,46 @@
-import React, { useState, useEffect } from 'react';
-import type { GeolocationState, WorkLocation, AttendanceRecord } from '../../types';
-import { useAuth } from '../../contexts/AuthContext';
-import { API_URL } from '../../src/config';
+import React, { useEffect, useState } from 'react'
+import type { AttendanceRecord, GeolocationState, WorkLocation } from '../../types'
+import { useAuth } from '../../contexts/AuthContext'
+import { API_URL } from '../../src/config'
 
-interface ClockInOutProps {
-  currentLocation: GeolocationState;
-  allowedLocations: WorkLocation[];
-  latestAttendance: AttendanceRecord | null;
+interface Props { currentLocation: GeolocationState; allowedLocations: WorkLocation[]; latestAttendance: AttendanceRecord | null }
+
+const ClockInOut: React.FC<Props> = ({ currentLocation, allowedLocations, latestAttendance }) => {
+  const { apiFetch } = useAuth()
+  const [selectedLocationId, setSelectedLocationId] = useState('')
+  const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
+  const [loading, setLoading] = useState(false)
+  const checkedIn = Boolean(latestAttendance && !latestAttendance.checkOutTime)
+
+  useEffect(() => { setSelectedLocationId(checkedIn ? String(latestAttendance?.locationId ?? '') : '') }, [checkedIn, latestAttendance?.locationId])
+
+  const submit = async (action: 'check-in' | 'check-out') => {
+    setMessage(null)
+    if (!checkedIn && !selectedLocationId) return setMessage({ type: 'error', text: 'Select a work location first.' })
+    const { latitude, longitude, error } = currentLocation
+    if (error || latitude === null || longitude === null) return setMessage({ type: 'error', text: `Could not get location: ${error || 'Unknown error'}` })
+    const locationId = Number(checkedIn ? latestAttendance?.locationId : selectedLocationId)
+    if (!Number.isSafeInteger(locationId)) return setMessage({ type: 'error', text: 'Select a valid work location.' })
+    setLoading(true)
+    try {
+      const response = await apiFetch(`${API_URL}/attendance/${action}`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json', 'Idempotency-Key': crypto.randomUUID() },
+        body: JSON.stringify({ latitude, longitude, locationId, ...(action === 'check-out' ? { attendanceId: latestAttendance?.id } : {}) }),
+      })
+      const data = await response.json()
+      if (!response.ok) throw new Error(data.message || 'Attendance action failed.')
+      setMessage({ type: 'success', text: data.message })
+      window.dispatchEvent(new CustomEvent('dataChanged', { detail: 'attendance' }))
+    } catch (error) { setMessage({ type: 'error', text: error instanceof Error ? error.message : 'Attendance action failed.' }) }
+    finally { setLoading(false) }
+  }
+
+  return <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md flex flex-col justify-center items-center space-y-4">
+    <h3 className="text-xl font-semibold text-slate-800 dark:text-white">Attendance</h3>
+    {!checkedIn && <div className="w-full"><label htmlFor="location-select" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Select Location</label><select id="location-select" value={selectedLocationId} onChange={event => setSelectedLocationId(event.target.value)} className="w-full px-4 py-2 border rounded-lg"><option value="" disabled>-- Choose a location --</option>{allowedLocations.map(location => <option key={location.id} value={location.id}>{location.name}</option>)}</select></div>}
+    <div className="flex space-x-4"><button onClick={() => submit('check-in')} disabled={checkedIn || loading || !selectedLocationId} className="px-8 py-4 text-lg font-bold text-white bg-green-500 rounded-lg disabled:bg-slate-400">{loading && !checkedIn ? 'Checking In…' : 'Check-In'}</button><button onClick={() => submit('check-out')} disabled={!checkedIn || loading} className="px-8 py-4 text-lg font-bold text-white bg-red-500 rounded-lg disabled:bg-slate-400">{loading && checkedIn ? 'Checking Out…' : 'Check-Out'}</button></div>
+    {message && <p className={`text-center p-3 rounded-lg w-full ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>{message.text}</p>}
+  </div>
 }
 
-const ClockInOut: React.FC<ClockInOutProps> = ({ currentLocation, allowedLocations, latestAttendance }) => {
-  const [isCheckedIn, setIsCheckedIn] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-  const [selectedLocationId, setSelectedLocationId] = useState<string>('');
-  const [loading, setLoading] = useState(false);
-  const { token } = useAuth();
-
-  useEffect(() => {
-    if (latestAttendance && !latestAttendance.checkOutTime) {
-      setIsCheckedIn(true);
-      // Pre-select the location if the user is already checked in
-      if(latestAttendance.locationId) {
-        setSelectedLocationId(latestAttendance.locationId.toString());
-      }
-    } else {
-      setIsCheckedIn(false);
-      setSelectedLocationId('');
-    }
-  }, [latestAttendance]);
-
-  const handleAction = async () => {
-    setMessage(null);
-    setLoading(true);
-
-    if (!isCheckedIn && !selectedLocationId) {
-      setMessage({ type: 'error', text: 'Please select a work location before checking in.' });
-      setLoading(false);
-      return;
-    }
-    
-    const { latitude, longitude, error: locationError } = currentLocation;
-    if (locationError || !latitude || !longitude) {
-      setMessage({ type: 'error', text: `Could not get location: ${locationError || 'Unknown error'}` });
-      setLoading(false);
-      return;
-    }
-    
-    if (!token) {
-        setMessage({ type: 'error', text: 'Authentication error. Please log in again.' });
-        setLoading(false);
-        return;
-    }
-
-    try {
-        const response = await fetch(`${API_URL}/attendance/clock`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}`},
-            body: JSON.stringify({ latitude, longitude, locationId: parseInt(selectedLocationId, 10) })
-        });
-
-      let data;
-      try
-      {
-        data = await response.json();
-      } catch {
-        data = {};
-      }
-
-        if (!response.ok) throw new Error(data.message || 'Action failed.');
-        setMessage({ type: 'success', text: data.message });
-        window.dispatchEvent(new CustomEvent('dataChanged', { detail: 'attendance' }));
-    } catch (e: any) {
-      setMessage({ type: 'error', text: e.message });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md flex flex-col justify-center items-center space-y-4">
-      <h3 className="text-xl font-semibold text-slate-800 dark:text-white">Attendance</h3>
-      
-      {!isCheckedIn && (
-        <div className="w-full">
-            <label htmlFor="location-select" className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Select Location</label>
-            <select
-                id="location-select"
-                value={selectedLocationId}
-                onChange={(e) => setSelectedLocationId(e.target.value)}
-                className="w-full px-4 py-2 border border-slate-300 dark:border-slate-600 rounded-lg bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            >
-                <option value="" disabled>-- Choose a location --</option>
-                {allowedLocations.map(loc => (
-                    <option key={loc.id} value={loc.id}>{loc.name}</option>
-                ))}
-            </select>
-        </div>
-      )}
-
-      <div className="flex space-x-4">
-        <button
-          onClick={handleAction}
-          disabled={isCheckedIn || loading || (!isCheckedIn && !selectedLocationId)}
-          className="px-8 py-4 text-lg font-bold text-white bg-green-500 rounded-lg shadow-md hover:bg-green-600 disabled:bg-slate-400 disabled:cursor-not-allowed transition"
-        >
-          {loading && !isCheckedIn ? 'Checking In...' : 'Check-In'}
-        </button>
-        <button
-          onClick={handleAction}
-          disabled={!isCheckedIn || loading}
-          className="px-8 py-4 text-lg font-bold text-white bg-red-500 rounded-lg shadow-md hover:bg-red-600 disabled:bg-slate-400 disabled:cursor-not-allowed transition"
-        >
-          {loading && isCheckedIn ? 'Checking Out...' : 'Check-Out'}
-        </button>
-      </div>
-      {message && (
-        <p className={`text-center p-3 rounded-lg w-full ${message.type === 'success' ? 'bg-green-100 text-green-700' : 'bg-red-100 text-red-700'}`}>
-          {message.text}
-        </p>
-      )}
-       <p className="text-sm text-slate-500 dark:text-slate-400">
-        Status: {isCheckedIn ? `Checked in at ${new Date(latestAttendance?.checkInTime || '').toLocaleTimeString()}` : 'Checked out'}
-      </p>
-    </div>
-  );
-};
-
-export default ClockInOut;
+export default ClockInOut

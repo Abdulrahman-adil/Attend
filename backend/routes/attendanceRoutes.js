@@ -1,11 +1,18 @@
 
 const express = require('express');
-const { clockInOut, getAttendance, getEmployeeDashboard } = require('../controllers/attendanceController');
-const { protect, manager } = require('../middleware/authMiddleware');
-const router = express.Router();
+const { wrap, fail } = require('../lib/http');
 
-router.post('/clock', protect, clockInOut);
-router.get('/dashboard', protect, getEmployeeDashboard);
-router.get('/:employeeId', protect, manager, getAttendance);
+function createAttendanceRoutes({ auth, controller }) {
+  const router = express.Router();
+  router.use(auth.protect);
+  router.post('/check-in', auth.employee, wrap(controller.checkIn));
+  router.post('/check-out', auth.employee, wrap(controller.checkOut));
+  router.post('/clock', auth.employee, wrap(() => {
+    fail(409, 'Refresh to the updated attendance client before checking in or out.', 'CLIENT_UPGRADE_REQUIRED');
+  }));
+  router.get('/dashboard', auth.employee, wrap(controller.dashboard));
+  router.get('/:employeeId', auth.manager, wrap(controller.history));
+  return router;
+}
 
-module.exports = router;
+module.exports = { createAttendanceRoutes };
