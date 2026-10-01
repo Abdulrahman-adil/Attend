@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5174, // You can specify a port for the frontend dev server
     proxy: {
       '/api': {
-        target: 'http://localhost:5001',
+        target: 'http://127.0.0.1:5001',
         changeOrigin: true,
         secure: false,
       },
