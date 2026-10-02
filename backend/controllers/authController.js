@@ -56,7 +56,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
             "ACCOUNT_EXISTS"
           );
         const user = await tx.run(
-          "INSERT INTO users(name,email,normalized_email,password,created_at) VALUES(?,?,?,?,?)",
+          "INSERT INTO users(name,email,normalized_email,password,created_at) VALUES(?,?,?,?,?)RETURNING id",
           [name, address, address, encoded, instant.toISOString()]
         );
         await issueInvitation(
@@ -310,7 +310,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
               "INVITATION_UNAVAILABLE"
             );
           await tx.run(
-            "UPDATE users SET is_active=1,activated_at=?,password=COALESCE(?,password),google_id=NULL WHERE id=?",
+            "UPDATE users SET is_active=TRUE,activated_at=?,password=COALESCE(?,password),google_id=NULL WHERE id=?",
             [time, encoded, inv.user_id]
           );
           await audit(
