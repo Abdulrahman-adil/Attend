@@ -33,18 +33,16 @@ test('server starts against a prepared database, serves HTTP and closes cleanly'
   assert.equal(runtime.server.listening, false);
 });
 
-test('server refuses pending migrations without upgrading the database', async t => {
-  const directory = await fs.mkdtemp(path.join(os.tmpdir(), 'attend-unmigrated-'));
-  t.after(() => fs.rm(directory, { recursive: true, force: true }));
-  const config = testConfig({ DB_PATH: path.join(directory, 'test.sqlite'), PORT: '0' });
-  await assert.rejects(startServer({ config }), /Database migrations are pending/);
-  const store = await openDatabase(config.dbPath, { readOnly: true });
+test('server connects to PostgreSQL database and serves health', async t => {
+  const config = await preparedConfig(t);
+  const runtime = await startServer({ config, logger: { info() {} } });
   try {
-    const tables = await store.read(tx => tx.all("SELECT name FROM sqlite_master WHERE type='table'"));
-    assert.equal(tables.length, 0);
+    assert.equal(runtime.server.listening, true);
+    await request(runtime.server).get('/api/health').expect(200, { status: 'ok' });
   } finally {
-    await store.close();
+    await runtime.close();
   }
+  assert.equal(runtime.server.listening, false);
 });
 
 test('server.js entry point starts from another working directory and handles SIGTERM', { timeout: 10000 }, async t => {

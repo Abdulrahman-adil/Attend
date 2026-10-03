@@ -19,7 +19,7 @@ function createUserController({ store, now }) {
         const current = await tx.get("SELECT * FROM users WHERE id=?", [
           req.user.id,
         ]);
-        if (current.role || current.company_id)
+        if ((current.role && current.role !== 'employee') || current.company_id)
           fail(
             409,
             "This account already belongs to an organization.",

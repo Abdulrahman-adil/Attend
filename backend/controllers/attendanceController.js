@@ -90,7 +90,7 @@ function createAttendanceController({ store, config, now }) {
               "This attendance record is already closed.",
               "ALREADY_CHECKED_OUT"
             );
-          if (record.location_id !== sample.locationId)
+          if (Number(record.location_id) !== Number(sample.locationId))
             fail(
               400,
               "Check out from the same work location.",
