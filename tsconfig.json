@@ -9,7 +9,8 @@
     "strict": true,
     "jsx": "react-jsx",
     "noEmit": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "types": ["vite/client"]
   },
   "include": ["*.ts", "*.tsx", "src", "pages", "components", "contexts", "hooks", "services"],
   "exclude": ["node_modules", "backend", "dist"]
