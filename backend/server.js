@@ -1,11 +1,10 @@
 const path = require("node:path");
 const { createApp } = require("./app");
 const { loadConfig } = require("./config");
-// const { openDatabase } = require('./db/database');
 const { createPostgresStore } = require("./db/postgres");
+const { createMailer, createOutboxWorker } = require("./services/emailService");
 
 async function startServer({ config = loadConfig(), logger = console } = {}) {
-  // Migrations are an explicit setup step; startup never changes the schema.
   const store = createPostgresStore({
     databaseUrl: config.databaseUrl,
   });
@@ -38,7 +37,44 @@ async function startServer({ config = loadConfig(), logger = console } = {}) {
     logger.info(
       `Server running on http://${config.host}:${server.address().port}`
     );
-    return { app, server, close };
+    let emailInterval = null;
+    let mailer = null;
+    let outboxWorker = null;
+    if (config.emailEnabled) {
+      try {
+        mailer = createMailer(config);
+        outboxWorker = createOutboxWorker({ store, config, mailer, logger });
+        emailInterval = setInterval(() => {
+          outboxWorker.drain().catch((err) => {
+            logger.error(
+              JSON.stringify({ event: "email.drain.error", error: err.message })
+            );
+          });
+        }, 30000);
+        emailInterval.unref();
+        logger.info(JSON.stringify({ event: "email.worker.started" }));
+      } catch (err) {
+        logger.error(
+          JSON.stringify({ event: "email.worker.start_failed", error: err.message })
+        );
+      }
+    }
+    const originalClose = close;
+    const enhancedClose = () => {
+      if (emailInterval) {
+        clearInterval(emailInterval);
+        emailInterval = null;
+      }
+      if (mailer && typeof mailer.close === "function") {
+        try {
+          mailer.close();
+        } catch (_) {
+          // ignore cleanup errors
+        }
+      }
+      return originalClose();
+    };
+    return { app, server, close: enhancedClose };
   } catch (error) {
     if (server) await new Promise((resolve) => server.close(resolve));
     await store.close();
