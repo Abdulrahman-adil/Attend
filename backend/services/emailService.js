@@ -1,5 +1,4 @@
 const crypto = require("node:crypto");
-const nodemailer = require("nodemailer");
 function encrypt(payload, key) {
   const iv = crypto.randomBytes(12);
   const cipher = crypto.createCipheriv("aes-256-gcm", key, iv);
@@ -42,35 +41,74 @@ async function queueEmail(
     ]
   );
 }
+
+// function createMailer(config) {
+//   if (!config.emailEnabled) return null;
+//   if (
+//     !config.smtp.host ||
+//     !config.smtp.user ||
+//     !config.smtp.pass ||
+//     !config.emailFrom
+//   )
+//     throw new Error("EMAIL_ENABLED requires complete SMTP configuration.");
+//   const transport = nodemailer.createTransport({
+//     host: config.smtp.host,
+//     port: config.smtp.port,
+//     secure: config.smtp.port === 465,
+//     requireTLS: config.smtp.port !== 465,
+//     auth: { user: config.smtp.user, pass: config.smtp.pass },
+//     pool: true,
+//     maxConnections: 2,
+//     maxMessages: 50,
+//     connectionTimeout: 10000,
+//     greetingTimeout: 10000,
+//     socketTimeout: 20000,
+//     disableFileAccess: true,
+//     disableUrlAccess: true,
+//   });
+//   return {
+//     send: (mail) => transport.sendMail({ from: config.emailFrom, ...mail }),
+//     close: () => transport.close(),
+//   };
+// }
 function createMailer(config) {
   if (!config.emailEnabled) return null;
-  if (
-    !config.smtp.host ||
-    !config.smtp.user ||
-    !config.smtp.pass ||
-    !config.emailFrom
-  )
-    throw new Error("EMAIL_ENABLED requires complete SMTP configuration.");
-  const transport = nodemailer.createTransport({
-    host: config.smtp.host,
-    port: config.smtp.port,
-    secure: config.smtp.port === 465,
-    requireTLS: config.smtp.port !== 465,
-    auth: { user: config.smtp.user, pass: config.smtp.pass },
-    pool: true,
-    maxConnections: 2,
-    maxMessages: 50,
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 20000,
-    disableFileAccess: true,
-    disableUrlAccess: true,
-  });
+
+  if (!config.resendApiKey || !config.emailFrom) {
+    throw new Error("EMAIL_ENABLED requires RESEND_API_KEY and EMAIL_FROM.");
+  }
+
+  const { Resend } = require("resend");
+  const resend = new Resend(config.resendApiKey);
+
   return {
-    send: (mail) => transport.sendMail({ from: config.emailFrom, ...mail }),
-    close: () => transport.close(),
+    send: async (mail) => {
+      const { data, error } = await resend.emails.send({
+        from: config.emailFrom,
+        to: mail.to,
+        subject: mail.subject,
+        text: mail.text,
+        ...(mail.messageId
+          ? { headers: { "Message-ID": mail.messageId } }
+          : {}),
+      });
+
+      if (error) {
+        const err = new Error(error.message || "Resend email failed");
+        err.code = error.name || "RESEND_ERROR";
+        throw err;
+      }
+
+      return {
+        messageId: data?.id,
+        rejected: [],
+      };
+    },
+
+    close: () => {},
   };
 }
+
 function compose(config, row, payload) {
   const common = {
     to: payload.to,
