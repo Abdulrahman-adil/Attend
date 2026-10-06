@@ -15,7 +15,7 @@ function createAuth({ store, config, now }) {
     res.cookie(cookieName, token, {
       httpOnly: true,
       secure: config.production,
-      sameSite: "lax",
+      sameSite: config.production ? "none" : "lax",
       path: "/",
       maxAge,
     });

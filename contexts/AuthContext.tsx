@@ -49,7 +49,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const headers = new Headers(init.headers)
     const method = (init.method || 'GET').toUpperCase()
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
-    return fetch(input, { ...init, headers, credentials: 'same-origin' })
+    return fetch(input, { ...init, headers, credentials: 'include' })
   }, [csrfToken])
 
   const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null) }, [])
@@ -58,7 +58,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     let active = true
     const restore = async () => {
       try {
-        const response = await fetch(`${API_URL}/auth/session`, { credentials: 'same-origin' })
+        const response = await fetch(`${API_URL}/auth/session`, { credentials: 'include' })
         const data = await json(response)
         if (active && response.ok) applySession(data)
       } finally { if (active) setLoading(false) }
@@ -70,7 +70,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const login = useCallback(async (email: string, password: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/login`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ email, password }),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'include', body: JSON.stringify({ email, password }),
       })
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in.') }
@@ -83,7 +83,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const googleLogin = useCallback(async (credential: string, platform?: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/google`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ credential, platform: platform || 'web' }),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'include', body: JSON.stringify({ credential, platform: platform || 'web' }),
       })
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in with Google.') }
@@ -96,7 +96,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const register = useCallback(async (name: string, email: string, password: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/register`, {
-        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ name, email, password }),
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'include', body: JSON.stringify({ name, email, password }),
       })
       const data = await json(response)
       return response.ok ? { success: true, message: messageFor(data, 'Account created.') } : { success: false, message: messageFor(data, 'Unable to create the account.') }
