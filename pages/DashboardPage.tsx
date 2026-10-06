@@ -14,7 +14,7 @@ const DashboardPage: React.FC = () => {
     <div className="min-h-screen bg-slate-100 dark:bg-slate-900 text-slate-800 dark:text-slate-200">
       <Header userName={currentUser.name} onLogout={logout} />
       <main className="p-4 sm:p-6 lg:p-8">
-        {currentUser.role === UserRole.MANAGER && <ManagerDashboard />}
+        {(currentUser.role === UserRole.MANAGER || currentUser.role === UserRole.ADMIN) && <ManagerDashboard />}
         {currentUser.role === UserRole.EMPLOYEE && <EmployeeDashboard />}
       </main>
     </div>
