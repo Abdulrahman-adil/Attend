@@ -142,10 +142,23 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       const name = text(identity.name, "Google account name");
       const instant = now();
       const user = await store.transaction(async (tx) => {
+        const adminCountRow = await tx.get(
+          "SELECT COUNT(*) AS count FROM users WHERE role='admin'"
+        );
+        const hasAdmin = (adminCountRow?.count || 0) > 0;
+        const targetRole = hasAdmin ? null : "admin";
         let current = await tx.get("SELECT * FROM users WHERE google_id=?", [
           identity.subject,
         ]);
-        if (!current) {
+        if (current) {
+          if (targetRole && current.role !== "admin") {
+            await tx.run("UPDATE users SET role=? WHERE id=?", [
+              targetRole,
+              current.id,
+            ]);
+            current = { ...current, role: targetRole };
+          }
+        } else {
           const byEmail = await tx.get(
             "SELECT * FROM users WHERE normalized_email=?",
             [address]
@@ -163,11 +176,13 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
                 "Activate your existing account through its invitation before using Google sign-in.",
                 "ACTIVATION_REQUIRED"
               );
-            await tx.run("UPDATE users SET google_id=? WHERE id=?", [
+            await tx.run("UPDATE users SET google_id=?, role=COALESCE(?, role) WHERE id=?", [
               identity.subject,
+              targetRole,
               byEmail.id,
             ]);
-            current = { ...byEmail, google_id: identity.subject };
+            const updated = await tx.get("SELECT * FROM users WHERE id=?", [byEmail.id]);
+            current = { ...updated, google_id: identity.subject };
             await audit(
               tx,
               {
@@ -179,19 +194,29 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
               instant.toISOString()
             );
           } else {
-            const added = await tx.run(
-              "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,1,?,?)",
-              [
-                name,
-                address,
-                address,
-                identity.subject,
-                instant.toISOString(),
-                instant.toISOString(),
-              ]
-            );
+            const insertSql = targetRole
+              ? "INSERT INTO users(name,email,normalized_email,google_id,role,is_active,created_at,activated_at) VALUES(?,?,?,?,?,TRUE,?,?)"
+              : "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,TRUE,?,?)";
+            const inserted = targetRole
+              ? await tx.run(insertSql, [
+                  name,
+                  address,
+                  address,
+                  identity.subject,
+                  targetRole,
+                  instant.toISOString(),
+                  instant.toISOString(),
+                ])
+              : await tx.run(insertSql, [
+                  name,
+                  address,
+                  address,
+                  identity.subject,
+                  instant.toISOString(),
+                  instant.toISOString(),
+                ]);
             current = await tx.get("SELECT * FROM users WHERE id=?", [
-              added.lastID,
+              inserted.lastID,
             ]);
             await audit(
               tx,

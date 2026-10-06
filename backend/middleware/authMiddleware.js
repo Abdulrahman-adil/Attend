@@ -74,7 +74,10 @@ function createAuth({ store, config, now }) {
     next();
   });
   const manager = (req, _res, next) => {
-    if (req.user.role !== "manager" || !req.user.company_id)
+    if (
+      (req.user.role !== "manager" && req.user.role !== "admin") ||
+      !req.user.company_id
+    )
       return next(
         Object.assign(new Error("Manager access is required."), {
           status: 403,
