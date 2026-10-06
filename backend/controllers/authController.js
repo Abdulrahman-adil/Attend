@@ -195,8 +195,8 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
             );
           } else {
             const insertSql = targetRole
-              ? "INSERT INTO users(name,email,normalized_email,google_id,role,is_active,created_at,activated_at) VALUES(?,?,?,?,?,TRUE,?,?)"
-              : "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,TRUE,?,?)";
+              ? "INSERT INTO users(name,email,normalized_email,google_id,role,is_active,created_at,activated_at) VALUES(?,?,?,?,?,TRUE,?,?) RETURNING id"
+              : "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,TRUE,?,?) RETURNING id";
             const inserted = targetRole
               ? await tx.run(insertSql, [
                   name,
