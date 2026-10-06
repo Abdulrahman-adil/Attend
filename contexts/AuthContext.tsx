@@ -10,6 +10,7 @@ interface AuthContextType {
   csrfToken: string | null
   loading: boolean
   login: (email: string, password: string) => Promise<AuthResult>
+  googleLogin: (credential: string, platform?: string) => Promise<AuthResult>
   register: (name: string, email: string, password: string) => Promise<AuthResult>
   logout: () => Promise<void>
   createOrganization: (companyName: string, timezone: string) => Promise<AuthResult>
@@ -79,6 +80,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
   }, [applySession, navigate])
 
+  const googleLogin = useCallback(async (credential: string, platform?: string): Promise<AuthResult> => {
+    try {
+      const response = await fetch(`${API_URL}/auth/google`, {
+        method: 'POST', headers: { 'Content-Type': 'application/json' }, credentials: 'same-origin', body: JSON.stringify({ credential, platform: platform || 'web' }),
+      })
+      const data = await json(response)
+      if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in with Google.') }
+      const user = applySession(data)
+      navigate(user.role ? '/dashboard' : '/select-role', { replace: true })
+      return { success: true, message: 'Signed in.', user }
+    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
+  }, [applySession, navigate])
+
   const register = useCallback(async (name: string, email: string, password: string): Promise<AuthResult> => {
     try {
       const response = await fetch(`${API_URL}/auth/register`, {
@@ -108,7 +122,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     finally { clearSession(); navigate('/login', { replace: true }) }
   }, [apiFetch, clearSession, navigate])
 
-  const value = useMemo(() => ({ currentUser, csrfToken, loading, login, register, logout, createOrganization, apiFetch }),
+  const value = useMemo(() => ({ currentUser, csrfToken, loading, login, googleLogin, register, logout, createOrganization, apiFetch }),
     [apiFetch, createOrganization, csrfToken, currentUser, loading, login, logout, register])
   if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-900"><p>Loading application…</p></div>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>

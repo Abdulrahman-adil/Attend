@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import { useGoogleLogin } from '@react-oauth/google'
 
 const RegisterPage: React.FC = () => {
   const [name, setName] = useState('')
@@ -9,7 +10,19 @@ const RegisterPage: React.FC = () => {
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
   const [loading, setLoading] = useState(false)
-  const { register } = useAuth()
+  const { register, googleLogin } = useAuth()
+
+  const handleGoogleLogin = useGoogleLogin({
+    onSuccess: async (credentialResponse) => {
+      const cred = credentialResponse as { credential?: string }
+      if (cred.credential) {
+        await googleLogin(cred.credential, 'web')
+      }
+    },
+    onError: () => {
+      setError('Google sign-in failed. Please try again.')
+    },
+  })
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -25,10 +38,6 @@ const RegisterPage: React.FC = () => {
       setError(result.message)
     }
     setLoading(false)
-  }
-
-  const handleGoogleLogin = () => {
-    setError('Google sign-in is not available yet. Please register with your email and password.')
   }
 
   return (
@@ -51,7 +60,7 @@ const RegisterPage: React.FC = () => {
         {!success && (
           <>
             <button
-              onClick={handleGoogleLogin}
+              onClick={() => handleGoogleLogin()}
               className="w-full flex items-center justify-center gap-2 bg-white dark:bg-slate-700 border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 py-2.5 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-600 transition duration-300 mb-4"
             >
               <svg className="w-5 h-5" viewBox="0 0 48 48">
