@@ -12,16 +12,54 @@ function createEmployeeController({ store, config, now }) {
       const companyId = req.user.company_id;
       let invitationResult = null;
       const user = await store.transaction(async (tx) => {
-        if (
-          await tx.get("SELECT id FROM users WHERE normalized_email=?", [
-            address,
-          ])
-        )
+        const existing = await tx.get(
+          "SELECT * FROM users WHERE normalized_email=?",
+          [address]
+        );
+        if (existing) {
+          if (
+            existing.role === "employee" &&
+            !existing.is_active &&
+            (existing.company_id === null || existing.company_id === companyId)
+          ) {
+            await tx.run(
+              "UPDATE users SET company_id=?, invited_at=? WHERE id=?",
+              [companyId, instant.toISOString(), existing.id]
+            );
+            const reusedEmployee = {
+              id: existing.id,
+              name: existing.name,
+              email: address,
+              company_id: companyId,
+              role: "employee",
+              is_active: false,
+            };
+            invitationResult = await issueInvitation(
+              tx,
+              config,
+              reusedEmployee,
+              "invitation",
+              req.user.id,
+              instant
+            );
+            await audit(
+              tx,
+              {
+                companyId,
+                actorId: req.user.id,
+                subjectId: existing.id,
+                type: "employee.invited",
+              },
+              instant.toISOString()
+            );
+            return reusedEmployee;
+          }
           fail(
             409,
             "An account already uses this email. For a pending employee in your organization, use Resend invitation.",
             "ACCOUNT_EXISTS"
           );
+        }
         const created = await tx.run(
           "INSERT INTO users(name,email,normalized_email,role,company_id,created_at) VALUES(?,?,?,'employee',?,?) RETURNING id",
           [name, address, address, companyId, instant.toISOString()]
