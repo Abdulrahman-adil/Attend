@@ -17,15 +17,30 @@ const EmployeeDashboard: React.FC = () => {
   const location = useGeolocation()
   const [dashboardData, setDashboardData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const fetchData = useCallback(async () => {
     setLoading(true)
+    setErrorMessage(null)
     try {
       const response = await apiFetch(`${API_URL}/attendance/dashboard`)
-      if (!response.ok) throw new Error('Failed to load dashboard data.')
-      setDashboardData(await response.json())
-    } catch (error) { console.error(error) }
-    finally { setLoading(false) }
+      if (!response.ok) {
+        let msg = 'Failed to load dashboard data.'
+        try {
+          const data = await response.json()
+          if (data?.message) msg = data.message
+        } catch {}
+        setErrorMessage(msg)
+        setDashboardData(null)
+      } else {
+        setDashboardData(await response.json())
+      }
+    } catch (error) {
+      setErrorMessage(error instanceof Error ? error.message : 'Failed to load dashboard data.')
+      setDashboardData(null)
+    } finally {
+      setLoading(false)
+    }
   }, [apiFetch])
 
   useEffect(() => {
@@ -47,7 +62,13 @@ const EmployeeDashboard: React.FC = () => {
     return <div className="text-center p-8">Loading dashboard...</div>
   }
 
-  if (!currentUser || !dashboardData) return null
+  if (!currentUser) return null
+
+  if (errorMessage) {
+    return <div className="text-center p-8 text-red-600 dark:text-red-400">{errorMessage}</div>
+  }
+
+  if (!dashboardData) return null
 
   const { company, locations, latestAttendance } = dashboardData
 

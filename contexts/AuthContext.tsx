@@ -49,6 +49,15 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const headers = new Headers(init.headers)
     const method = (init.method || 'GET').toUpperCase()
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
+    // Fallback bearer token for GET /api/attendance/dashboard when cookie may not cross host
+    if (method === 'GET' && input.includes('/attendance/dashboard')) {
+      const cookieName = document.cookie.includes('__Host-attend_session') ? '__Host-attend_session' : 'attend_session'
+      const match = document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))
+      if (match) {
+        const token = match.split('=')[1]
+        if (token) headers.set('Authorization', 'Bearer ' + token)
+      }
+    }
     return fetch(input, { ...init, headers, credentials: 'include' })
   }, [csrfToken])
 
