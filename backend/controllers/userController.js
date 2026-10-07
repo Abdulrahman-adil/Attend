@@ -19,7 +19,7 @@ function createUserController({ store, now }) {
         const current = await tx.get("SELECT * FROM users WHERE id=?", [
           req.user.id,
         ]);
-        if ((current.role && current.role !== 'employee') || current.company_id)
+        if ((current.role && current.role !== 'employee' && current.role !== 'admin') || current.company_id)
           fail(
             409,
             "This account already belongs to an organization.",
@@ -29,9 +29,10 @@ function createUserController({ store, now }) {
           "INSERT INTO companies(name,owner_id,timezone,timezone_configured) VALUES(?,?,?,TRUE) RETURNING id",
           [name, current.id, zone]
         );
+        const newRole = current.role === 'admin' ? 'admin' : 'manager';
         await tx.run(
-          "UPDATE users SET role='manager',company_id=? WHERE id=?",
-          [company.lastID, current.id]
+          "UPDATE users SET role=?,company_id=? WHERE id=?",
+          [newRole, company.lastID, current.id]
         );
         await audit(
           tx,
@@ -43,7 +44,7 @@ function createUserController({ store, now }) {
           },
           time
         );
-        return { ...current, role: "manager", company_id: company.lastID };
+        return { ...current, role: newRole, company_id: company.lastID };
       });
       res.json({ user: userDto(user), message: "Organization created." });
     },
