@@ -75,7 +75,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in.') }
       const user = applySession(data)
-      navigate(user.role ? '/dashboard' : '/select-role', { replace: true })
+      navigate(user.role ? (user.companyId ? '/dashboard' : '/select-role') : '/select-role', { replace: true })
       return { success: true, message: 'Signed in.', user }
     } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
   }, [applySession, navigate])
@@ -88,7 +88,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in with Google.') }
       const user = applySession(data)
-      navigate(user.role ? '/dashboard' : '/select-role', { replace: true })
+      navigate(user.role ? (user.companyId ? '/dashboard' : '/select-role') : '/select-role', { replace: true })
       return { success: true, message: 'Signed in.', user }
     } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
   }, [applySession, navigate])
