@@ -15,7 +15,8 @@ const AddEmployee: React.FC = () => {
       const response = await apiFetch(`${API_URL}/employees`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email }) })
       const data = await response.json()
       if (!response.ok) throw new Error(data.message || 'Unable to invite the employee.')
-      setMessage(`${data.employee.name} was invited. Delivery: ${data.delivery}.`); setName(''); setEmail('')
+      const messageText = `Delivery: ${data.delivery}.` + (data.activationUrl ? ` Activation URL: ${data.activationUrl}` : '');
+      setMessage(`${data.employee.name} was invited. ${messageText}`); setName(''); setEmail('')
       window.dispatchEvent(new CustomEvent('dataChanged', { detail: 'employees' }))
     } catch (error) { setError(error instanceof Error ? error.message : 'Unable to invite the employee.') }
     finally { setLoading(false) }

@@ -17,7 +17,7 @@ async function issueInvitation(tx, config, user, kind, actorId, instant) {
       (kind === "password_reset" ? 3600000 : config.invitationMs)
   ).toISOString();
   const invite = await tx.run(
-    "INSERT INTO invitations(user_id,company_id,token_hash,kind,created_at,expires_at,created_by) VALUES(?,?,?,?,?,?,?)RETURNING id",
+    "INSERT INTO invitations(user_id,company_id,token_hash,kind,created_at,expires_at,created_by) VALUES(?,?,?,?,?,?,?) RETURNING id",
     [user.id, user.company_id, hash(token), kind, time, expiresAt, actorId]
   );
   await queueEmail(
@@ -34,6 +34,6 @@ async function issueInvitation(tx, config, user, kind, actorId, instant) {
   );
   if (kind === "invitation")
     await tx.run("UPDATE users SET invited_at=? WHERE id=?", [time, user.id]);
-  return invite.lastID;
+  return { invitationId: invite.lastID, token };
 }
 module.exports = { issueInvitation };

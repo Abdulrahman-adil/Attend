@@ -10,6 +10,7 @@ function createEmployeeController({ store, config, now }) {
       const name = text(body.name, "Employee name");
       const instant = now();
       const companyId = req.user.company_id;
+      let invitationResult = null;
       const user = await store.transaction(async (tx) => {
         if (
           await tx.get("SELECT id FROM users WHERE normalized_email=?", [
@@ -31,9 +32,9 @@ function createEmployeeController({ store, config, now }) {
           email: address,
           company_id: companyId,
           role: "employee",
-          is_active:FALSE,
+          is_active: false,
         };
-        await issueInvitation(
+        invitationResult = await issueInvitation(
           tx,
           config,
           employee,
@@ -53,11 +54,15 @@ function createEmployeeController({ store, config, now }) {
         );
         return employee;
       });
-      res.status(201).json({
+      const payload = {
         employee: userDto(user),
         message: "Employee invited. An invitation email is queued.",
         delivery: config.emailEnabled ? "queued" : "disabled",
-      });
+      };
+      if (!config.emailEnabled && invitationResult && invitationResult.token) {
+        payload.activationUrl = `${config.frontendUrl}/#/activate/${invitationResult.token}`;
+      }
+      res.status(201).json(payload);
     },
     async list(req, res) {
       const { limit, offset } = page(req.query);
@@ -151,7 +156,7 @@ function createEmployeeController({ store, config, now }) {
             "OPEN_ATTENDANCE"
           );
         await tx.run(
-          "UPDATE users SET archived_at=?,is_active=0 WHERE id=? AND company_id=?",
+          "UPDATE users SET archived_at=?,is_active=false WHERE id=? AND company_id=?",
           [time, employeeId, req.user.company_id]
         );
         await tx.run(

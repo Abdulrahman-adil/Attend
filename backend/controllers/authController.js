@@ -56,7 +56,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
             "ACCOUNT_EXISTS"
           );
         const user = await tx.run(
-          "INSERT INTO users(name,email,normalized_email,password,created_at) VALUES(?,?,?,?,?)RETURNING id",
+          "INSERT INTO users(name,email,normalized_email,password,created_at) VALUES(?,?,?,?,?) RETURNING id",
           [name, address, address, encoded, instant.toISOString()]
         );
         await issueInvitation(
