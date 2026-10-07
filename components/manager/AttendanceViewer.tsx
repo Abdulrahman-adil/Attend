@@ -1,97 +1,143 @@
-import React, { useState, useEffect } from 'react';
-import { useAuth } from '../../contexts/AuthContext';
-import { User, AttendanceRecord } from '../../types';
-import { API_URL } from '../../src/config';
+import React, { useEffect, useState } from 'react'
+import { useAuth } from '../../contexts/AuthContext'
+import { User, AttendanceRecord } from '../../types'
+import { API_URL } from '../../src/config'
 
 const AttendanceViewer: React.FC = () => {
-  const [employees, setEmployees] = useState<User[]>([]);
-  const [selectedEmployeeId, setSelectedEmployeeId] = useState<string>('');
-  const [attendance, setAttendance] = useState<AttendanceRecord[]>([]);
-  const { apiFetch } = useAuth();
+  const [employees, setEmployees] = useState<User[]>([])
+  const [selectedEmployeeId, setSelectedEmployeeId] = useState('')
+  const [attendance, setAttendance] = useState<AttendanceRecord[]>([])
+  const { apiFetch } = useAuth()
 
   useEffect(() => {
     const fetchEmployees = async () => {
-            const response = await apiFetch(`${API_URL}/employees`);
-            const data = await response.json();
-            const items = data.items || [];
-            setEmployees(items);
-            if (items.length > 0) {
-                setSelectedEmployeeId(String(items[0].id));
-            }
-    };
-    fetchEmployees();
-  }, [apiFetch]);
+      const response = await apiFetch(`${API_URL}/employees`)
+      const data = await response.json()
+      const items = data.items || []
+      setEmployees(items)
+      if (items.length > 0) setSelectedEmployeeId(String(items[0].id))
+    }
+    fetchEmployees()
+  }, [apiFetch])
 
   useEffect(() => {
     const fetchAttendance = async () => {
-        if (selectedEmployeeId) {
-            const response = await apiFetch(`${API_URL}/attendance/${selectedEmployeeId}`);
-            const data = await response.json();
-            setAttendance(data.items || []);
-        } else {
-            setAttendance([]);
-        }
-    };
-    fetchAttendance();
-  }, [apiFetch, selectedEmployeeId]);
+      if (!selectedEmployeeId) return setAttendance([])
+      const response = await apiFetch(
+        `${API_URL}/attendance/${selectedEmployeeId}`,
+      )
+      const data = await response.json()
+      setAttendance(data.items || [])
+    }
+    fetchAttendance()
+  }, [apiFetch, selectedEmployeeId])
 
-  const formatTime = (isoString?: string) => {
-    if (!isoString) return 'N/A';
-    return new Date(isoString).toLocaleTimeString();
-  };
-
-  const formatDate = (isoString: string) => {
-      return new Date(isoString).toLocaleDateString();
+  const selected = employees.find(
+    (emp) => String(emp.id) === selectedEmployeeId,
+  )
+  const open = attendance.filter((record) => !record.checkOutTime).length
+  const time = (value?: string) =>
+    value
+      ? new Date(value).toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        })
+      : '—'
+  const date = (value: string) =>
+    new Date(value).toLocaleDateString('en-GB', {
+      day: '2-digit',
+      month: 'short',
+    })
+  const duration = (record: AttendanceRecord) => {
+    if (!record.checkOutTime) return 'مفتوحة'
+    const minutes = Math.round(
+      (new Date(record.checkOutTime).getTime() -
+        new Date(record.checkInTime).getTime()) /
+        60000,
+    )
+    const hours = Math.floor(minutes / 60)
+    return `${hours}س ${minutes % 60}د`
   }
 
   return (
-    <div className="bg-white dark:bg-slate-800 p-6 rounded-lg shadow-md">
-      <h3 className="text-xl font-semibold mb-4 text-slate-800 dark:text-white">View Attendance</h3>
-      <div className="mb-4">
-        <label htmlFor="employee-select" className="block text-sm font-medium text-slate-700 dark:text-slate-300">Select Employee</label>
-        <select
-          id="employee-select"
-          value={selectedEmployeeId}
-          onChange={(e) => setSelectedEmployeeId(e.target.value)}
-          className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-slate-300 dark:border-slate-600 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md bg-slate-50 dark:bg-slate-700 text-slate-900 dark:text-white"
-        >
-          {employees.map(emp => (
-            <option key={emp.id} value={emp.id}>{emp.name}</option>
-          ))}
-        </select>
+    <section className="space-y-5">
+      <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm text-indigo-300">الحضور</p>
+          <h3 className="text-2xl font-semibold text-white">
+            سجل {selected?.name || 'الموظف'}
+          </h3>
+        </div>
+        <label className="w-full sm:w-64">
+          <span className="mb-1 block text-xs text-slate-400">الموظف</span>
+          <select
+            value={selectedEmployeeId}
+            onChange={(event) => setSelectedEmployeeId(event.target.value)}
+            className="w-full rounded-xl border border-slate-700 bg-slate-900 px-3 py-2 text-white"
+          >
+            {employees.map((emp) => (
+              <option key={emp.id} value={emp.id}>
+                {emp.name}
+              </option>
+            ))}
+          </select>
+        </label>
       </div>
-      <div className="overflow-x-auto">
-        <table className="w-full text-left">
-          <thead className="border-b border-slate-300 dark:border-slate-700">
-            <tr>
-              <th className="py-2 px-4 text-slate-600 dark:text-slate-400 font-semibold">Date</th>
-              <th className="py-2 px-4 text-slate-600 dark:text-slate-400 font-semibold">Check-In</th>
-              <th className="py-2 px-4 text-slate-600 dark:text-slate-400 font-semibold">Check-Out</th>
-              <th className="py-2 px-4 text-slate-600 dark:text-slate-400 font-semibold">Location</th>
-            </tr>
-          </thead>
-          <tbody>
-            {attendance.length > 0 ? (
-              attendance.map((record) => (
-                <tr key={record.id} className="border-b border-slate-200 dark:border-slate-700">
-                  <td className="py-3 px-4">{formatDate(record.checkInTime)}</td>
-                  <td className="py-3 px-4">{formatTime(record.checkInTime)}</td>
-                  <td className="py-3 px-4">{formatTime(record.checkOutTime)}</td>
-                  <td className="py-3 px-4">{record.locationName || 'N/A'}</td>
-                </tr>
-              ))
-            ) : (
-              <tr>
-                <td colSpan={4} className="text-center py-4 text-slate-500 dark:text-slate-400">
-                  No attendance records found for this employee.
-                </td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-      </div>
-    </div>
-  );
-};
 
-export default AttendanceViewer;
+      <div className="grid grid-cols-3 gap-3">
+        <div className="rounded-2xl bg-slate-900 p-4">
+          <p className="text-xs text-slate-400">السجلات</p>
+          <p className="mt-1 text-2xl font-semibold text-white">
+            {attendance.length}
+          </p>
+        </div>
+        <div className="rounded-2xl bg-slate-900 p-4">
+          <p className="text-xs text-slate-400">جلسات مفتوحة</p>
+          <p className="mt-1 text-2xl font-semibold text-white">{open}</p>
+        </div>
+        <div className="rounded-2xl bg-slate-900 p-4">
+          <p className="text-xs text-slate-400">آخر موقع</p>
+          <p className="mt-1 truncate text-lg font-semibold text-white">
+            {attendance[0]?.locationName || '—'}
+          </p>
+        </div>
+      </div>
+
+      <div className="space-y-3">
+        {attendance.length === 0 ? (
+          <p className="rounded-2xl bg-slate-900 p-6 text-center text-slate-400">
+            لا يوجد حضور لهذا الموظف.
+          </p>
+        ) : (
+          attendance.map((record) => (
+            <article
+              key={record.id}
+              className="grid gap-3 rounded-2xl border border-slate-800 bg-slate-900/80 p-4 sm:grid-cols-4"
+            >
+              <div>
+                <p className="text-xs text-slate-500">التاريخ</p>
+                <p className="text-white">{date(record.checkInTime)}</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500">حضور</p>
+                <p className="text-emerald-300">{time(record.checkInTime)}</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500">انصراف</p>
+                <p className="text-rose-300">{time(record.checkOutTime)}</p>
+              </div>
+              <div>
+                <p className="text-xs text-slate-500">
+                  {record.locationName || 'بدون موقع'}
+                </p>
+                <p className="text-white">{duration(record)}</p>
+              </div>
+            </article>
+          ))
+        )}
+      </div>
+    </section>
+  )
+}
+
+export default AttendanceViewer
