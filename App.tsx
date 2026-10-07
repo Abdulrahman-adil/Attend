@@ -21,7 +21,7 @@ const AppRoutes: React.FC = () => {
       <Route 
         path="/" 
         element={
-          currentUser ? <Navigate to={currentUser.role ? '/dashboard' : '/select-role'} replace /> : <Navigate to="/login" replace />
+          currentUser ? <Navigate to={currentUser.role ? (currentUser.companyId ? '/dashboard' : '/select-role') : '/select-role'} replace /> : <Navigate to="/login" replace />
         } 
       />
 
