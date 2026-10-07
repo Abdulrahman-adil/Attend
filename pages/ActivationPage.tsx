@@ -19,7 +19,7 @@ const ActivationPage: React.FC = () => {
 
     const inspect = async () => {
       try {
-        const response = await fetch(`${API_URL}/auth/inspect`, {
+        const response = await fetch(`${API_URL}/auth/invitation/inspect`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ token }),
