@@ -124,6 +124,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
         res.json({
           user: userDto(user),
           csrfToken: session.csrfToken,
+          token: session.token,
           serverTime: instant.toISOString(),
         });
     },
@@ -251,12 +252,13 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
           expiresIn: Math.floor(config.sessionMs / 1000),
         });
       auth.setCookie(res, session.token);
-      res.json({ ...payload, csrfToken: session.csrfToken });
+      res.json({ ...payload, csrfToken: session.csrfToken, token: session.token });
     },
     async session(req, res) {
       res.json({
         user: userDto(req.user),
         csrfToken: req.csrfToken,
+        token: req.sessionTransport === 'cookie' ? (req.headers.cookie || '').split('; ').find(row => row.startsWith(config.production ? '__Host-attend_session=' : 'attend_session='))?.split('=')[1] || null : null,
         serverTime: now().toISOString(),
       });
     },

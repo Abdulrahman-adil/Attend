@@ -33,15 +33,18 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
   const [csrfToken, setCsrfToken] = useState<string | null>(null)
+  const [token, setToken] = useState<string | null>(null)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
   const applySession = useCallback((data: Record<string, unknown>) => {
     const user = data.user as User | undefined
     const csrf = typeof data.csrfToken === 'string' ? data.csrfToken : null
+    const sessionToken = typeof data.token === 'string' ? data.token : null
     if (!user || !csrf) throw new Error('The server returned an incomplete session.')
     setCurrentUser(user)
     setCsrfToken(csrf)
+    if (sessionToken) setToken(sessionToken)
     return user
   }, [])
 
@@ -49,19 +52,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const headers = new Headers(init.headers)
     const method = (init.method || 'GET').toUpperCase()
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
-    // Fallback bearer token for GET /api/attendance/dashboard when cookie may not cross host
-    if (method === 'GET' && input.includes('/attendance/dashboard')) {
-      const cookieName = document.cookie.includes('__Host-attend_session') ? '__Host-attend_session' : 'attend_session'
-      const match = document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))
-      if (match) {
-        const token = match.split('=')[1]
-        if (token) headers.set('Authorization', 'Bearer ' + token)
-      }
-    }
+    if (token) headers.set('Authorization', 'Bearer ' + token)
     return fetch(input, { ...init, headers, credentials: 'include' })
-  }, [csrfToken])
+  }, [csrfToken, token])
 
-  const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null) }, [])
+  const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null); setToken(null) }, [])
 
   useEffect(() => {
     let active = true
