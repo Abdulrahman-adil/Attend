@@ -83,36 +83,23 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       });
     },
     async login(req, res) {
-      try {
-        const body = object(req.body);
-        const address = email(body.email);
+      const body = object(req.body);
+      const address = email(body.email);
         if (
           typeof body.password !== "string" ||
           !body.password.length ||
           Buffer.byteLength(body.password) > 72
         )
           fail(400, "Enter your email and password.", "VALIDATION");
-        let user;
-        try {
-          user = await store.read((tx) =>
-            tx.get("SELECT * FROM users WHERE normalized_email=?", [address])
-          );
-        } catch (dbErr) {
-          console.error("DIAG_LOGIN_USER_LOOKUP_ERROR:", dbErr.name || "Unknown", dbErr.message || String(dbErr), dbErr.code ? `pg_code=${dbErr.code}` : "", dbErr.stack ? "stack_available=true" : "");
-          throw dbErr;
-        }
+        const user = await store.read((tx) =>
+          tx.get("SELECT * FROM users WHERE normalized_email=?", [address])
+        );
         // A fixed valid hash keeps non-existing-account checks on the bcrypt path as well.
         const encoded =
           user?.password && /^\$2[aby]\$/.test(user.password)
             ? user.password
             : "$2b$12$YAWOTSWbABebkxAuSoUFMeFiOBH.2SMKNIRakzSV8NF87CMDwtTPu";
-        let matches;
-        try {
-          matches = await bcrypt.compare(body.password, encoded);
-        } catch (bcryptErr) {
-          console.error("DIAG_LOGIN_BCRYPT_COMPARE_ERROR:", bcryptErr.name || "Unknown", bcryptErr.message || String(bcryptErr), bcryptErr.stack ? "stack_available=true" : "");
-          throw bcryptErr;
-        }
+        const matches = await bcrypt.compare(body.password, encoded);
         if (!user || !matches || user.archived_at || !user.is_active)
           fail(
             401,
@@ -120,51 +107,25 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
             "INVALID_CREDENTIALS"
           );
         const instant = now();
-        let session;
-        try {
-          session = await store.transaction(async (tx) => {
-            let current;
-            try {
-              current = await tx.get(
-                "SELECT * FROM users WHERE id=? AND is_active=1 AND archived_at IS NULL AND password=?",
-                [user.id, user.password]
-              );
-            } catch (txReadErr) {
-              console.error("DIAG_LOGIN_SESSION_USER_SELECT_ERROR:", txReadErr.name || "Unknown", txReadErr.message || String(txReadErr), txReadErr.code ? `pg_code=${txReadErr.code}` : "", txReadErr.stack ? "stack_available=true" : "");
-              throw txReadErr;
-            }
-            if (!current)
-              fail(
-                401,
-                "Account credentials changed. Please sign in again.",
-                "INVALID_CREDENTIALS"
-              );
-            try {
-              return auth.loginSession(tx, current, instant);
-            } catch (loginSessionErr) {
-              console.error("DIAG_LOGIN_SESSION_CREATE_ERROR:", loginSessionErr.name || "Unknown", loginSessionErr.message || String(loginSessionErr), loginSessionErr.code ? `pg_code=${loginSessionErr.code}` : "", loginSessionErr.stack ? "stack_available=true" : "");
-              throw loginSessionErr;
-            }
-          });
-        } catch (txErr) {
-          console.error("DIAG_LOGIN_TRANSACTION_ERROR:", txErr.name || "Unknown", txErr.message || String(txErr), txErr.code ? `pg_code=${txErr.code}` : "", txErr.stack ? "stack_available=true" : "");
-          throw txErr;
-        }
-        try {
-          auth.setCookie(res, session.token);
-        } catch (cookieErr) {
-          console.error("DIAG_LOGIN_COOKIE_ERROR:", cookieErr.name || "Unknown", cookieErr.message || String(cookieErr), cookieErr.stack ? "stack_available=true" : "");
-          throw cookieErr;
-        }
+        const session = await store.transaction(async (tx) => {
+          const current = await tx.get(
+            "SELECT * FROM users WHERE id=? AND is_active=TRUE AND archived_at IS NULL AND password=?",
+            [user.id, user.password]
+          );
+          if (!current)
+            fail(
+              401,
+              "Account credentials changed. Please sign in again.",
+              "INVALID_CREDENTIALS"
+            );
+          return auth.loginSession(tx, current, instant);
+        });
+        auth.setCookie(res, session.token);
         res.json({
           user: userDto(user),
           csrfToken: session.csrfToken,
           serverTime: instant.toISOString(),
         });
-      } catch (err) {
-        console.error("DIAG_LOGIN_UNHANDLED_ERROR:", err.name || "Unknown", err.message || String(err), err.status ? `status=${err.status}` : "", err.code ? `code=${err.code}` : "", err.stack ? "stack_available=true" : "");
-        throw err;
-      }
     },
     async googleLogin(req, res) {
       const body = object(req.body);
