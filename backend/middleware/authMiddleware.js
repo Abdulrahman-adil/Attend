@@ -60,6 +60,7 @@ function createAuth({ store, config, now }) {
       );
     req.user = user;
     req.sessionHash = sessionHash;
+    req.sessionToken = token;
     req.csrfToken = csrfToken(token, config.secret);
     req.sessionTransport = cookies[cookieName] ? "cookie" : "bearer";
     if (

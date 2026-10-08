@@ -51,7 +51,7 @@ The active GIS credential flow uses POST /api/auth/google, not the dead Passport
 
 Production retains Secure, HttpOnly, SameSite=None, Path=/ and no Domain with the __Host-attend_session name. None is intentional because app.vaniillaa.com and onrender.com are cross-site. CORS permits only the configured frontend origin with credentials. All browser session requests include credentials; authenticated mutations send the session's CSRF token.
 
-Test real Google login, session restoration after reload, CSRF rejection, expiry, logout/reload, inactive accounts and both supported browser privacy modes on the deployed domains. The frontend verifies session persistence after login and reports failure rather than silently showing a logged-in state.
+Test real Google login, session restoration after reload, CSRF rejection, expiry, logout/reload, inactive accounts and both supported browser privacy modes on the deployed domains. Successful password and Google web login responses establish the in-memory bearer session immediately. There is no second cookie confirmation request after login. On refresh, the frontend attempts cookie-based restoration; an initial 401 means no existing session and does not describe the result of a later login attempt.
 
 Browser third-party-cookie blocking can still prevent persistence. If target browsers block these cookies, reliable cross-site sessions remain a deployment blocker under the retained topology. A custom domain/proxy would require a separate authorized deployment decision; neither is implemented here.
 
@@ -62,3 +62,22 @@ Production integration tests accept only TEST_DATABASE_URL naming attend_test or
 Repository node_modules contains tracked, incomplete dependencies. For this implementation, dependencies and builds were isolated in the ignored .verification copy; tracked node_modules was not modified. A fresh dependency install is required for normal local execution. The SQLite native-install allowance exists only in that ignored copy and is not production configuration.
 
 Node 22+ is required. Canonical commands: npm test, npm run test:postgres, npm run test:legacy in backend; npm run build at the frontend root. Real PostgreSQL tests are skipped when no TEST_DATABASE_URL is configured. A passing unit suite or frontend build does not constitute PostgreSQL integration or production verification.
+
+
+## Auth follow-up to 21434b9 (2026-10-08)
+
+VERIFIED LOCALLY:
+
+- The reported `Please sign in.` response originates before JWT/database validation when neither an accepted cookie nor bearer token is present. This alone cannot distinguish failed login, refresh without a cookie, or a normal unauthenticated initial load.
+- Regression tests against 21434b9 reproduced five failures: password and Google immediate requests through a previously captured API helper omit the new bearer token; restoration reparses a valid semicolon-separated cookie header incorrectly when there is no space; failed logout clears local state; restoration network failures escape as unhandled rejections. These are reproduced code defects, not proof that any one caused the reported production incident. Normal dashboard rendering after login may already obtain the updated helper in 21434b9.
+- The API helper now reads current in-memory credentials synchronously. No browser storage persistence was added. Restoration returns the exact token already authenticated by middleware. Logout retains the local session on network/server failure, allowing retry; successful revocation or an already unauthenticated response clears it.
+- Secure, HttpOnly, SameSite=None, host-only cookie scope, CSRF, exact configured CORS origin, session hashing, PostgreSQL runtime and tenant queries remain intact. No schema, dependency, environment, account or deployment change was made.
+- Tests ran inside the ignored `.verification` copy: `node --test tools/auth-context.test.cjs backend/tests/unit/*.test.js` passed 20 tests. The frontend tests execute the actual provider with a hook harness, not a real browser. HTTP tests use an in-memory store double and mocked Google identity, not PostgreSQL or real accounts.
+- `node --test backend/tests/*.test.js backend/tests/legacy/*.test.js` passed the single legacy migration test; 15 PostgreSQL tests were skipped with no test database configured. TypeScript checks for both tsconfig files and Vite production build passed (61 modules).
+
+EXTERNAL VERIFICATION REQUIRED:
+
+- Incident classification A/B/C/D requires a real browser trace. Record only request statuses, initiators, and presence (never values) of credentials: POST `/api/auth/login` or `/google`, dashboard GET, and `/auth/session` before/after refresh. A startup session 401 is expected when signed out. Check the browser's Set-Cookie rejection explanation and whether the refresh request includes the cookie.
+- Verify deployed frontend/backend revisions, Render `FRONTEND_URL=https://app.vaniillaa.com`, HTTPS, credentialed preflight, Google client audience/origin configuration, and real PostgreSQL session insertion/revocation. No external settings were changed or deployment triggered manually.
+- Existing employee, newly activated employee, existing admin, real Google login, real dashboard navigation, tenant isolation and logout/reload require real integration/browser verification. New account activation and tenant tests remain skipped, not passed.
+- The backend remains `https://attend-api-f60m.onrender.com`; frontend remains `https://app.vaniillaa.com`. If the browser blocks third-party cookies, refresh cannot recover a token that exists only in page memory. This remains a deployment decision/blocker; these fixes do not override browser privacy policy or introduce a custom domain/proxy.

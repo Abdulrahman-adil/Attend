@@ -1,4 +1,4 @@
-import React, { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react'
+import React, { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { User, UserRole } from '../types'
 import { API_URL } from '../src/config'
@@ -33,7 +33,8 @@ export const useAuth = () => {
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentUser, setCurrentUser] = useState<User | null>(null)
   const [csrfToken, setCsrfToken] = useState<string | null>(null)
-  const [token, setToken] = useState<string | null>(null)
+  // Requests made immediately after login must see credentials before React renders.
+  const credentials = useRef<{ token: string; csrfToken: string } | null>(null)
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
 
@@ -41,22 +42,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const user = data.user as User | undefined
     const csrf = typeof data.csrfToken === 'string' ? data.csrfToken : null
     const sessionToken = typeof data.token === 'string' ? data.token : null
-    if (!user || !csrf) throw new Error('The server returned an incomplete session.')
+    if (!user || !csrf || !sessionToken) throw new Error('The server returned an incomplete session.')
+    credentials.current = { token: sessionToken, csrfToken: csrf }
     setCurrentUser(user)
     setCsrfToken(csrf)
-    if (sessionToken) setToken(sessionToken)
     return user
   }, [])
 
   const apiFetch = useCallback(async (input: string, init: RequestInit = {}) => {
     const headers = new Headers(init.headers)
     const method = (init.method || 'GET').toUpperCase()
+    const { token, csrfToken } = credentials.current || {}
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
     if (token) headers.set('Authorization', 'Bearer ' + token)
     return fetch(input, { ...init, headers, credentials: 'include' })
-  }, [csrfToken, token])
+  }, [])
 
-  const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null); setToken(null) }, [])
+  const clearSession = useCallback(() => { credentials.current = null; setCurrentUser(null); setCsrfToken(null) }, [])
 
   useEffect(() => {
     let active = true
@@ -65,6 +67,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const response = await fetch(`${API_URL}/auth/session`, { credentials: 'include' })
         const data = await json(response)
         if (active && response.ok) applySession(data)
+      } catch {
+        // Restoration is optional; a network failure must leave sign-in usable.
       } finally { if (active) setLoading(false) }
     }
     void restore()
@@ -122,12 +126,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [apiFetch])
 
   const logout = useCallback(async () => {
-    try { await apiFetch(`${API_URL}/auth/logout`, { method: 'POST' }) }
-    finally { clearSession(); navigate('/login', { replace: true }) }
+    const response = await apiFetch(`${API_URL}/auth/logout`, { method: 'POST' })
+    if (!response.ok && response.status !== 401) throw new Error('Sign-out failed. Please try again.')
+    clearSession()
+    navigate('/login', { replace: true })
   }, [apiFetch, clearSession, navigate])
 
   const value = useMemo(() => ({ currentUser, csrfToken, loading, login, googleLogin, register, logout, createOrganization, apiFetch }),
-    [apiFetch, createOrganization, csrfToken, currentUser, loading, login, logout, register])
+    [apiFetch, createOrganization, csrfToken, currentUser, loading, login, googleLogin, logout, register])
   if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-900"><p>Loading application…</p></div>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

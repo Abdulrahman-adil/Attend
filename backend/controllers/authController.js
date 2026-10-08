@@ -224,7 +224,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       res.json({
         user: userDto(req.user),
         csrfToken: req.csrfToken,
-        token: req.sessionTransport === 'cookie' ? (req.headers.cookie || '').split('; ').find(row => row.startsWith(config.production ? '__Host-attend_session=' : 'attend_session='))?.split('=')[1] || null : null,
+        token: req.sessionToken,
         serverTime: now().toISOString(),
       });
     },
