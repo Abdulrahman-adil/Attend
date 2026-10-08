@@ -49,16 +49,9 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const headers = new Headers(init.headers)
     const method = (init.method || 'GET').toUpperCase()
     if (!['GET', 'HEAD', 'OPTIONS'].includes(method) && csrfToken) headers.set('X-CSRF-Token', csrfToken)
-    // Fallback bearer token for GET /api/attendance/dashboard when cookie may not cross host
-    if (method === 'GET' && input.includes('/attendance/dashboard')) {
-      const cookieName = document.cookie.includes('__Host-attend_session') ? '__Host-attend_session' : 'attend_session'
-      const match = document.cookie.split('; ').find(row => row.startsWith(cookieName + '='))
-      if (match) {
-        const token = match.split('=')[1]
-        if (token) headers.set('Authorization', 'Bearer ' + token)
-      }
-    }
-    return fetch(input, { ...init, headers, credentials: 'include' })
+    const response = await fetch(input, { ...init, headers, credentials: 'include' })
+    if (response.status === 401) { setCurrentUser(null); setCsrfToken(null) }
+    return response
   }, [csrfToken])
 
   const clearSession = useCallback(() => { setCurrentUser(null); setCsrfToken(null) }, [])
@@ -70,10 +63,16 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         const response = await fetch(`${API_URL}/auth/session`, { credentials: 'include' })
         const data = await json(response)
         if (active && response.ok) applySession(data)
-      } finally { if (active) setLoading(false) }
+      } catch { if (active) { setCurrentUser(null); setCsrfToken(null) } } finally { if (active) setLoading(false) }
     }
     void restore()
     return () => { active = false }
+  }, [applySession])
+
+  const confirmSession = useCallback(async () => {
+    const response = await fetch(`${API_URL}/auth/session`, { credentials: 'include', cache: 'no-store' })
+    if (!response.ok) throw new Error('The browser could not retain the session cookie. Check browser cookie settings for this application.')
+    return applySession(await json(response))
   }, [applySession])
 
   const login = useCallback(async (email: string, password: string): Promise<AuthResult> => {
@@ -83,11 +82,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       })
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in.') }
-      const user = applySession(data)
+      const user = await confirmSession()
       navigate(user.role ? (user.companyId ? '/dashboard' : '/select-role') : '/select-role', { replace: true })
       return { success: true, message: 'Signed in.', user }
-    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
-  }, [applySession, navigate])
+    } catch (error) { return { success: false, message: error instanceof Error ? error.message : 'Unable to sign in.' } }
+  }, [confirmSession, navigate])
 
   const googleLogin = useCallback(async (credential: string, platform?: string): Promise<AuthResult> => {
     try {
@@ -96,11 +95,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       })
       const data = await json(response)
       if (!response.ok) return { success: false, message: messageFor(data, 'Unable to sign in with Google.') }
-      const user = applySession(data)
+      const user = await confirmSession()
       navigate(user.role ? (user.companyId ? '/dashboard' : '/select-role') : '/select-role', { replace: true })
       return { success: true, message: 'Signed in.', user }
-    } catch { return { success: false, message: 'Unable to reach the server. Please try again.' } }
-  }, [applySession, navigate])
+    } catch (error) { return { success: false, message: error instanceof Error ? error.message : 'Unable to sign in.' } }
+  }, [confirmSession, navigate])
 
   const register = useCallback(async (name: string, email: string, password: string): Promise<AuthResult> => {
     try {
@@ -127,12 +126,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [apiFetch])
 
   const logout = useCallback(async () => {
-    try { await apiFetch(`${API_URL}/auth/logout`, { method: 'POST' }) }
-    finally { clearSession(); navigate('/login', { replace: true }) }
+    const response = await apiFetch(`${API_URL}/auth/logout`, { method: 'POST' })
+    if (!response.ok && response.status !== 401) throw new Error('Sign-out failed. Please try again.')
+    clearSession(); navigate('/login', { replace: true })
   }, [apiFetch, clearSession, navigate])
 
   const value = useMemo(() => ({ currentUser, csrfToken, loading, login, googleLogin, register, logout, createOrganization, apiFetch }),
-    [apiFetch, createOrganization, csrfToken, currentUser, loading, login, logout, register])
+    [apiFetch, createOrganization, csrfToken, currentUser, loading, login, googleLogin, logout, register])
   if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-100 dark:bg-slate-900"><p>Loading application…</p></div>
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
 }

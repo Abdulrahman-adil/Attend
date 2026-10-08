@@ -2,6 +2,7 @@ const crypto = require("node:crypto");
 const { hash } = require("../lib/http");
 const { queueEmail } = require("./emailService");
 async function issueInvitation(tx, config, user, kind, actorId, instant) {
+  await tx.get("SELECT id FROM users WHERE id=? FOR UPDATE", [user.id]);
   const time = instant.toISOString();
   await tx.run(
     "UPDATE email_outbox SET status='cancelled',payload_encrypted=NULL WHERE invitation_id IN (SELECT id FROM invitations WHERE user_id=? AND kind=?) AND status IN ('pending','failed')",
@@ -24,9 +25,9 @@ async function issueInvitation(tx, config, user, kind, actorId, instant) {
     tx,
     config,
     {
-      eventKey: `invitation:${invite.lastID}`,
+      eventKey: `invitation:${invite.id}`,
       companyId: user.company_id,
-      invitationId: invite.lastID,
+      invitationId: invite.id,
       kind,
       payload: { to: user.email, name: user.name, token, expiresAt },
     },
@@ -34,6 +35,6 @@ async function issueInvitation(tx, config, user, kind, actorId, instant) {
   );
   if (kind === "invitation")
     await tx.run("UPDATE users SET invited_at=? WHERE id=?", [time, user.id]);
-  return { invitationId: invite.lastID, token };
+  return { invitationId: invite.id, token };
 }
 module.exports = { issueInvitation };

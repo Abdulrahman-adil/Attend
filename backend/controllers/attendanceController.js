@@ -27,7 +27,7 @@ function createAttendanceController({ store, config, now }) {
       );
       const result = await store.transaction(async (tx) => {
         const current = await tx.get(
-          "SELECT id FROM users WHERE id=? AND company_id=? AND role='employee' AND is_active=TRUE AND archived_at IS NULL",
+          "SELECT id FROM users WHERE id=? AND company_id=? AND role='employee' AND is_active=TRUE AND archived_at IS NULL FOR UPDATE",
           [req.user.id, req.user.company_id]
         );
         if (!current)
@@ -45,7 +45,7 @@ function createAttendanceController({ store, config, now }) {
             );
           return {
             status: existing.status_code,
-            body: JSON.parse(existing.response_json),
+            body: existing.response_json,
             replayed: true,
           };
         }
@@ -76,7 +76,7 @@ function createAttendanceController({ store, config, now }) {
             ]
           );
           record = await tx.get("SELECT * FROM attendance WHERE id=?", [
-            added.lastID,
+            added.id,
           ]);
         } else {
           record = await tx.get(
@@ -100,7 +100,7 @@ function createAttendanceController({ store, config, now }) {
             allowRetired: true,
           });
           const time = now().toISOString();
-          if (time < record.check_in_time)
+          if (Date.parse(time) < new Date(record.check_in_time).getTime())
             fail(
               503,
               "Server clock is inconsistent. Please contact support.",
@@ -110,7 +110,7 @@ function createAttendanceController({ store, config, now }) {
             "UPDATE attendance SET check_out_time=?,check_out_latitude=?,check_out_longitude=? WHERE id=? AND check_out_time IS NULL",
             [time, sample.latitude, sample.longitude, record.id]
           );
-          if (updated.changes !== 1)
+          if (updated.rowCount !== 1)
             fail(
               409,
               "Attendance changed. Refresh and try again.",
@@ -222,7 +222,9 @@ function createAttendanceController({ store, config, now }) {
           "SELECT a.*,l.name AS location_name FROM attendance a LEFT JOIN locations l ON l.id=a.location_id WHERE a.employee_id=? AND a.company_id=? ORDER BY a.check_in_time DESC,a.id DESC LIMIT ? OFFSET ?",
           [employeeId, req.user.company_id, limit, offset]
         );
+        const company = await tx.get("SELECT timezone FROM companies WHERE id=?", [req.user.company_id]);
         return {
+          timezone: company.timezone,
           items: rows.map(attendanceDto),
           total: (
             await tx.get(

@@ -1,5 +1,7 @@
 const express = require("express");
 const cors = require("cors");
+const { checkSchema } = require('./db/postgresMigrations');
+const { requestSecurity } = require('./middleware/requestSecurity');
 const { createAuth } = require("./middleware/authMiddleware");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const { wrap } = require("./lib/http");
@@ -50,11 +52,11 @@ function createApp({
   app.get(
     "/api/health",
     wrap(async (_req, res) => {
-      await store.read((tx) => tx.get("SELECT 1"));
+      await checkSchema(store);
       res.json({ status: "ok" });
     })
   );
-  app.use("/api/auth", createAuthRoutes({ auth, controller: authController }));
+  app.use("/api/auth", requestSecurity(config), createAuthRoutes({ auth, controller: authController }));
   app.use(
     "/api/users",
     createUserRoutes({ auth, controller: userController, employeeController })

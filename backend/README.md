@@ -1,53 +1,44 @@
 # Attend backend
 
-The backend uses Express and SQLite. `app.js` assembles the middleware, controllers and routes; `server.js` loads the local configuration, opens an already migrated database, then starts listening. Importing either module does not start a server or open the application database.
+Production uses PostgreSQL and the existing Google Identity Services login, Express, and database-backed JWT sessions. SQLite is an optional development dependency for explicitly invoked legacy/recovery tools, never server startup.
 
-## Local setup
+## Configuration and commands
 
-Run these commands in the `backend` directory.
+Use Node 22 or later. Install with `npm ci`; production installs can use `npm ci --omit=dev`. Preserve existing environment configuration. See `.env.example` and [the deployment procedure](../docs/postgres-deployment.md).
 
-1. Run `npm install` if dependencies are not installed.
-2. For a new environment, copy `.env.example` to `.env`. Preserve an existing `.env` and add missing settings to it instead of overwriting it.
-3. Set `JWT_SECRET` and `OUTBOX_ENCRYPTION_KEY` using the generation commands in `.env.example`. Keep the outbox key stable so queued mail remains decryptable. The normal development origin is `http://localhost:5174`.
-4. Prepare the database as described below.
-5. Run `npm start` or `npm run dev`. Check `http://127.0.0.1:5001/api/health`; a ready instance returns `{"status":"ok"}`.
+- `npm run db:check`: read-only PostgreSQL schema/version inspection.
+- `npm run db:migrate`: explicit transactional migrations for a new empty or already tracked PostgreSQL schema.
+- `npm run db:baseline`: explicitly adopt an existing untracked baseline after catalog checks, then apply additive migrations.
+- `npm run admin:bootstrap`: promote an existing active Google-authenticated account selected by operator environment configuration; refuses if any admin exists.
+- `npm start`: validate schema then serve HTTP; never migrate.
+- `npm test`: unit/protocol tests; no database or external Google/Resend calls.
+- `npm run test:postgres`: integration tests in fresh random schemas of an explicitly configured dedicated PostgreSQL test database. Without TEST_DATABASE_URL these tests are skipped, not passed.
+- `npm run test:legacy`: isolated in-memory SQLite migration/schema tests.
+- `npm run legacy:check` and `npm run legacy:migrate`: existing SQLite commands, only on an actual backed-up legacy database.
 
-The default database is `backend/db/attendance.db`. Set `DB_PATH` to an absolute filename to use a separate database. Environment variables supplied by the shell override `.env`. `HOST` defaults to `127.0.0.1`; `PORT` defaults to `5001`.
+The legacy repair script remains offline and unchanged. It can create synthetic recovery identities and MUST NOT be used for this migration. No SQLite import or data cleanup is performed by the PostgreSQL commands.
 
-## Database preparation
+## Authentication
 
-For a **new, empty database**, run `npm run db:migrate` to create its schema.
+The frontend Google button obtains a credential and submits JSON to POST /api/auth/google. The backend verifies Google's signature/issuer/expiry/audience through google-auth-library and requires a verified email. The old Passport redirect endpoints remain unavailable; there is no active callback URL or authorization-code/state exchange. Do not wire the unused Passport module back into production.
 
-For an **existing database**, take a SQLite-consistent backup first, then run `npm run db:check`. Resolve reported integrity problems before running `npm run db:migrate`. A stopped application's database can be copied together with any WAL files; SQLite's backup API is preferable while it is in use. Startup refuses pending migrations and never applies them automatically.
+Existing password login, activation, and password reset remain available. Password reset revokes database sessions while retaining an existing Google identity link.
 
-If a legacy database has missing user references, use `scripts/repair-legacy-users.js` only after a backup and a rehearsal on a copy. It produces a read-only plan by default. With `--apply`, it preserves referenced user IDs using inactive, archived recovery accounts with generated archive-only emails; it never restores passwords or real email addresses. It optionally recovers a display name only when a historical source confirms both the user role and company. The script then migrates inside the same transaction and checks database integrity before committing.
+Web sessions use the production cookie __Host-attend_session (Secure, HttpOnly, Path=/, no Domain, SameSite=None), an eight-hour JWT and a required session lookup. Cookie mutations require the returned X-CSRF-Token. Mobile Google login retains its bearer-token response. Roles and active/archive status are read from the database on authenticated requests.
 
-Example rehearsal:
+Authentication requests reject foreign Origin headers and non-JSON login requests. A bounded per-process limiter covers login/registration/link requests; proxy addresses are not blindly trusted. Behind a reverse proxy, the IP limit may be shared. Verify edge rate limiting and legitimate traffic capacity before release.
 
-```sh
-node scripts/repair-legacy-users.js --database /path/to/copy.sqlite --identity-source /path/to/historical.sqlite
-node scripts/repair-legacy-users.js --database /path/to/copy.sqlite --identity-source /path/to/historical.sqlite --apply
-DB_PATH=/path/to/copy.sqlite npm run db:check
+## Outbox
+
+Mail is encrypted with AES-256-GCM and sent through Resend HTTPS. Jobs are claimed with row locks and SKIP LOCKED, expire correctly with PostgreSQL timestamps, retry with backoff, and stop after five attempts. Lease attempt checks prevent stale workers from overwriting a newer claim. Requests have a 20-second timeout and a stable provider idempotency key; external delivery is not an exactly-once guarantee. Shutdown stops further claims and waits for the current drain before closing the pool.
+
+The worker starts immediately and polls every 30 seconds only while the web service is running. A sleeping free service cannot guarantee background delivery. With EMAIL_ENABLED=false, mail remains queued, so public password registration/activation requires a delivery arrangement.
+
+Read-only operational checks:
+```sql
+SELECT status, count(*) FROM email_outbox GROUP BY status;
+SELECT min(created_at) FROM email_outbox WHERE status='pending';
+SELECT count(*) FROM email_outbox WHERE status='failed';
 ```
 
-## Tests
-
-Run `npm test`. Tests exercise real HTTP routes, cookie sessions, CSRF checks, organization setup, invitations, work locations, attendance commands, tenant isolation, startup and shutdown. All records are synthetic. SQLite databases are in memory or in temporary directories, and email delivery is disabled. Local listening sockets are required.
-
-## API wiring
-
-| Area | Routes |
-| --- | --- |
-| Health | `GET /api/health` |
-| Authentication | `POST /api/auth/register`, `/login`, `/activate`, `/invitation/inspect`, `/request-link`; `GET /api/auth/session`; `POST /api/auth/logout` |
-| Organization setup | `POST /api/users/role` |
-| Employees | `GET/POST /api/employees`; `POST /api/employees/:id/resend`; `DELETE /api/employees/:id` |
-| Existing archival URL | `DELETE /api/users/users/:id`, using the same tenant-scoped archival handler |
-| Locations | `GET/POST /api/locations`; `DELETE /api/locations/:id` |
-| Attendance | `POST /api/attendance/check-in`, `/check-out`; `GET /api/attendance/dashboard`; `GET /api/attendance/:employeeId` |
-
-Protected routes use the session cookie. Mutations also require the `X-CSRF-Token` returned by login/session. Attendance commands require `Idempotency-Key`; checkout additionally requires `attendanceId`. The old `/api/attendance/clock` route returns `409 CLIENT_UPGRADE_REQUIRED` after authentication instead of guessing a toggle action.
-
-## Remaining integration work
-
-This step repairs backend startup and route wiring. The existing React client still needs its request bodies, session handling and response parsing updated. Google endpoints return `503 GOOGLE_AUTH_UNAVAILABLE` until that integration is restored. Email is queued in the outbox, but its delivery worker is not started by this version. Setting `EMAIL_ENABLED=true` alone does not start delivery.
+No automatic retention deletion or failed-message reset is added. Review retention and retry decisions separately, preserving historical records and the encryption key.

@@ -12,9 +12,9 @@ function createAuthRoutes({ auth, controller }) {
   router.get('/session', auth.protect, wrap(controller.session));
   router.post('/logout', auth.protect, wrap(controller.logout));
 
-  // The previous Google integration still uses the removed database/auth API.
+  // Google Identity Services uses POST /google; there is no redirect callback flow.
   router.get(['/google', '/google/callback'], wrap(() => {
-    fail(503, 'Google sign-in is currently unavailable. Please sign in with your email and password.', 'GOOGLE_AUTH_UNAVAILABLE');
+    fail(503, 'Use the Google sign-in button in the application.', 'GOOGLE_AUTH_UNAVAILABLE');
   }));
   return router;
 }

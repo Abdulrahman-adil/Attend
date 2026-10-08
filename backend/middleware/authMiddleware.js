@@ -20,6 +20,7 @@ function createAuth({ store, config, now }) {
       maxAge,
     });
   const protect = wrap(async (req, _res, next) => {
+    _res.set('Cache-Control', 'no-store');
     const cookies = Object.fromEntries(
       (req.headers.cookie || "").split(";").map((s) => {
         const i = s.indexOf("=");

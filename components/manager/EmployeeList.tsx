@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { User } from '../../types';
+import { fetchAll } from '../../services/apiPagination';
 import { API_URL } from '../../src/config';
 
 interface EmployeeItem extends User {
@@ -19,10 +20,7 @@ const EmployeeList: React.FC = () => {
     setError('');
     setLoading(true);
     try {
-      const response = await apiFetch(`${API_URL}/employees`);
-      if (!response.ok) throw new Error('Failed to fetch employees');
-      const data = await response.json();
-      setEmployees(data.items || []);
+      setEmployees(await fetchAll<EmployeeItem>(apiFetch, `${API_URL}/employees`));
     } catch (err: any) {
       setError(err.message || 'Failed to load employees');
     } finally {

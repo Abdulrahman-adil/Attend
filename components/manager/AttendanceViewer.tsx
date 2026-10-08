@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { User, AttendanceRecord } from '../../types'
+import { fetchAll } from '../../services/apiPagination'
 import { API_URL } from '../../src/config'
 
 const AttendanceViewer: React.FC = () => {
@@ -8,16 +9,16 @@ const AttendanceViewer: React.FC = () => {
   const [selectedEmployeeId, setSelectedEmployeeId] = useState('')
   const [attendance, setAttendance] = useState<AttendanceRecord[]>([])
   const { apiFetch } = useAuth()
+  const [error, setError] = useState('')
+  const [timezone, setTimezone] = useState('UTC')
 
   useEffect(() => {
     const fetchEmployees = async () => {
-      const response = await apiFetch(`${API_URL}/employees`)
-      const data = await response.json()
-      const items = data.items || []
+      const items = await fetchAll<User>(apiFetch, `${API_URL}/employees`)
       setEmployees(items)
       if (items.length > 0) setSelectedEmployeeId(String(items[0].id))
     }
-    fetchEmployees()
+    void fetchEmployees().catch(error => setError(error.message))
   }, [apiFetch])
 
   useEffect(() => {
@@ -27,9 +28,12 @@ const AttendanceViewer: React.FC = () => {
         `${API_URL}/attendance/${selectedEmployeeId}`,
       )
       const data = await response.json()
-      setAttendance(data.items || [])
+      if (!response.ok) throw new Error(data.message || 'Unable to load attendance.')
+      setTimezone(data.timezone || 'UTC')
+      setAttendance(await fetchAll<AttendanceRecord>(apiFetch, `${API_URL}/attendance/${selectedEmployeeId}`))
     }
-    fetchAttendance()
+    setError('')
+    void fetchAttendance().catch(error => setError(error.message))
   }, [apiFetch, selectedEmployeeId])
 
   const selected = employees.find(
@@ -39,12 +43,14 @@ const AttendanceViewer: React.FC = () => {
   const time = (value?: string) =>
     value
       ? new Date(value).toLocaleTimeString([], {
+          timeZone: timezone,
           hour: '2-digit',
           minute: '2-digit',
         })
       : '—'
   const date = (value: string) =>
     new Date(value).toLocaleDateString('en-GB', {
+      timeZone: timezone,
       day: '2-digit',
       month: 'short',
     })
@@ -61,6 +67,7 @@ const AttendanceViewer: React.FC = () => {
 
   return (
     <section className="space-y-5">
+      {error && <p role="alert" className="text-red-600">{error}</p>}
       <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm text-indigo-300">الحضور</p>

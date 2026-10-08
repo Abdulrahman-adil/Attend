@@ -11,6 +11,7 @@ function loadConfig(env = process.env) {
     frontend.password ||
     frontend.search ||
     frontend.hash ||
+    frontend.pathname !== "/" ||
     (production &&
       (frontend.protocol !== "https:" ||
         ["localhost", "127.0.0.1"].includes(frontend.hostname)))
@@ -41,6 +42,10 @@ function loadConfig(env = process.env) {
     )
   )
     throw new Error("Google client IDs must be valid Google OAuth client IDs.");
+  if (production && !env.DATABASE_URL) throw new Error("DATABASE_URL is required in production.");
+  if (production && !env.GOOGLE_WEB_CLIENT_ID) throw new Error("GOOGLE_WEB_CLIENT_ID is required in production.");
+  if (env.EMAIL_ENABLED === "true" && (!env.RESEND_API_KEY || !env.EMAIL_FROM))
+    throw new Error("EMAIL_ENABLED requires RESEND_API_KEY and EMAIL_FROM.");
   return {
     production,
     secret,
@@ -54,17 +59,9 @@ function loadConfig(env = process.env) {
     host: env.HOST || "0.0.0.0",
     sessionMs: 8 * 60 * 60 * 1000,
     invitationMs: 24 * 60 * 60 * 1000,
-    //emailEnabled: env.EMAIL_ENABLED === "true",
-    // smtp: {
-    //   host: env.EMAIL_HOST,
-    //   port: Number(env.EMAIL_PORT || 587),
-    //   user: env.EMAIL_USER,
-    //   pass: env.EMAIL_PASS,
-    // },
     emailEnabled: env.EMAIL_ENABLED === "true",
     resendApiKey: env.RESEND_API_KEY,
     emailFrom: env.EMAIL_FROM,
-    //emailFrom: env.EMAIL_FROM || env.EMAIL_USER,
     google: {
       clientIds: [...new Set(googleClientIds)],
       webClientId: (env.GOOGLE_WEB_CLIENT_ID || "").trim() || null,

@@ -1,4 +1,4 @@
-const test = require('node:test');
+const { pgTest: test } = require('./helpers/app');
 const assert = require('node:assert/strict');
 const request = require('supertest');
 const { testApp, seedOrganization } = require('./helpers/app');
@@ -23,7 +23,7 @@ test('manager archival is tenant scoped, preserves history, and revokes the empl
   await request(app).get('/api/auth/session').set(employee).expect(401);
   const archived = await store.read(tx => tx.get('SELECT * FROM users WHERE id=?', [first.employeeId]));
   assert.ok(archived.archived_at);
-  assert.equal(archived.is_active, 0);
+  assert.equal(archived.is_active, false);
   const history = await request(app).get(`/api/attendance/${first.employeeId}`).set(manager).expect(200);
   assert.equal(history.body.total, 1);
   const foreign = await store.read(tx => tx.get('SELECT * FROM users WHERE id=?', [second.employeeId]));
@@ -39,5 +39,5 @@ test('an employee with open attendance cannot be archived', async t => {
   assert.equal(result.body.code, 'OPEN_ATTENDANCE');
   const employee = await store.read(tx => tx.get('SELECT * FROM users WHERE id=?', [company.employeeId]));
   assert.equal(employee.archived_at, null);
-  assert.equal(employee.is_active, 1);
+  assert.equal(employee.is_active, true);
 });

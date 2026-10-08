@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import type {
   AttendanceRecord,
   GeolocationState,
@@ -19,6 +19,7 @@ const ClockInOut: React.FC<Props> = ({
   latestAttendance,
 }) => {
   const { apiFetch } = useAuth()
+  const pendingRequest = useRef<{ body: string; key: string; action: string } | null>(null)
   const [selectedLocationId, setSelectedLocationId] = useState('')
   const [message, setMessage] = useState<{
     type: 'success' | 'error'
@@ -54,26 +55,26 @@ const ClockInOut: React.FC<Props> = ({
         type: 'error',
         text: 'Select a valid work location.',
       })
+    const body = JSON.stringify({ latitude, longitude, locationId, accuracy: currentLocation.accuracy,
+      ...(action === 'check-out' ? { attendanceId: latestAttendance?.id } : {}) })
+    if (!pendingRequest.current || pendingRequest.current.action !== action)
+      pendingRequest.current = { body, key: crypto.randomUUID(), action }
+    const pending = pendingRequest.current
     setLoading(true)
     try {
       const response = await apiFetch(`${API_URL}/attendance/${action}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Idempotency-Key': crypto.randomUUID(),
+          'Idempotency-Key': pending.key,
         },
-        body: JSON.stringify({
-          latitude,
-          longitude,
-          locationId,
-          ...(action === 'check-out'
-            ? { attendanceId: latestAttendance?.id }
-            : {}),
-        }),
+        body: pending.body,
       })
       const data = await response.json()
+      if (response.status >= 400 && response.status < 500) pendingRequest.current = null
       if (!response.ok)
         throw new Error(data.message || 'Attendance action failed.')
+      pendingRequest.current = null
       const text =
         action === 'check-in' ? 'تم تسجيل الحضور' : 'تم تسجيل الانصراف'
       setMessage({ type: 'success', text })

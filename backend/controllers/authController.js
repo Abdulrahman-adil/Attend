@@ -22,7 +22,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       inv.revoked_at ||
       inv.consumed_at ||
       inv.archived_at ||
-      inv.expires_at <= instant.toISOString()
+      new Date(inv.expires_at).getTime() <= instant.getTime()
     )
       fail(
         410,
@@ -62,16 +62,16 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
         await issueInvitation(
           tx,
           config,
-          { id: user.lastID, name, email: address, company_id: null },
+          { id: user.id, name, email: address, company_id: null },
           "activation",
-          user.lastID,
+          user.id,
           instant
         );
         await audit(
           tx,
           {
-            actorId: user.lastID,
-            subjectId: user.lastID,
+            actorId: user.id,
+            subjectId: user.id,
             type: "account.registered",
           },
           instant.toISOString()
@@ -109,7 +109,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
         const instant = now();
         const session = await store.transaction(async (tx) => {
           const current = await tx.get(
-            "SELECT * FROM users WHERE id=? AND is_active=TRUE AND archived_at IS NULL AND password=?",
+            "SELECT * FROM users WHERE id=? AND is_active=TRUE AND archived_at IS NULL AND password=? FOR UPDATE",
             [user.id, user.password]
           );
           if (!current)
@@ -141,26 +141,13 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       const address = email(identity.email);
       const name = text(identity.name, "Google account name");
       const instant = now();
-      const user = await store.transaction(async (tx) => {
-        const adminCountRow = await tx.get(
-          "SELECT COUNT(*) AS count FROM users WHERE role='admin'"
-        );
-        const hasAdmin = (adminCountRow?.count || 0) > 0;
-        const targetRole = hasAdmin ? null : "admin";
-        let current = await tx.get("SELECT * FROM users WHERE google_id=?", [
-          identity.subject,
-        ]);
-        if (current) {
-          if (targetRole && current.role !== "admin") {
-            await tx.run("UPDATE users SET role=? WHERE id=?", [
-              targetRole,
-              current.id,
-            ]);
-            current = { ...current, role: targetRole };
-          }
-        } else {
+      const { user, session } = await store.transaction(async (tx) => {
+        // Serialize Google identity linking/creation, including identities not yet present.
+        await tx.get("SELECT pg_advisory_xact_lock(734221, 2)");
+        let current = await tx.get("SELECT * FROM users WHERE google_id=? FOR UPDATE", [identity.subject]);
+        if (!current) {
           const byEmail = await tx.get(
-            "SELECT * FROM users WHERE normalized_email=?",
+            "SELECT * FROM users WHERE normalized_email=? FOR UPDATE",
             [address]
           );
           if (byEmail) {
@@ -176,9 +163,8 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
                 "Activate your existing account through its invitation before using Google sign-in.",
                 "ACTIVATION_REQUIRED"
               );
-            await tx.run("UPDATE users SET google_id=?, role=COALESCE(?, role) WHERE id=?", [
+            await tx.run("UPDATE users SET google_id=? WHERE id=?", [
               identity.subject,
-              targetRole,
               byEmail.id,
             ]);
             const updated = await tx.get("SELECT * FROM users WHERE id=?", [byEmail.id]);
@@ -194,29 +180,12 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
               instant.toISOString()
             );
           } else {
-            const insertSql = targetRole
-              ? "INSERT INTO users(name,email,normalized_email,google_id,role,is_active,created_at,activated_at) VALUES(?,?,?,?,?,TRUE,?,?) RETURNING id"
-              : "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,TRUE,?,?) RETURNING id";
-            const inserted = targetRole
-              ? await tx.run(insertSql, [
-                  name,
-                  address,
-                  address,
-                  identity.subject,
-                  targetRole,
-                  instant.toISOString(),
-                  instant.toISOString(),
-                ])
-              : await tx.run(insertSql, [
-                  name,
-                  address,
-                  address,
-                  identity.subject,
-                  instant.toISOString(),
-                  instant.toISOString(),
-                ]);
+            const inserted = await tx.run(
+              "INSERT INTO users(name,email,normalized_email,google_id,is_active,created_at,activated_at) VALUES(?,?,?,?,TRUE,?,?) RETURNING id",
+              [name, address, address, identity.subject, instant.toISOString(), instant.toISOString()]
+            );
             current = await tx.get("SELECT * FROM users WHERE id=?", [
-              inserted.lastID,
+              inserted.id,
             ]);
             await audit(
               tx,
@@ -235,11 +204,8 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
             "This Google-linked account is inactive.",
             "INVALID_CREDENTIALS"
           );
-        return current;
+        return { user: current, session: await auth.loginSession(tx, current, instant) };
       });
-      const session = await store.transaction((tx) =>
-        auth.loginSession(tx, user, instant)
-      );
       const payload = {
         user: userDto(user),
         serverTime: instant.toISOString(),
@@ -295,6 +261,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
           ? null
           : await bcrypt.hash(password(req.body.password), 12);
       await store.transaction(async (tx) => {
+        await tx.get("SELECT id FROM users WHERE id=? FOR UPDATE", [pending.user_id]);
         const inv = await findInvitation(tx, token, instant);
         ensureValid(inv, instant);
         const time = instant.toISOString();
@@ -302,7 +269,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
           "UPDATE invitations SET consumed_at=? WHERE id=? AND consumed_at IS NULL AND revoked_at IS NULL AND expires_at>?",
           [time, inv.id, time]
         );
-        if (consumed.changes !== 1)
+        if (consumed.rowCount !== 1)
           fail(
             410,
             "This link has already been used.",
@@ -310,7 +277,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
           );
         if (inv.kind === "password_reset") {
           await tx.run(
-            "UPDATE users SET password=?,google_id=NULL WHERE id=?",
+            "UPDATE users SET password=? WHERE id=?",
             [encoded, inv.user_id]
           );
           await tx.run(
@@ -335,7 +302,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
               "INVITATION_UNAVAILABLE"
             );
           await tx.run(
-            "UPDATE users SET is_active=TRUE,activated_at=?,password=COALESCE(?,password),google_id=NULL WHERE id=?",
+            "UPDATE users SET is_active=TRUE,activated_at=?,password=COALESCE(?,password) WHERE id=?",
             [time, encoded, inv.user_id]
           );
           await audit(
@@ -397,7 +364,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
       const instant = now();
       await store.transaction(async (tx) => {
         const user = await tx.get(
-          "SELECT * FROM users WHERE normalized_email=? AND archived_at IS NULL",
+          "SELECT * FROM users WHERE normalized_email=? AND archived_at IS NULL FOR UPDATE",
           [address]
         );
         if (
@@ -408,7 +375,7 @@ function createAuthController({ store, config, now, auth, googleIdentity }) {
         const purpose =
           kind === "password_reset"
             ? kind
-            : user.role === "employee"
+            : user.company_id !== null
             ? "invitation"
             : "activation";
         const recent = await tx.get(

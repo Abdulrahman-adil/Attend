@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import { WorkLocation } from '../../types'
+import { fetchAll } from '../../services/apiPagination'
 import { API_URL } from '../../src/config'
 
 const field =
@@ -17,11 +18,7 @@ const LocationManager: React.FC = () => {
   const [loading, setLoading] = useState(false)
 
   const refresh = useCallback(async () => {
-    const response = await apiFetch(`${API_URL}/locations`)
-    const data = await response.json()
-    if (!response.ok)
-      throw new Error(data.message || 'Unable to load locations.')
-    setLocations(data)
+    setLocations(await fetchAll<WorkLocation>(apiFetch, `${API_URL}/locations`))
   }, [apiFetch])
 
   useEffect(() => {

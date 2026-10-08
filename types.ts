@@ -27,7 +27,7 @@ export interface WorkLocation {
   latitude: number;
   longitude: number;
   radius: number; // in meters
-  companyId: string;
+  companyId: number;
 }
 
 export interface AttendanceRecord {
@@ -42,6 +42,7 @@ export interface AttendanceRecord {
 }
 
 export interface GeolocationState {
+    accuracy?: number;
     latitude: number | null;
     longitude: number | null;
     error: string | null;
