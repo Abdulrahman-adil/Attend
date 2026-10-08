@@ -42,35 +42,6 @@ async function queueEmail(
   );
 }
 
-// function createMailer(config) {
-//   if (!config.emailEnabled) return null;
-//   if (
-//     !config.smtp.host ||
-//     !config.smtp.user ||
-//     !config.smtp.pass ||
-//     !config.emailFrom
-//   )
-//     throw new Error("EMAIL_ENABLED requires complete SMTP configuration.");
-//   const transport = nodemailer.createTransport({
-//     host: config.smtp.host,
-//     port: config.smtp.port,
-//     secure: config.smtp.port === 465,
-//     requireTLS: config.smtp.port !== 465,
-//     auth: { user: config.smtp.user, pass: config.smtp.pass },
-//     pool: true,
-//     maxConnections: 2,
-//     maxMessages: 50,
-//     connectionTimeout: 10000,
-//     greetingTimeout: 10000,
-//     socketTimeout: 20000,
-//     disableFileAccess: true,
-//     disableUrlAccess: true,
-//   });
-//   return {
-//     send: (mail) => transport.sendMail({ from: config.emailFrom, ...mail }),
-//     close: () => transport.close(),
-//   };
-// }
 function createMailer(config) {
   if (!config.emailEnabled) return null;
 
@@ -91,7 +62,7 @@ function createMailer(config) {
         ...(mail.messageId
           ? { headers: { "Message-ID": mail.messageId } }
           : {}),
-      });
+      }, { idempotencyKey: mail.messageId, signal: AbortSignal.timeout(20000) });
 
       if (error) {
         const err = new Error(error.message || "Resend email failed");
@@ -163,15 +134,17 @@ function createOutboxWorker({
   logger = console,
 }) {
   let running = false;
-  async function drain(limit = 10) {
-    if (!mailer || running) return;
+  let stopped = false;
+  let active = Promise.resolve();
+  async function processJobs(limit = 10) {
+    if (!mailer || running || stopped) return;
     running = true;
     try {
-      for (let i = 0; i < limit; i++) {
+      for (let i = 0; i < limit && !stopped; i++) {
         const instant = now();
         const job = await store.transaction(async (tx) => {
           const row = await tx.get(
-            "SELECT * FROM email_outbox WHERE (status='pending' AND next_attempt_at<=?) OR (status='sending' AND locked_until<=?) ORDER BY id LIMIT 1",
+            "SELECT * FROM email_outbox WHERE (status='pending' AND next_attempt_at<=?) OR (status='sending' AND locked_until<=?) ORDER BY id LIMIT 1 FOR UPDATE SKIP LOCKED",
             [instant.toISOString(), instant.toISOString()]
           );
           if (!row) return null;
@@ -184,7 +157,7 @@ function createOutboxWorker({
               !invitation ||
               invitation.consumed_at ||
               invitation.revoked_at ||
-              invitation.expires_at <= instant.toISOString()
+              new Date(invitation.expires_at).getTime() <= instant.getTime()
             ) {
               await tx.run(
                 "UPDATE email_outbox SET status='cancelled',payload_encrypted=NULL WHERE id=?",
@@ -192,6 +165,10 @@ function createOutboxWorker({
               );
               return { cancelled: true };
             }
+          }
+          if (row.attempts >= 5) {
+            await tx.run("UPDATE email_outbox SET status='failed',locked_until=NULL,last_error='RETRY_EXHAUSTED' WHERE id=?", [row.id]);
+            return { cancelled: true };
           }
           await tx.run(
             "UPDATE email_outbox SET status='sending',attempts=attempts+1,locked_until=? WHERE id=?",
@@ -212,8 +189,8 @@ function createOutboxWorker({
             throw new Error("Recipient rejected");
           await store.transaction((tx) =>
             tx.run(
-              "UPDATE email_outbox SET status='sent',sent_at=?,payload_encrypted=NULL,locked_until=NULL,last_error=NULL WHERE id=?",
-              [now().toISOString(), job.id]
+              "UPDATE email_outbox SET status='sent',sent_at=?,payload_encrypted=NULL,locked_until=NULL,last_error=NULL WHERE id=? AND status='sending' AND attempts=?",
+              [now().toISOString(), job.id, job.attempts + 1]
             )
           );
           logger.info(
@@ -232,7 +209,7 @@ function createOutboxWorker({
               : "DELIVERY_FAILED";
           await store.transaction((tx) =>
             tx.run(
-              "UPDATE email_outbox SET status=?,next_attempt_at=?,locked_until=NULL,last_error=? WHERE id=?",
+              "UPDATE email_outbox SET status=?,next_attempt_at=?,locked_until=NULL,last_error=? WHERE id=? AND status='sending' AND attempts=?",
               [
                 attempts >= 5 ? "failed" : "pending",
                 new Date(
@@ -240,6 +217,7 @@ function createOutboxWorker({
                 ).toISOString(),
                 code,
                 job.id,
+                attempts,
               ]
             )
           );
@@ -257,6 +235,11 @@ function createOutboxWorker({
       running = false;
     }
   }
-  return { drain };
+  function drain(limit = 10) {
+    if (running || stopped) return active;
+    active = processJobs(limit);
+    return active;
+  }
+  return { drain, async stop() { stopped = true; await active; } };
 }
 module.exports = { queueEmail, createMailer, createOutboxWorker, decrypt };

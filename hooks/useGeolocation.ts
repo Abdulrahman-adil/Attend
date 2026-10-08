@@ -20,6 +20,7 @@ export const useGeolocation = () => {
       (position) => {
         setLocation({
           latitude: position.coords.latitude,
+          accuracy: position.coords.accuracy,
           longitude: position.coords.longitude,
           error: null,
           loading: false,

@@ -1,126 +1,56 @@
-const { Pool } = require("pg");
-const { convertPlaceholders } = require("./sql");
+const { Pool, types } = require('pg');
+const { convertPlaceholders } = require('./sql');
 
+// Preserve the numeric API contract; never silently round BIGINT identities/counts.
+function safeInteger(value) {
+  const number = Number(value);
+  if (!Number.isSafeInteger(number)) throw new RangeError('Database integer exceeds the supported API range.');
+  return number;
+}
 function createPostgresStore(config = {}) {
+  const logger = config.logger || console;
   const pool = new Pool({
-    connectionString:
-      config.databaseUrl || process.env.DATABASE_URL || undefined,
-
-    host: config.host || process.env.PGHOST,
-    port: Number(config.port || process.env.PGPORT || 5432),
-    database: config.database || process.env.PGDATABASE || "attend_pro",
-    user: config.user || process.env.PGUSER,
-    password: config.password || process.env.PGPASSWORD,
-
-    max: Number(config.max || 10),
-    idleTimeoutMillis: 30_000,
-    connectionTimeoutMillis: 10_000,
+    connectionString: config.databaseUrl || process.env.DATABASE_URL || undefined,
+    ...(config.schema ? { options: `-c search_path=${validateSchema(config.schema)},public` } : {}),
+    ...(config.ssl ? { ssl: config.ssl } : {}),
+    max: config.max ?? 10,
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 10000,
+    statement_timeout: 15000,
+    idle_in_transaction_session_timeout: 30000,
+    types: { getTypeParser: (oid, format) => oid === 20 && format !== 'binary' ? safeInteger : types.getTypeParser(oid, format) },
   });
-
-  async function read(fn) {
-    return fn({
-      async get(sql, params = []) {
-        const result = await pool.query(convertPlaceholders(sql), params);
-
-        return result.rows[0];
-      },
-
-      async all(sql, params = []) {
-        const result = await pool.query(convertPlaceholders(sql), params);
-
-        return result.rows;
-      },
-
-      async run(sql, params = []) {
-        const convertedSql = convertPlaceholders(sql);
-        const result = await pool.query(convertPlaceholders(sql), params);
-
-        return {
-          lastID: result.rows[0]?.id ?? null,
-          changes: result.rowCount,
-          rows: result.rows,
-        };
-      },
-
-      async exec(sql) {
-        await pool.query(sql);
-      },
-    });
-  }
-
-  async function transaction(fn) {
-    const client = await pool.connect();
-
-    try {
-      await client.query("BEGIN");
-
-      const tx = {
-        async get(sql, params = []) {
-          const result = await client.query(convertPlaceholders(sql), params);
-
-          return result.rows[0];
-        },
-
-        async all(sql, params = []) {
-          const result = await client.query(convertPlaceholders(sql), params);
-
-          return result.rows;
-        },
-
-        async run(sql, params = []) {
-          const convertedSql = convertPlaceholders(sql);
-          const result = await client.query(convertPlaceholders(sql), params);
-
-          return {
-            lastID: result.rows[0]?.id ?? null,
-            changes: result.rowCount,
-            rows: result.rows,
-          };
-        },
-
-        async exec(sql) {
-          await client.query(sql);
-        },
-      };
-
-      const result = await fn(tx);
-
-      await client.query("COMMIT");
-
-      return result;
-    } catch (error) {
-      try {
-        await client.query("ROLLBACK");
-      } catch {
-        // Preserve the original error.
-      }
-
-      throw error;
-    } finally {
-      client.release();
-    }
-  }
-
-  async function close() {
-    await pool.end();
-  }
-
-  async function ping() {
-    const result = await pool.query(
-      "SELECT current_database() AS database, current_user AS user"
-    );
-
-    return result.rows[0];
-  }
-
+  pool.on('error', () => logger.error(JSON.stringify({ event: 'database.pool_error' })));
+  const adapter = connection => ({
+    async get(sql, params = []) { return (await connection.query(convertPlaceholders(sql), params)).rows[0]; },
+    async all(sql, params = []) { return (await connection.query(convertPlaceholders(sql), params)).rows; },
+    async run(sql, params = []) {
+      const result = await connection.query(convertPlaceholders(sql), params);
+      return { id: result.rows[0]?.id ?? null, rowCount: result.rowCount, rows: result.rows };
+    },
+    async exec(sql) { await connection.query(sql); },
+  });
   return {
-    read,
-    transaction,
-    close,
-    ping,
+    read: fn => fn(adapter(pool)),
+    async transaction(fn) {
+      const client = await pool.connect();
+      let discard;
+      try {
+        await client.query('BEGIN');
+        const result = await fn(adapter(client));
+        await client.query('COMMIT');
+        return result;
+      } catch (error) {
+        try { await client.query('ROLLBACK'); } catch (rollbackError) { discard = rollbackError; }
+        throw error;
+      } finally { client.release(discard); }
+    },
+    close: () => pool.end(),
+    ping: async () => { await pool.query('SELECT 1'); },
   };
 }
-
-module.exports = {
-  createPostgresStore,
-};
+function validateSchema(schema) {
+  if (!/^attend_test_[a-f0-9]+$/.test(schema)) throw new Error('Only isolated test schemas may override search_path.');
+  return schema;
+}
+module.exports = { createPostgresStore, safeInteger };

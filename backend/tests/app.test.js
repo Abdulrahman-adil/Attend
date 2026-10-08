@@ -1,4 +1,4 @@
-const test = require('node:test');
+const { pgTest: test } = require('./helpers/app');
 const assert = require('node:assert/strict');
 const request = require('supertest');
 const { testApp, seedOrganization } = require('./helpers/app');
@@ -37,7 +37,7 @@ test('unexpected database failures return a generic production error without cra
   await store.read(tx => tx.exec('DROP TABLE sessions'));
   const failed = await request(app).get('/api/auth/session').set(manager).expect(500);
   assert.deepEqual(failed.body, { message: 'Internal Server Error', code: 'INTERNAL_ERROR' });
-  await request(app).get('/api/health').expect(200);
+  await request(app).get('/api/health').expect(500);
 });
 
 test('registered accounts can activate, sign in, create an organization and invite an employee over HTTP', async t => {

@@ -11,7 +11,7 @@ function position(body) {
   };
 }
 async function validateLocation(tx,companyId,sample,{allowRetired=false}={}) {
-  const location=await tx.get('SELECT * FROM locations WHERE id=? AND company_id=?',[sample.locationId,companyId]);
+  const location=await tx.get('SELECT * FROM locations WHERE id=? AND company_id=? FOR SHARE',[sample.locationId,companyId]);
   if (!location || (location.retired_at && !allowRetired)) fail(404,'Work location not found.','LOCATION_NOT_FOUND');
   if (sample.accuracy!==null && sample.accuracy>location.radius) fail(422,'Your location is not accurate enough. Move to an open area and refresh location.','LOCATION_IMPRECISE');
   if (distance(sample.latitude,sample.longitude,location.latitude,location.longitude)>location.radius) fail(403,'You are outside the selected work location.','OUTSIDE_LOCATION');

@@ -44,7 +44,8 @@ const LoginPage: React.FC = () => {
           <GoogleLogin
             onSuccess={async (credentialResponse) => {
               if (credentialResponse.credential) {
-                await googleLogin(credentialResponse.credential, 'web')
+                const result = await googleLogin(credentialResponse.credential, 'web')
+                if (!result.success) setError(result.message)
               }
             }}
             onError={() => setError('Google sign-in failed. Please try again.')}

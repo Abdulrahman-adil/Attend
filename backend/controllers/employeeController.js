@@ -13,13 +13,13 @@ function createEmployeeController({ store, config, now }) {
       let invitationResult = null;
       const user = await store.transaction(async (tx) => {
         const existing = await tx.get(
-          "SELECT * FROM users WHERE normalized_email=?",
+          "SELECT * FROM users WHERE normalized_email=? FOR UPDATE",
           [address]
         );
         if (existing) {
           if (
             existing.role === "employee" &&
-            !existing.is_active &&
+            !existing.is_active && !existing.archived_at &&
             (existing.company_id === null || existing.company_id === companyId)
           ) {
             await tx.run(
@@ -65,7 +65,7 @@ function createEmployeeController({ store, config, now }) {
           [name, address, address, companyId, instant.toISOString()]
         );
         const employee = {
-          id: created.lastID,
+          id: created.id,
           name,
           email: address,
           company_id: companyId,
@@ -129,7 +129,7 @@ function createEmployeeController({ store, config, now }) {
       const instant = now();
       await store.transaction(async (tx) => {
         const user = await tx.get(
-          "SELECT * FROM users WHERE id=? AND company_id=? AND role='employee' AND archived_at IS NULL",
+          "SELECT * FROM users WHERE id=? AND company_id=? AND role='employee' AND archived_at IS NULL FOR UPDATE",
           [employeeId, req.user.company_id]
         );
         if (!user) fail(404, "Employee not found.", "NOT_FOUND");
@@ -178,7 +178,7 @@ function createEmployeeController({ store, config, now }) {
       const time = now().toISOString();
       await store.transaction(async (tx) => {
         const user = await tx.get(
-          "SELECT id FROM users WHERE id=? AND company_id=? AND role='employee' AND archived_at IS NULL",
+          "SELECT id FROM users WHERE id=? AND company_id=? AND role='employee' AND archived_at IS NULL FOR UPDATE",
           [employeeId, req.user.company_id]
         );
         if (!user) fail(404, "Employee not found.", "NOT_FOUND");

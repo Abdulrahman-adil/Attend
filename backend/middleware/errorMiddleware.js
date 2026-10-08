@@ -5,6 +5,8 @@ const notFound = (req, res, next) => {
 
 const errorHandler = (err, req, res, next) => {
   if (res.headersSent) return next(err);
+  if (err.code === '23505') return res.status(409).json({ message: 'This record already exists. Refresh and try again.', code: 'CONFLICT' });
+  if (['40001', '40P01', '55P03'].includes(err.code)) return res.status(409).json({ message: 'The record changed concurrently. Retry the request.', code: 'CONCURRENT_CHANGE' });
   const statusCode = Number.isInteger(err.status) && err.status >= 400 && err.status <= 599 ? err.status : 500;
   const unexpected = statusCode >= 500 && !(err instanceof HttpError);
   res.status(statusCode).json({

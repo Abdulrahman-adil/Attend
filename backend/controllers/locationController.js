@@ -32,12 +32,12 @@ function createLocationController({ store, now }) {
             companyId: req.user.company_id,
             actorId: req.user.id,
             type: "location.created",
-            details: { locationId: created.lastID },
+            details: { locationId: created.id },
           },
           now().toISOString()
         );
         return {
-          id: created.lastID,
+          id: created.id,
           company_id: req.user.company_id,
           name,
           latitude,
@@ -54,7 +54,7 @@ function createLocationController({ store, now }) {
           "UPDATE locations SET retired_at=? WHERE id=? AND company_id=? AND retired_at IS NULL",
           [now().toISOString(), locationId, req.user.company_id]
         );
-        if (!changed.changes) fail(404, "Location not found.", "NOT_FOUND");
+        if (!changed.rowCount) fail(404, "Location not found.", "NOT_FOUND");
         await audit(
           tx,
           {

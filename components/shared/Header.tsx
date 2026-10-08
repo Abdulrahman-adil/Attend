@@ -3,7 +3,7 @@ import React from 'react';
 
 interface HeaderProps {
   userName: string;
-  onLogout: () => void;
+  onLogout: () => void | Promise<void>;
 }
 
 const Header: React.FC<HeaderProps> = ({ userName, onLogout }) => {
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ userName, onLogout }) => {
           <div className="flex items-center">
             <span className="text-slate-600 dark:text-slate-300 mr-4">Welcome, {userName}</span>
             <button
-              onClick={onLogout}
+              onClick={() => { Promise.resolve().then(onLogout).catch(() => window.alert('Sign-out failed. Please try again.')); }}
               className="bg-red-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-red-600 transition"
             >
               Logout
